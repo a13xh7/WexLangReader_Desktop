@@ -1,0 +1,2059 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="U1zwyZlGZPmhTqzg357maJTR8rRBa5vI3BVKaZlX">
+
+    <link rel="stylesheet" href="http://127.0.0.1:7799/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:7799/css/style.css">
+    <link rel="stylesheet" href="http://127.0.0.1:7799/css/icofont.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:7799/css/bootstrap-select.min.css">
+
+    <title>WexLang Reader 1.0</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-dark bg-dark fixed-top" style="padding-top: 0; padding-bottom: 0; height: 60px;">
+
+    <a class="navbar-brand" href="http://127.0.0.1:7799">
+
+        <img src="http://127.0.0.1:7799/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        <span class="mr-3">WexLang Reader</span>
+
+
+        <img src="http://127.0.0.1:7799/img/flags/en.svg" class="text_flag" alt=""> <i class="text-small">(English)</i>
+        <span class="q_lang_arrow">⟶</span>
+        <img src="http://127.0.0.1:7799/img/flags/ru.svg" class="text_flag" alt=""> <i class="text-small">(Русский)</i>
+
+    </a>
+
+
+    <div style="">
+
+    </div>
+
+
+
+
+    <script>
+        learned_lang_code = "en";
+        known_lang_code = "ru";
+    </script>
+
+</nav>
+
+
+<!-- Bootstrap row -->
+<div class="row" id="body-row">
+    <!-- Sidebar -->
+    <div id="sidebar-container" class="sidebar-expanded col-2">
+
+        <ul class="list-group sticky-top sticky-offset">
+
+            <br>
+
+            <a href="http://127.0.0.1:7799" class="bg-dark list-group-item list-group-item-action" onclick="showLoadingOverlay()"><i class="icofont-book"></i> My texts</a>
+
+            <a href="http://127.0.0.1:7799/reader/words" class="bg-dark list-group-item list-group-item-action" onclick="showLoadingOverlay()"><i class="icofont-file-text"></i> My words</a>
+
+            <br>
+
+            <a href="http://127.0.0.1:7799/reader/add/text" class="bg-dark list-group-item list-group-item-action"><i class="icofont-plus-square"></i> Add text</a>
+
+            <br>
+
+            <a href="http://127.0.0.1:7799/reader/upload_dictionary" class="bg-dark list-group-item list-group-item-action"><i class="icofont-upload"></i> Upload dictionary</a>
+
+            <br>
+
+            <a href="http://127.0.0.1:7799/reader/settings" class="bg-dark list-group-item list-group-item-action"><i class="icofont-gears"></i> Settings</a>
+
+
+
+        </ul>
+
+    </div>
+    <!-- sidebar-container END -->
+
+    <!-- MAIN -->
+    <div class="col py-3">
+
+        
+    <h1 class="uc">Settings</h1>
+
+    <form action="http://127.0.0.1:7799/reader/update-settings" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="app_lang">Interface language</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="app_lang" name="app_lang">
+
+                    
+
+                    <option value="en" selected>English</option>
+                    <option value="ru" >Russian</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="lang_i_learn_id">Language I learn</label>
+            <div class="col-sm-10">
+                <select class="selectpicker" name="lang_i_learn_id" id="lang_i_learn_id" data-live-search="true" data-width="100%">
+
+                    
+                        <option
+                            value="0"
+                            data-subtext="English"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/en.svg' class='text_flag' alt=''> English <small class='text-muted'>English</small>"
+
+                                                        selected
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="1"
+                            data-subtext="Russian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ru.svg' class='text_flag' alt=''> Русский <small class='text-muted'>Russian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="2"
+                            data-subtext="Afrikaans"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/af.svg' class='text_flag' alt=''> Afrikaans <small class='text-muted'>Afrikaans</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="3"
+                            data-subtext="Albanian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sq.svg' class='text_flag' alt=''> Shqiptar <small class='text-muted'>Albanian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="4"
+                            data-subtext="Amharic"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/am.svg' class='text_flag' alt=''> አማርኛ <small class='text-muted'>Amharic</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="5"
+                            data-subtext="Arabic"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ar.svg' class='text_flag' alt=''> عربى <small class='text-muted'>Arabic</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="6"
+                            data-subtext="Armenian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/hy.svg' class='text_flag' alt=''> հայերեն <small class='text-muted'>Armenian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="7"
+                            data-subtext="Azerbaijani"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/az.svg' class='text_flag' alt=''> Azərbaycan <small class='text-muted'>Azerbaijani</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="8"
+                            data-subtext="Basque"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/eu.svg' class='text_flag' alt=''> Euskal <small class='text-muted'>Basque</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="9"
+                            data-subtext="Belarusian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/be.svg' class='text_flag' alt=''> Беларуская <small class='text-muted'>Belarusian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="10"
+                            data-subtext="Bengali"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/bn.svg' class='text_flag' alt=''> বাঙালি <small class='text-muted'>Bengali</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="11"
+                            data-subtext="Bosnian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/bs.svg' class='text_flag' alt=''> Bosanski <small class='text-muted'>Bosnian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="12"
+                            data-subtext="Bulgarian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/bg.svg' class='text_flag' alt=''> Български <small class='text-muted'>Bulgarian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="13"
+                            data-subtext="Catalan"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ca.svg' class='text_flag' alt=''> Català <small class='text-muted'>Catalan</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="14"
+                            data-subtext="Cebuano"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ceb.svg' class='text_flag' alt=''> Cebuano <small class='text-muted'>Cebuano</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="15"
+                            data-subtext="Chinese (Simplified)"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/zh-CN.svg' class='text_flag' alt=''> 简体中文 <small class='text-muted'>Chinese (Simplified)</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="16"
+                            data-subtext="Chinese (Traditional)"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/zh-TW.svg' class='text_flag' alt=''> 中國傳統的 <small class='text-muted'>Chinese (Traditional)</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="17"
+                            data-subtext="Corsican"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/co.svg' class='text_flag' alt=''> Corsa <small class='text-muted'>Corsican</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="18"
+                            data-subtext="Croatian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/hr.svg' class='text_flag' alt=''> Hrvatski <small class='text-muted'>Croatian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="19"
+                            data-subtext="Czech"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/cs.svg' class='text_flag' alt=''> Čeština <small class='text-muted'>Czech</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="20"
+                            data-subtext="Danish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/da.svg' class='text_flag' alt=''> Dansk <small class='text-muted'>Danish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="21"
+                            data-subtext="Dutch"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/nl.svg' class='text_flag' alt=''> Nederlands <small class='text-muted'>Dutch</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="22"
+                            data-subtext="Esperanto"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/eo.svg' class='text_flag' alt=''> Esperanto <small class='text-muted'>Esperanto</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="23"
+                            data-subtext="Estonian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/et.svg' class='text_flag' alt=''> Eesti keel <small class='text-muted'>Estonian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="24"
+                            data-subtext="Finnish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/fi.svg' class='text_flag' alt=''> Suomalainen <small class='text-muted'>Finnish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="25"
+                            data-subtext="French"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/fr.svg' class='text_flag' alt=''> Français <small class='text-muted'>French</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="26"
+                            data-subtext="Frisian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/fy.svg' class='text_flag' alt=''> Frysk <small class='text-muted'>Frisian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="27"
+                            data-subtext="Galician"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/gl.svg' class='text_flag' alt=''> Galego <small class='text-muted'>Galician</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="28"
+                            data-subtext="Georgian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ka.svg' class='text_flag' alt=''> ქართული <small class='text-muted'>Georgian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="29"
+                            data-subtext="German"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/de.svg' class='text_flag' alt=''> Deutsche <small class='text-muted'>German</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="30"
+                            data-subtext="Greek"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/el.svg' class='text_flag' alt=''> Ελληνικά <small class='text-muted'>Greek</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="31"
+                            data-subtext="Gujarati"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/gu.svg' class='text_flag' alt=''> ગુજરાતી <small class='text-muted'>Gujarati</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="32"
+                            data-subtext="Haitian Creole"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ht.svg' class='text_flag' alt=''> Kreyòl Ayisyen <small class='text-muted'>Haitian Creole</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="33"
+                            data-subtext="Hausa"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ha.svg' class='text_flag' alt=''> Hausa <small class='text-muted'>Hausa</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="34"
+                            data-subtext="Hawaiian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/haw.svg' class='text_flag' alt=''> Ōlelo Hawaiʻi <small class='text-muted'>Hawaiian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="35"
+                            data-subtext="Hebrew"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/iw.svg' class='text_flag' alt=''> עברית <small class='text-muted'>Hebrew</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="36"
+                            data-subtext="Hindi"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/hi.svg' class='text_flag' alt=''> हिंदी <small class='text-muted'>Hindi</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="37"
+                            data-subtext="Hmong"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/hmn.svg' class='text_flag' alt=''> Hmoob <small class='text-muted'>Hmong</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="38"
+                            data-subtext="Hungarian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/hu.svg' class='text_flag' alt=''> Magyar <small class='text-muted'>Hungarian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="39"
+                            data-subtext="Icelandic"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/is.svg' class='text_flag' alt=''> Íslensku <small class='text-muted'>Icelandic</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="40"
+                            data-subtext="Igbo"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ig.svg' class='text_flag' alt=''> Igbo <small class='text-muted'>Igbo</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="41"
+                            data-subtext="Indonesian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/id.svg' class='text_flag' alt=''> Bahasa Indonesia <small class='text-muted'>Indonesian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="42"
+                            data-subtext="Irish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ga.svg' class='text_flag' alt=''> Gaeilge <small class='text-muted'>Irish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="43"
+                            data-subtext="Italian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/it.svg' class='text_flag' alt=''> Italiano <small class='text-muted'>Italian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="44"
+                            data-subtext="Japanese"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ja.svg' class='text_flag' alt=''> 日本人 <small class='text-muted'>Japanese</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="45"
+                            data-subtext="Javanese"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/jw.svg' class='text_flag' alt=''> Jawa <small class='text-muted'>Javanese</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="46"
+                            data-subtext="Kannada"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/kn.svg' class='text_flag' alt=''> ಕನ್ನಡ <small class='text-muted'>Kannada</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="47"
+                            data-subtext="Kazakh"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/kk.svg' class='text_flag' alt=''> Қазақша <small class='text-muted'>Kazakh</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="48"
+                            data-subtext="Khmer"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/km.svg' class='text_flag' alt=''> ភាសាខ្មែរ <small class='text-muted'>Khmer</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="49"
+                            data-subtext="Korean"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ko.svg' class='text_flag' alt=''> 한국어 <small class='text-muted'>Korean</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="50"
+                            data-subtext="Kurdish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ku.svg' class='text_flag' alt=''> Kurdî <small class='text-muted'>Kurdish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="51"
+                            data-subtext="Kyrgyz"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ky.svg' class='text_flag' alt=''> Кыргызча <small class='text-muted'>Kyrgyz</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="52"
+                            data-subtext="Lao"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/lo.svg' class='text_flag' alt=''> ລາວ <small class='text-muted'>Lao</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="53"
+                            data-subtext="Latin"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/la.svg' class='text_flag' alt=''> Latine <small class='text-muted'>Latin</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="54"
+                            data-subtext="Latvian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/lv.svg' class='text_flag' alt=''> Latviešu valoda <small class='text-muted'>Latvian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="55"
+                            data-subtext="Lithuanian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/lt.svg' class='text_flag' alt=''> Lietuvių <small class='text-muted'>Lithuanian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="56"
+                            data-subtext="Luxembourgish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/lb.svg' class='text_flag' alt=''> Lëtzebuergesch <small class='text-muted'>Luxembourgish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="57"
+                            data-subtext="Macedonian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/mk.svg' class='text_flag' alt=''> Македонски <small class='text-muted'>Macedonian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="58"
+                            data-subtext="Malagasy"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/mg.svg' class='text_flag' alt=''> Malagasy <small class='text-muted'>Malagasy</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="59"
+                            data-subtext="Malay"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ms.svg' class='text_flag' alt=''> Melayu <small class='text-muted'>Malay</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="60"
+                            data-subtext="Malayalam"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ml.svg' class='text_flag' alt=''> മലയാളം <small class='text-muted'>Malayalam</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="61"
+                            data-subtext="Maltese"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/mt.svg' class='text_flag' alt=''> Malti <small class='text-muted'>Maltese</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="62"
+                            data-subtext="Maori"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/mi.svg' class='text_flag' alt=''> Maori <small class='text-muted'>Maori</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="63"
+                            data-subtext="Marathi"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/mr.svg' class='text_flag' alt=''> मराठी <small class='text-muted'>Marathi</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="64"
+                            data-subtext="Mongolian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/mn.svg' class='text_flag' alt=''> Монгол хэл дээр <small class='text-muted'>Mongolian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="65"
+                            data-subtext="Myanmar (Burmese)"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/my.svg' class='text_flag' alt=''> မြန်မာ <small class='text-muted'>Myanmar (Burmese)</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="66"
+                            data-subtext="Nepali"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ne.svg' class='text_flag' alt=''> नेपाली <small class='text-muted'>Nepali</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="67"
+                            data-subtext="Norwegian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/no.svg' class='text_flag' alt=''> Norsk <small class='text-muted'>Norwegian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="68"
+                            data-subtext="Chichewa (Nyanja)"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ny.svg' class='text_flag' alt=''> Chichewa <small class='text-muted'>Chichewa (Nyanja)</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="69"
+                            data-subtext="Pashto"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ps.svg' class='text_flag' alt=''> پښتو <small class='text-muted'>Pashto</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="70"
+                            data-subtext="Persian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/fa.svg' class='text_flag' alt=''> فارسی <small class='text-muted'>Persian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="71"
+                            data-subtext="Polish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/pl.svg' class='text_flag' alt=''> Polskie <small class='text-muted'>Polish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="72"
+                            data-subtext="Portuguese"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/pt.svg' class='text_flag' alt=''> Português <small class='text-muted'>Portuguese</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="73"
+                            data-subtext="Punjabi"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/pa.svg' class='text_flag' alt=''> ਪੰਜਾਬੀ <small class='text-muted'>Punjabi</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="74"
+                            data-subtext="Romanian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ro.svg' class='text_flag' alt=''> Română <small class='text-muted'>Romanian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="76"
+                            data-subtext="Samoan"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sm.svg' class='text_flag' alt=''> Samoa <small class='text-muted'>Samoan</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="77"
+                            data-subtext="Scots Gaelic"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/gd.svg' class='text_flag' alt=''> Gàidhlig na h-Alba <small class='text-muted'>Scots Gaelic</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="78"
+                            data-subtext="Serbian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sr.svg' class='text_flag' alt=''> Српски <small class='text-muted'>Serbian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="79"
+                            data-subtext="Sesotho"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/st.svg' class='text_flag' alt=''> Sesotho <small class='text-muted'>Sesotho</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="80"
+                            data-subtext="Shona"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sn.svg' class='text_flag' alt=''> Shona <small class='text-muted'>Shona</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="81"
+                            data-subtext="Sindhi"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sd.svg' class='text_flag' alt=''> سنڌي <small class='text-muted'>Sindhi</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="82"
+                            data-subtext="Sinhala"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/si.svg' class='text_flag' alt=''> සිංහල <small class='text-muted'>Sinhala</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="83"
+                            data-subtext="Slovak"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sk.svg' class='text_flag' alt=''> Slovenský <small class='text-muted'>Slovak</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="84"
+                            data-subtext="Slovenian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sl.svg' class='text_flag' alt=''> Slovenščina <small class='text-muted'>Slovenian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="85"
+                            data-subtext="Somali"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/so.svg' class='text_flag' alt=''> Somali <small class='text-muted'>Somali</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="86"
+                            data-subtext="Spanish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/es.svg' class='text_flag' alt=''> Español <small class='text-muted'>Spanish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="87"
+                            data-subtext="Sundanese"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/su.svg' class='text_flag' alt=''> Basa Sunda <small class='text-muted'>Sundanese</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="88"
+                            data-subtext="Swahili"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sw.svg' class='text_flag' alt=''> Kiswahili <small class='text-muted'>Swahili</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="89"
+                            data-subtext="Swedish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sv.svg' class='text_flag' alt=''> Svenska <small class='text-muted'>Swedish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="90"
+                            data-subtext="Filipino (Tagalog)"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/tl.svg' class='text_flag' alt=''> Filipino <small class='text-muted'>Filipino (Tagalog)</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="91"
+                            data-subtext="Tajik"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/tg.svg' class='text_flag' alt=''> Тоҷикӣ <small class='text-muted'>Tajik</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="92"
+                            data-subtext="Tamil"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ta.svg' class='text_flag' alt=''> தமிழ் <small class='text-muted'>Tamil</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="93"
+                            data-subtext="Telugu"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/te.svg' class='text_flag' alt=''> తెలుగు <small class='text-muted'>Telugu</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="94"
+                            data-subtext="Thai"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/th.svg' class='text_flag' alt=''> ไทย <small class='text-muted'>Thai</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="95"
+                            data-subtext="Turkish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/tr.svg' class='text_flag' alt=''> Türk <small class='text-muted'>Turkish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="96"
+                            data-subtext="Ukrainian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/uk.svg' class='text_flag' alt=''> Українська <small class='text-muted'>Ukrainian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="97"
+                            data-subtext="Urdu"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ur.svg' class='text_flag' alt=''> اردو <small class='text-muted'>Urdu</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="98"
+                            data-subtext="Uzbek"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/uz.svg' class='text_flag' alt=''> O&#039;zbek <small class='text-muted'>Uzbek</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="99"
+                            data-subtext="Vietnamese"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/vi.svg' class='text_flag' alt=''> Tiếng Việt <small class='text-muted'>Vietnamese</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="100"
+                            data-subtext="Welsh"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/cy.svg' class='text_flag' alt=''> Cymraeg <small class='text-muted'>Welsh</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="101"
+                            data-subtext="Xhosa"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/xh.svg' class='text_flag' alt=''> isiXhosa <small class='text-muted'>Xhosa</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="102"
+                            data-subtext="Yiddish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/yi.svg' class='text_flag' alt=''> Yiddish <small class='text-muted'>Yiddish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="103"
+                            data-subtext="Yoruba"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/yo.svg' class='text_flag' alt=''> Yorùbá <small class='text-muted'>Yoruba</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="104"
+                            data-subtext="Zulu"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/zu.svg' class='text_flag' alt=''> Zulu <small class='text-muted'>Zulu</small>"
+
+                                                    >
+                        </option>
+
+                    
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="lang_i_know_id">Language I know</label>
+            <div class="col-sm-10">
+                <select class="selectpicker" name="lang_i_know_id" id="lang_i_know_id" data-live-search="true" data-width="100%">
+
+                    
+                        <option
+                            value="0"
+                            data-subtext="English"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/en.svg' class='text_flag' alt=''> English <small class='text-muted'>English</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="1"
+                            data-subtext="Russian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ru.svg' class='text_flag' alt=''> Русский <small class='text-muted'>Russian</small>"
+
+                                                        selected
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="2"
+                            data-subtext="Afrikaans"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/af.svg' class='text_flag' alt=''> Afrikaans <small class='text-muted'>Afrikaans</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="3"
+                            data-subtext="Albanian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sq.svg' class='text_flag' alt=''> Shqiptar <small class='text-muted'>Albanian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="4"
+                            data-subtext="Amharic"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/am.svg' class='text_flag' alt=''> አማርኛ <small class='text-muted'>Amharic</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="5"
+                            data-subtext="Arabic"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ar.svg' class='text_flag' alt=''> عربى <small class='text-muted'>Arabic</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="6"
+                            data-subtext="Armenian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/hy.svg' class='text_flag' alt=''> հայերեն <small class='text-muted'>Armenian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="7"
+                            data-subtext="Azerbaijani"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/az.svg' class='text_flag' alt=''> Azərbaycan <small class='text-muted'>Azerbaijani</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="8"
+                            data-subtext="Basque"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/eu.svg' class='text_flag' alt=''> Euskal <small class='text-muted'>Basque</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="9"
+                            data-subtext="Belarusian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/be.svg' class='text_flag' alt=''> Беларуская <small class='text-muted'>Belarusian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="10"
+                            data-subtext="Bengali"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/bn.svg' class='text_flag' alt=''> বাঙালি <small class='text-muted'>Bengali</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="11"
+                            data-subtext="Bosnian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/bs.svg' class='text_flag' alt=''> Bosanski <small class='text-muted'>Bosnian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="12"
+                            data-subtext="Bulgarian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/bg.svg' class='text_flag' alt=''> Български <small class='text-muted'>Bulgarian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="13"
+                            data-subtext="Catalan"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ca.svg' class='text_flag' alt=''> Català <small class='text-muted'>Catalan</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="14"
+                            data-subtext="Cebuano"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ceb.svg' class='text_flag' alt=''> Cebuano <small class='text-muted'>Cebuano</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="15"
+                            data-subtext="Chinese (Simplified)"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/zh-CN.svg' class='text_flag' alt=''> 简体中文 <small class='text-muted'>Chinese (Simplified)</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="16"
+                            data-subtext="Chinese (Traditional)"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/zh-TW.svg' class='text_flag' alt=''> 中國傳統的 <small class='text-muted'>Chinese (Traditional)</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="17"
+                            data-subtext="Corsican"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/co.svg' class='text_flag' alt=''> Corsa <small class='text-muted'>Corsican</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="18"
+                            data-subtext="Croatian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/hr.svg' class='text_flag' alt=''> Hrvatski <small class='text-muted'>Croatian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="19"
+                            data-subtext="Czech"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/cs.svg' class='text_flag' alt=''> Čeština <small class='text-muted'>Czech</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="20"
+                            data-subtext="Danish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/da.svg' class='text_flag' alt=''> Dansk <small class='text-muted'>Danish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="21"
+                            data-subtext="Dutch"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/nl.svg' class='text_flag' alt=''> Nederlands <small class='text-muted'>Dutch</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="22"
+                            data-subtext="Esperanto"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/eo.svg' class='text_flag' alt=''> Esperanto <small class='text-muted'>Esperanto</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="23"
+                            data-subtext="Estonian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/et.svg' class='text_flag' alt=''> Eesti keel <small class='text-muted'>Estonian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="24"
+                            data-subtext="Finnish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/fi.svg' class='text_flag' alt=''> Suomalainen <small class='text-muted'>Finnish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="25"
+                            data-subtext="French"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/fr.svg' class='text_flag' alt=''> Français <small class='text-muted'>French</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="26"
+                            data-subtext="Frisian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/fy.svg' class='text_flag' alt=''> Frysk <small class='text-muted'>Frisian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="27"
+                            data-subtext="Galician"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/gl.svg' class='text_flag' alt=''> Galego <small class='text-muted'>Galician</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="28"
+                            data-subtext="Georgian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ka.svg' class='text_flag' alt=''> ქართული <small class='text-muted'>Georgian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="29"
+                            data-subtext="German"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/de.svg' class='text_flag' alt=''> Deutsche <small class='text-muted'>German</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="30"
+                            data-subtext="Greek"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/el.svg' class='text_flag' alt=''> Ελληνικά <small class='text-muted'>Greek</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="31"
+                            data-subtext="Gujarati"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/gu.svg' class='text_flag' alt=''> ગુજરાતી <small class='text-muted'>Gujarati</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="32"
+                            data-subtext="Haitian Creole"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ht.svg' class='text_flag' alt=''> Kreyòl Ayisyen <small class='text-muted'>Haitian Creole</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="33"
+                            data-subtext="Hausa"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ha.svg' class='text_flag' alt=''> Hausa <small class='text-muted'>Hausa</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="34"
+                            data-subtext="Hawaiian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/haw.svg' class='text_flag' alt=''> Ōlelo Hawaiʻi <small class='text-muted'>Hawaiian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="35"
+                            data-subtext="Hebrew"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/iw.svg' class='text_flag' alt=''> עברית <small class='text-muted'>Hebrew</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="36"
+                            data-subtext="Hindi"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/hi.svg' class='text_flag' alt=''> हिंदी <small class='text-muted'>Hindi</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="37"
+                            data-subtext="Hmong"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/hmn.svg' class='text_flag' alt=''> Hmoob <small class='text-muted'>Hmong</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="38"
+                            data-subtext="Hungarian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/hu.svg' class='text_flag' alt=''> Magyar <small class='text-muted'>Hungarian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="39"
+                            data-subtext="Icelandic"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/is.svg' class='text_flag' alt=''> Íslensku <small class='text-muted'>Icelandic</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="40"
+                            data-subtext="Igbo"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ig.svg' class='text_flag' alt=''> Igbo <small class='text-muted'>Igbo</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="41"
+                            data-subtext="Indonesian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/id.svg' class='text_flag' alt=''> Bahasa Indonesia <small class='text-muted'>Indonesian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="42"
+                            data-subtext="Irish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ga.svg' class='text_flag' alt=''> Gaeilge <small class='text-muted'>Irish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="43"
+                            data-subtext="Italian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/it.svg' class='text_flag' alt=''> Italiano <small class='text-muted'>Italian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="44"
+                            data-subtext="Japanese"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ja.svg' class='text_flag' alt=''> 日本人 <small class='text-muted'>Japanese</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="45"
+                            data-subtext="Javanese"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/jw.svg' class='text_flag' alt=''> Jawa <small class='text-muted'>Javanese</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="46"
+                            data-subtext="Kannada"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/kn.svg' class='text_flag' alt=''> ಕನ್ನಡ <small class='text-muted'>Kannada</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="47"
+                            data-subtext="Kazakh"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/kk.svg' class='text_flag' alt=''> Қазақша <small class='text-muted'>Kazakh</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="48"
+                            data-subtext="Khmer"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/km.svg' class='text_flag' alt=''> ភាសាខ្មែរ <small class='text-muted'>Khmer</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="49"
+                            data-subtext="Korean"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ko.svg' class='text_flag' alt=''> 한국어 <small class='text-muted'>Korean</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="50"
+                            data-subtext="Kurdish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ku.svg' class='text_flag' alt=''> Kurdî <small class='text-muted'>Kurdish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="51"
+                            data-subtext="Kyrgyz"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ky.svg' class='text_flag' alt=''> Кыргызча <small class='text-muted'>Kyrgyz</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="52"
+                            data-subtext="Lao"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/lo.svg' class='text_flag' alt=''> ລາວ <small class='text-muted'>Lao</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="53"
+                            data-subtext="Latin"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/la.svg' class='text_flag' alt=''> Latine <small class='text-muted'>Latin</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="54"
+                            data-subtext="Latvian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/lv.svg' class='text_flag' alt=''> Latviešu valoda <small class='text-muted'>Latvian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="55"
+                            data-subtext="Lithuanian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/lt.svg' class='text_flag' alt=''> Lietuvių <small class='text-muted'>Lithuanian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="56"
+                            data-subtext="Luxembourgish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/lb.svg' class='text_flag' alt=''> Lëtzebuergesch <small class='text-muted'>Luxembourgish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="57"
+                            data-subtext="Macedonian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/mk.svg' class='text_flag' alt=''> Македонски <small class='text-muted'>Macedonian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="58"
+                            data-subtext="Malagasy"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/mg.svg' class='text_flag' alt=''> Malagasy <small class='text-muted'>Malagasy</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="59"
+                            data-subtext="Malay"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ms.svg' class='text_flag' alt=''> Melayu <small class='text-muted'>Malay</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="60"
+                            data-subtext="Malayalam"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ml.svg' class='text_flag' alt=''> മലയാളം <small class='text-muted'>Malayalam</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="61"
+                            data-subtext="Maltese"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/mt.svg' class='text_flag' alt=''> Malti <small class='text-muted'>Maltese</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="62"
+                            data-subtext="Maori"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/mi.svg' class='text_flag' alt=''> Maori <small class='text-muted'>Maori</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="63"
+                            data-subtext="Marathi"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/mr.svg' class='text_flag' alt=''> मराठी <small class='text-muted'>Marathi</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="64"
+                            data-subtext="Mongolian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/mn.svg' class='text_flag' alt=''> Монгол хэл дээр <small class='text-muted'>Mongolian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="65"
+                            data-subtext="Myanmar (Burmese)"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/my.svg' class='text_flag' alt=''> မြန်မာ <small class='text-muted'>Myanmar (Burmese)</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="66"
+                            data-subtext="Nepali"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ne.svg' class='text_flag' alt=''> नेपाली <small class='text-muted'>Nepali</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="67"
+                            data-subtext="Norwegian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/no.svg' class='text_flag' alt=''> Norsk <small class='text-muted'>Norwegian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="68"
+                            data-subtext="Chichewa (Nyanja)"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ny.svg' class='text_flag' alt=''> Chichewa <small class='text-muted'>Chichewa (Nyanja)</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="69"
+                            data-subtext="Pashto"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ps.svg' class='text_flag' alt=''> پښتو <small class='text-muted'>Pashto</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="70"
+                            data-subtext="Persian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/fa.svg' class='text_flag' alt=''> فارسی <small class='text-muted'>Persian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="71"
+                            data-subtext="Polish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/pl.svg' class='text_flag' alt=''> Polskie <small class='text-muted'>Polish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="72"
+                            data-subtext="Portuguese"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/pt.svg' class='text_flag' alt=''> Português <small class='text-muted'>Portuguese</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="73"
+                            data-subtext="Punjabi"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/pa.svg' class='text_flag' alt=''> ਪੰਜਾਬੀ <small class='text-muted'>Punjabi</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="74"
+                            data-subtext="Romanian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ro.svg' class='text_flag' alt=''> Română <small class='text-muted'>Romanian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="76"
+                            data-subtext="Samoan"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sm.svg' class='text_flag' alt=''> Samoa <small class='text-muted'>Samoan</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="77"
+                            data-subtext="Scots Gaelic"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/gd.svg' class='text_flag' alt=''> Gàidhlig na h-Alba <small class='text-muted'>Scots Gaelic</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="78"
+                            data-subtext="Serbian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sr.svg' class='text_flag' alt=''> Српски <small class='text-muted'>Serbian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="79"
+                            data-subtext="Sesotho"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/st.svg' class='text_flag' alt=''> Sesotho <small class='text-muted'>Sesotho</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="80"
+                            data-subtext="Shona"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sn.svg' class='text_flag' alt=''> Shona <small class='text-muted'>Shona</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="81"
+                            data-subtext="Sindhi"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sd.svg' class='text_flag' alt=''> سنڌي <small class='text-muted'>Sindhi</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="82"
+                            data-subtext="Sinhala"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/si.svg' class='text_flag' alt=''> සිංහල <small class='text-muted'>Sinhala</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="83"
+                            data-subtext="Slovak"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sk.svg' class='text_flag' alt=''> Slovenský <small class='text-muted'>Slovak</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="84"
+                            data-subtext="Slovenian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sl.svg' class='text_flag' alt=''> Slovenščina <small class='text-muted'>Slovenian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="85"
+                            data-subtext="Somali"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/so.svg' class='text_flag' alt=''> Somali <small class='text-muted'>Somali</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="86"
+                            data-subtext="Spanish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/es.svg' class='text_flag' alt=''> Español <small class='text-muted'>Spanish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="87"
+                            data-subtext="Sundanese"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/su.svg' class='text_flag' alt=''> Basa Sunda <small class='text-muted'>Sundanese</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="88"
+                            data-subtext="Swahili"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sw.svg' class='text_flag' alt=''> Kiswahili <small class='text-muted'>Swahili</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="89"
+                            data-subtext="Swedish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/sv.svg' class='text_flag' alt=''> Svenska <small class='text-muted'>Swedish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="90"
+                            data-subtext="Filipino (Tagalog)"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/tl.svg' class='text_flag' alt=''> Filipino <small class='text-muted'>Filipino (Tagalog)</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="91"
+                            data-subtext="Tajik"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/tg.svg' class='text_flag' alt=''> Тоҷикӣ <small class='text-muted'>Tajik</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="92"
+                            data-subtext="Tamil"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ta.svg' class='text_flag' alt=''> தமிழ் <small class='text-muted'>Tamil</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="93"
+                            data-subtext="Telugu"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/te.svg' class='text_flag' alt=''> తెలుగు <small class='text-muted'>Telugu</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="94"
+                            data-subtext="Thai"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/th.svg' class='text_flag' alt=''> ไทย <small class='text-muted'>Thai</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="95"
+                            data-subtext="Turkish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/tr.svg' class='text_flag' alt=''> Türk <small class='text-muted'>Turkish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="96"
+                            data-subtext="Ukrainian"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/uk.svg' class='text_flag' alt=''> Українська <small class='text-muted'>Ukrainian</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="97"
+                            data-subtext="Urdu"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/ur.svg' class='text_flag' alt=''> اردو <small class='text-muted'>Urdu</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="98"
+                            data-subtext="Uzbek"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/uz.svg' class='text_flag' alt=''> O&#039;zbek <small class='text-muted'>Uzbek</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="99"
+                            data-subtext="Vietnamese"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/vi.svg' class='text_flag' alt=''> Tiếng Việt <small class='text-muted'>Vietnamese</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="100"
+                            data-subtext="Welsh"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/cy.svg' class='text_flag' alt=''> Cymraeg <small class='text-muted'>Welsh</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="101"
+                            data-subtext="Xhosa"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/xh.svg' class='text_flag' alt=''> isiXhosa <small class='text-muted'>Xhosa</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="102"
+                            data-subtext="Yiddish"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/yi.svg' class='text_flag' alt=''> Yiddish <small class='text-muted'>Yiddish</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="103"
+                            data-subtext="Yoruba"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/yo.svg' class='text_flag' alt=''> Yorùbá <small class='text-muted'>Yoruba</small>"
+
+                                                    >
+                        </option>
+
+                    
+                        <option
+                            value="104"
+                            data-subtext="Zulu"
+                            data-content="<img src='http://127.0.0.1:7799/img/flags/zu.svg' class='text_flag' alt=''> Zulu <small class='text-muted'>Zulu</small>"
+
+                                                    >
+                        </option>
+
+                    
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="use_free_translator">Use free google translate api</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="use_free_translator" name="use_free_translator">
+
+                    
+                    <option value="1" selected>Yes</option>
+                    <option value="0" >No, use official google translate API</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="api_key">Google translate api key</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="api_key" name="api_key" placeholder="key" value="">
+            </div>
+        </div>
+
+        <button type="submit" class="btn w-100 btn-primary noradius mb-5 uc"><b>Save</b></button>
+
+    </form>
+
+    <hr>
+
+    <ul>
+        <li>If you are using free google API, google may block your IP because it&#039;s not actually free and there are limits.</li>
+        <li> To avoid this do not use &quot;Mark all words as&quot; function too often. </li>
+        <li> If translation stopped working you can wait some time for google to unban your IP or switch to official google translate API, set you API key and translate without any limits.</li>
+    </ul>
+
+    <ul>
+        <li><a href="https://cloud.google.com/translate/pricing">https://cloud.google.com/translate/pricing</a></li>
+    </ul>
+    <img src="http://127.0.0.1:7799/img/api.png" alt="">
+
+
+
+    </div>
+    <!-- Main Col END -->
+
+</div>
+<!-- body-row END -->
+
+
+<div class="alert alert-success fade show" id="alert" style="position: fixed; top: 57px; right: 0; z-index: 9999999 !important; display: none;" >
+
+    <strong>      Saved      </strong>
+
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://127.0.0.1:7799/js/jquery-3.4.1.min.js"></script>
+<script src="http://127.0.0.1:7799/js/popper.min.js"></script>
+<script src="http://127.0.0.1:7799/js/bootstrap.min.js"></script>
+<script src="http://127.0.0.1:7799/js/bootstrap-select.min.js"></script>
+
+<!-- App JavaScript -->
+<script src="http://127.0.0.1:7799/js/reader.js"></script>
+<script src="http://127.0.0.1:7799/js/js.cookie.js"></script>
+<script src="http://127.0.0.1:7799/js/loadingoverlay.min.js"></script>
+</body>
+</html>

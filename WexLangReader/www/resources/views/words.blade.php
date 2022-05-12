@@ -3,12 +3,7 @@
 
 @section('content')
 
-    @if($totalWords < 15000)
-        <a href="https://gum.co/ZVxga" class="h2">База из 15 882 самых распространенных английских слов</a>
-        <hr style="border: 1px solid #DCDCDC;">
-    @endif
-
-
+   
 
     <form action="{{route('add_new_word')}}" method="POST" >
 

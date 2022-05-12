@@ -8127,3 +8127,771 @@ Created()
 - 22:10:20.187 DEBUG: OnBrowserDestroyed()
 - 22:10:20.454 INFO: Ended application
 - 22:10:20.454 INFO: --------------------------------------------------------
+- 22:38:08.000 INFO: --------------------------------------------------------
+- 22:38:08.000 INFO: Started application
+- 22:38:08.000 INFO: Logging to: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log
+- 22:38:08.000 INFO: Log level = DEBUG4
+- 22:38:08.000 INFO: Starting Mongoose 3.9c web server
+- 22:38:08.000 INFO: WWW directory: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\www\public
+- 22:38:08.000 INFO: Index files: index.html,index.php
+- 22:38:08.000 INFO: CGI interpreter: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\php\php-cgi.exe
+- 22:38:08.000 INFO: CGI pattern: **.php$
+- 22:38:08.000 INFO: Hide files patterns: 
+- 22:38:08.000 INFO: CGI environment variables set: TMP=C:\Users\user\AppData\Local\Temp\,TEMP=C:\Users\user\AppData\Local\Temp\,TMPDIR=C:\Users\user\AppData\Local\Temp\,SERVER_NAME=127.0.0.1,PHPDESKTOP_VERSION=57.0
+- 22:38:08.000 INFO: Web server url: http://127.0.0.1:7334/
+- 22:38:08.000 INFO: remote_debugging_port = 51198
+- 22:38:08.000 DEBUG: Command line string for the browser process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --no-sandbox --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --remote-debugging-port=51198
+- 22:38:08.031 DEBUG: App::OnContextInitialized()
+- 22:38:08.031 DEBUG: Window max width/height = 1840/992
+- 22:38:08.031 DEBUG: GetBrowserWindow(): not found, hwnd = 2951338
+- 22:38:08.031 DEBUG: WindowProc(): event WM_GETMINMAXINFO: could not fetch BrowserWindow
+- 22:38:08.031 DEBUG: BrowserWindow::CreateBrowserControl()
+- 22:38:08.031 DEBUG: StoreBrowserWindow(): hwnd = 2951338
+- 22:38:08.078 DEBUG: ClientHandler::OnAfterCreated()
+- 22:38:08.078 DEBUG: SetCefBrowser() called in ClientHandler::OnAfterCreated()
+- 22:38:08.000 DEBUG: Command line string for the gpu-process process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --type=gpu-process --no-sandbox --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --disable-direct-composition --supports-dual-gpus=false --gpu-driver-bug-workarounds=7,10,18,19,20,23,41,74 --disable-gl-extensions="GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent" --gpu-vendor-id=0x10de --gpu-device-id=0x21c4 --gpu-driver-vendor=NVIDIA --gpu-driver-version=30.0.15.1215 --gpu-driver-date=3-17-2022 --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --service-request-channel-token=AE644FC1F6996D5EE4DFF7B0B1D8FF74 --mojo-platform-channel-handle=1752 /prefetch:2
+- 22:38:08.078 DEBUG: OnLoadingStateChange: loading=1, url=
+- 22:38:08.000 DEBUG: Command line string for the renderer process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --type=renderer --no-sandbox --primordial-pipe-token=2C65420A8B3C6FBDECC3FC6413FA912F --lang=en-US --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --enable-pinch --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553 --service-request-channel-token=2C65420A8B3C6FBDECC3FC6413FA912F --renderer-client-id=3 --mojo-platform-channel-handle=2356 /prefetch:1
+- 22:38:08.016 DEBUG: OnBrowserCreated()
+[0512/223808.233:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+- 22:38:09.484 INFO: GET 200 /css/bootstrap.min.css
+- 22:38:09.484 INFO: GET 200 /css/style.css
+- 22:38:09.484 INFO: GET 200 /css/bootstrap-select.min.css
+- 22:38:09.484 INFO: GET 200 /css/icofont.min.css
+- 22:38:09.484 INFO: GET 200 /
+- 22:38:09.391 DEBUG: OnContextCreated()
+- 22:38:09.516 INFO: GET 200 /img/logo.svg
+- 22:38:09.516 INFO: GET 200 /img/flags/ru.svg
+- 22:38:09.516 INFO: GET 200 /img/flags/en.svg
+- 22:38:09.516 INFO: GET 200 /fonts/icofont.woff2
+- 22:38:09.562 INFO: GET 200 /js/jquery-3.4.1.min.js
+- 22:38:09.562 INFO: GET 200 /js/popper.min.js
+- 22:38:09.562 INFO: GET 200 /js/bootstrap-select.min.js
+- 22:38:09.562 INFO: GET 200 /js/bootstrap.min.js
+- 22:38:09.562 INFO: GET 200 /js/reader.js
+- 22:38:09.594 INFO: GET 200 /js/js.cookie.js
+- 22:38:09.594 INFO: GET 200 /js/loadingoverlay.min.js
+- 22:38:09.625 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7334/
+- 22:38:12.484 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7334/
+- 22:38:12.562 DEBUG: OnContextCreated()
+- 22:38:12.703 INFO: GET 200 /
+- 22:38:12.734 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7334/
+- 22:38:13.375 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7334/
+- 22:38:13.547 DEBUG: OnContextCreated()
+- 22:38:13.687 INFO: GET 200 /reader/read/text/56?page=1
+- 22:38:13.703 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7334/reader/read/text/56?page=1
+- 22:38:15.281 DEBUG: WM_DESTROY
+- 22:38:15.281 DEBUG: RemoveBrowserWindow(): hwnd = 2951338
+- 22:38:15.281 INFO: Stopping Mongoose web server
+- 22:38:15.281 DEBUG: Mongoose webserver stopped immediately
+- 22:38:15.281 DEBUG: OnBeforeClose() hwnd=1312852
+- 22:38:15.281 DEBUG: RemoveBrowserWindow(): hwnd = 1312852
+- 22:38:15.281 DEBUG: GetBrowserWindow(): not found, hwnd = 1312852
+- 22:38:15.281 WARNING: RemoveBrowserWindow() failed: GetBrowserWindow() failed
+- 22:38:15.281 DEBUG: Calling CefQuitMessageLoop()
+- 22:38:15.437 INFO: Ended application
+- 22:38:15.437 INFO: --------------------------------------------------------
+- 22:42:35.000 INFO: --------------------------------------------------------
+- 22:42:35.000 INFO: Started application
+- 22:42:35.000 INFO: Logging to: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log
+- 22:42:35.000 INFO: Log level = DEBUG4
+- 22:42:35.000 INFO: Starting Mongoose 3.9c web server
+- 22:42:35.000 INFO: WWW directory: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\www\public
+- 22:42:35.000 INFO: Index files: index.html,index.php
+- 22:42:35.000 INFO: CGI interpreter: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\php\php-cgi.exe
+- 22:42:35.000 INFO: CGI pattern: **.php$
+- 22:42:35.000 INFO: Hide files patterns: 
+- 22:42:35.000 INFO: CGI environment variables set: TMP=C:\Users\user\AppData\Local\Temp\,TEMP=C:\Users\user\AppData\Local\Temp\,TMPDIR=C:\Users\user\AppData\Local\Temp\,SERVER_NAME=127.0.0.1,PHPDESKTOP_VERSION=57.0
+- 22:42:35.000 INFO: Web server url: http://127.0.0.1:7529/
+- 22:42:35.000 INFO: remote_debugging_port = 54942
+- 22:42:35.000 DEBUG: Command line string for the browser process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --no-sandbox --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --remote-debugging-port=54942
+- 22:42:36.032 DEBUG: App::OnContextInitialized()
+- 22:42:36.032 DEBUG: Window max width/height = 1840/992
+- 22:42:36.032 DEBUG: GetBrowserWindow(): not found, hwnd = 1443924
+- 22:42:36.032 DEBUG: WindowProc(): event WM_GETMINMAXINFO: could not fetch BrowserWindow
+- 22:42:36.032 DEBUG: BrowserWindow::CreateBrowserControl()
+- 22:42:36.032 DEBUG: StoreBrowserWindow(): hwnd = 1443924
+- 22:42:36.000 DEBUG: Command line string for the gpu-process process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --type=gpu-process --no-sandbox --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --disable-direct-composition --supports-dual-gpus=false --gpu-driver-bug-workarounds=7,10,18,19,20,23,41,74 --disable-gl-extensions="GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent" --gpu-vendor-id=0x10de --gpu-device-id=0x21c4 --gpu-driver-vendor=NVIDIA --gpu-driver-version=30.0.15.1215 --gpu-driver-date=3-17-2022 --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --service-request-channel-token=B96518F256FF044C3A12B8BC942B9554 --mojo-platform-channel-handle=1768 /prefetch:2
+- 22:42:36.063 DEBUG: ClientHandler::OnAfterCreated()
+- 22:42:36.063 DEBUG: SetCefBrowser() called in ClientHandler::OnAfterCreated()
+- 22:42:36.079 DEBUG: OnLoadingStateChange: loading=1, url=
+- 22:42:36.000 DEBUG: Command line string for the renderer process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --type=renderer --no-sandbox --primordial-pipe-token=3D31A2F2EEFCEB6696CFD7126E645F18 --lang=en-US --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --enable-pinch --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553 --service-request-channel-token=3D31A2F2EEFCEB6696CFD7126E645F18 --renderer-client-id=3 --mojo-platform-channel-handle=2304 /prefetch:1
+- 22:42:36.016 DEBUG: OnBrowserCreated()
+[0512/224236.154:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+- 22:42:37.344 INFO: GET 200 /css/bootstrap.min.css
+- 22:42:37.344 INFO: GET 200 /css/style.css
+- 22:42:37.344 INFO: GET 200 /css/bootstrap-select.min.css
+- 22:42:37.344 INFO: GET 200 /css/icofont.min.css
+- 22:42:37.360 INFO: GET 200 /
+- 22:42:37.266 DEBUG: OnContextCreated()
+- 22:42:37.360 INFO: GET 200 /img/logo.svg
+- 22:42:37.360 INFO: GET 200 /img/flags/ru.svg
+- 22:42:37.360 INFO: GET 200 /img/flags/en.svg
+- 22:42:37.391 INFO: GET 200 /fonts/icofont.woff2
+- 22:42:37.485 INFO: GET 200 /js/jquery-3.4.1.min.js
+- 22:42:37.485 INFO: GET 200 /js/popper.min.js
+- 22:42:37.485 INFO: GET 200 /js/bootstrap.min.js
+- 22:42:37.485 INFO: GET 200 /js/reader.js
+- 22:42:37.485 INFO: GET 200 /js/bootstrap-select.min.js
+- 22:42:37.500 INFO: GET 200 /js/js.cookie.js
+- 22:42:37.500 INFO: GET 200 /js/loadingoverlay.min.js
+- 22:42:37.563 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7529/
+- 22:42:39.250 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7529/
+- 22:42:39.406 DEBUG: OnContextCreated()
+- 22:42:39.516 INFO: GET 200 /reader/settings
+- 22:42:39.516 INFO: GET 200 /img/api.png
+- 22:42:39.563 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7529/reader/settings
+- 22:42:39.579 INFO: GET 200 /img/flags/af.svg
+- 22:42:39.579 INFO: GET 200 /img/flags/sq.svg
+- 22:42:39.579 INFO: GET 200 /img/flags/am.svg
+- 22:42:39.579 INFO: GET 200 /img/flags/ar.svg
+- 22:42:39.579 INFO: GET 200 /img/flags/az.svg
+- 22:42:39.579 INFO: GET 200 /img/flags/hy.svg
+- 22:42:39.579 INFO: GET 200 /img/flags/eu.svg
+- 22:42:39.594 INFO: GET 200 /img/flags/be.svg
+- 22:42:39.594 INFO: GET 200 /img/flags/bs.svg
+- 22:42:39.594 INFO: GET 200 /img/flags/bg.svg
+- 22:42:39.594 INFO: GET 200 /img/flags/bn.svg
+- 22:42:39.594 INFO: GET 200 /img/flags/ca.svg
+- 22:42:39.594 INFO: GET 200 /img/flags/ceb.svg
+- 22:42:39.594 INFO: GET 200 /img/flags/zh-CN.svg
+- 22:42:39.594 INFO: GET 200 /img/flags/zh-TW.svg
+- 22:42:39.594 INFO: GET 200 /img/flags/co.svg
+- 22:42:39.594 INFO: GET 200 /img/flags/hr.svg
+- 22:42:39.594 INFO: GET 200 /img/flags/cs.svg
+- 22:42:39.594 INFO: GET 200 /img/flags/da.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/nl.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/eo.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/et.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/fi.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/fr.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/fy.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/ka.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/gl.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/de.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/el.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/gu.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/ht.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/ha.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/haw.svg
+- 22:42:39.688 INFO: GET 200 /img/flags/iw.svg
+- 22:42:39.704 INFO: GET 200 /img/flags/hi.svg
+- 22:42:39.704 INFO: GET 200 /img/flags/hmn.svg
+- 22:42:39.704 INFO: GET 200 /img/flags/hu.svg
+- 22:42:39.704 INFO: GET 200 /img/flags/is.svg
+- 22:42:39.704 INFO: GET 200 /img/flags/ig.svg
+- 22:42:39.704 INFO: GET 200 /img/flags/id.svg
+- 22:42:39.704 INFO: GET 200 /img/flags/ga.svg
+- 22:42:39.719 INFO: GET 200 /img/flags/ja.svg
+- 22:42:39.719 INFO: GET 200 /img/flags/it.svg
+- 22:42:39.719 INFO: GET 200 /img/flags/jw.svg
+- 22:42:39.719 INFO: GET 200 /img/flags/kn.svg
+- 22:42:39.719 INFO: GET 200 /img/flags/kk.svg
+- 22:42:39.719 INFO: GET 200 /img/flags/km.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/ko.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/ku.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/ky.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/lo.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/la.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/lv.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/lt.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/lb.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/mg.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/mk.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/ms.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/ml.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/mt.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/mi.svg
+- 22:42:39.735 INFO: GET 200 /img/flags/mr.svg
+- 22:42:39.750 INFO: GET 200 /img/flags/mn.svg
+- 22:42:39.750 INFO: GET 200 /img/flags/my.svg
+- 22:42:39.750 INFO: GET 200 /img/flags/ne.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/ps.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/no.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/ny.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/fa.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/pl.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/pt.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/pa.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/ro.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/sm.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/gd.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/st.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/sr.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/sn.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/si.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/sk.svg
+- 22:42:39.766 INFO: GET 200 /img/flags/sd.svg
+- 22:42:39.797 INFO: GET 200 /img/flags/sl.svg
+- 22:42:39.797 INFO: GET 200 /img/flags/so.svg
+- 22:42:39.797 INFO: GET 200 /img/flags/es.svg
+- 22:42:39.797 INFO: GET 200 /img/flags/su.svg
+- 22:42:39.797 INFO: GET 200 /img/flags/sw.svg
+- 22:42:39.797 INFO: GET 200 /img/flags/sv.svg
+- 22:42:39.797 INFO: GET 200 /img/flags/tl.svg
+- 22:42:39.875 INFO: GET 200 /img/flags/ta.svg
+- 22:42:39.875 INFO: GET 200 /img/flags/tg.svg
+- 22:42:39.875 INFO: GET 200 /img/flags/te.svg
+- 22:42:39.875 INFO: GET 200 /img/flags/th.svg
+- 22:42:39.875 INFO: GET 200 /img/flags/tr.svg
+- 22:42:39.875 INFO: GET 200 /img/flags/uk.svg
+- 22:42:39.891 INFO: GET 200 /img/flags/ur.svg
+- 22:42:39.891 INFO: GET 200 /img/flags/uz.svg
+- 22:42:39.891 INFO: GET 200 /img/flags/vi.svg
+- 22:42:39.891 INFO: GET 200 /img/flags/cy.svg
+- 22:42:39.891 INFO: GET 200 /img/flags/xh.svg
+- 22:42:39.891 INFO: GET 200 /img/flags/yi.svg
+- 22:42:39.891 INFO: GET 200 /img/flags/yo.svg
+- 22:42:39.891 INFO: GET 200 /img/flags/zu.svg
+- 22:42:41.594 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7529/reader/settings
+- 22:42:41.782 INFO: POST 302 /reader/update-settings
+- 22:42:41.891 DEBUG: OnContextCreated()
+- 22:42:41.985 INFO: GET 200 /reader/settings
+- 22:42:41.016 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7529/reader/settings
+- 22:42:49.047 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7529/reader/settings
+- 22:42:49.156 DEBUG: OnContextCreated()
+- 22:42:49.250 INFO: GET 200 /
+- 22:42:49.266 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7529/
+- 22:42:54.735 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7529/
+- 22:42:54.844 DEBUG: OnContextCreated()
+- 22:42:54.938 INFO: GET 200 /reader/add/text
+- 22:42:54.954 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7529/reader/add/text
+- 22:43:05.922 DEBUG: WM_DESTROY
+- 22:43:05.922 DEBUG: RemoveBrowserWindow(): hwnd = 1443924
+- 22:43:05.922 INFO: Stopping Mongoose web server
+- 22:43:05.922 DEBUG: Mongoose webserver stopped immediately
+- 22:43:05.922 DEBUG: OnBeforeClose() hwnd=1640554
+- 22:43:05.922 DEBUG: RemoveBrowserWindow(): hwnd = 1640554
+- 22:43:05.922 DEBUG: GetBrowserWindow(): not found, hwnd = 1640554
+- 22:43:05.922 WARNING: RemoveBrowserWindow() failed: GetBrowserWindow() failed
+- 22:43:05.922 DEBUG: Calling CefQuitMessageLoop()
+- 22:43:05.844 DEBUG: OnBrowserDestroyed()
+- 22:43:06.125 INFO: Ended application
+- 22:43:06.125 INFO: --------------------------------------------------------
+- 22:47:07.016 INFO: --------------------------------------------------------
+- 22:47:07.016 INFO: Started application
+- 22:47:07.016 INFO: Logging to: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log
+- 22:47:07.016 INFO: Log level = DEBUG4
+- 22:47:07.016 INFO: Starting Mongoose 3.9c web server
+- 22:47:07.016 INFO: WWW directory: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\www\public
+- 22:47:07.016 INFO: Index files: index.html,index.php
+- 22:47:07.016 INFO: CGI interpreter: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\php\php-cgi.exe
+- 22:47:07.016 INFO: CGI pattern: **.php$
+- 22:47:07.016 INFO: Hide files patterns: 
+- 22:47:07.016 INFO: CGI environment variables set: TMP=C:\Users\user\AppData\Local\Temp\,TEMP=C:\Users\user\AppData\Local\Temp\,TMPDIR=C:\Users\user\AppData\Local\Temp\,SERVER_NAME=127.0.0.1,PHPDESKTOP_VERSION=57.0
+- 22:47:07.016 INFO: Web server url: http://127.0.0.1:7799/
+- 22:47:07.016 INFO: remote_debugging_port = 55325
+- 22:47:07.016 DEBUG: Command line string for the browser process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --no-sandbox --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --remote-debugging-port=55325
+- 22:47:07.047 DEBUG: App::OnContextInitialized()
+- 22:47:07.047 DEBUG: Window max width/height = 1840/992
+- 22:47:07.047 DEBUG: GetBrowserWindow(): not found, hwnd = 591660
+- 22:47:07.047 DEBUG: WindowProc(): event WM_GETMINMAXINFO: could not fetch BrowserWindow
+- 22:47:07.047 DEBUG: BrowserWindow::CreateBrowserControl()
+- 22:47:07.047 DEBUG: StoreBrowserWindow(): hwnd = 591660
+- 22:47:07.000 DEBUG: Command line string for the gpu-process process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --type=gpu-process --no-sandbox --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --disable-direct-composition --supports-dual-gpus=false --gpu-driver-bug-workarounds=7,10,18,19,20,23,41,74 --disable-gl-extensions="GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent" --gpu-vendor-id=0x10de --gpu-device-id=0x21c4 --gpu-driver-vendor=NVIDIA --gpu-driver-version=30.0.15.1215 --gpu-driver-date=3-17-2022 --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --service-request-channel-token=0DDF92D2C9DCC4626053072917F4A653 --mojo-platform-channel-handle=1756 /prefetch:2
+- 22:47:07.078 DEBUG: ClientHandler::OnAfterCreated()
+- 22:47:07.078 DEBUG: SetCefBrowser() called in ClientHandler::OnAfterCreated()
+- 22:47:07.094 DEBUG: OnLoadingStateChange: loading=1, url=
+- 22:47:07.000 DEBUG: Command line string for the renderer process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --type=renderer --no-sandbox --primordial-pipe-token=669EA2BB2B1F3C9ADC68E622AEB5E846 --lang=en-US --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --enable-pinch --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553 --service-request-channel-token=669EA2BB2B1F3C9ADC68E622AEB5E846 --renderer-client-id=3 --mojo-platform-channel-handle=2364 /prefetch:1
+- 22:47:07.016 DEBUG: OnBrowserCreated()
+[0512/224707.977:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+- 22:47:09.375 INFO: GET 200 /css/style.css
+- 22:47:09.375 INFO: GET 200 /css/bootstrap.min.css
+- 22:47:09.375 INFO: GET 200 /css/bootstrap-select.min.css
+- 22:47:09.375 INFO: GET 200 /css/icofont.min.css
+- 22:47:09.391 INFO: GET 200 /
+- 22:47:09.282 DEBUG: OnContextCreated()
+- 22:47:09.406 INFO: GET 200 /img/logo.svg
+- 22:47:09.406 INFO: GET 200 /img/flags/ru.svg
+- 22:47:09.406 INFO: GET 200 /img/flags/en.svg
+- 22:47:09.406 INFO: GET 200 /fonts/icofont.woff2
+- 22:47:09.453 INFO: GET 200 /js/jquery-3.4.1.min.js
+- 22:47:09.453 INFO: GET 200 /js/popper.min.js
+- 22:47:09.453 INFO: GET 200 /js/reader.js
+- 22:47:09.453 INFO: GET 200 /js/js.cookie.js
+- 22:47:09.453 INFO: GET 200 /js/bootstrap.min.js
+- 22:47:09.453 INFO: GET 200 /js/bootstrap-select.min.js
+- 22:47:09.484 INFO: GET 200 /js/loadingoverlay.min.js
+- 22:47:09.516 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7799/
+- 22:48:07.187 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7799/
+- 22:48:08.282 DEBUG: OnContextCreated()
+- 22:48:08.391 INFO: GET 200 /
+- 22:48:08.422 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7799/
+- 22:48:33.312 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7799/
+- 22:48:33.407 DEBUG: OnContextCreated()
+- 22:48:33.516 INFO: GET 200 /reader/settings
+- 22:48:33.531 INFO: GET 200 /img/api.png
+- 22:48:33.547 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7799/reader/settings
+- 22:48:33.562 INFO: GET 200 /img/flags/af.svg
+- 22:48:33.562 INFO: GET 200 /img/flags/sq.svg
+- 22:48:33.562 INFO: GET 200 /img/flags/am.svg
+- 22:48:33.562 INFO: GET 200 /img/flags/az.svg
+- 22:48:33.562 INFO: GET 200 /img/flags/ar.svg
+- 22:48:33.562 INFO: GET 200 /img/flags/hy.svg
+- 22:48:33.562 INFO: GET 200 /img/flags/eu.svg
+- 22:48:33.594 INFO: GET 200 /img/flags/be.svg
+- 22:48:33.594 INFO: GET 200 /img/flags/bn.svg
+- 22:48:33.594 INFO: GET 200 /img/flags/bs.svg
+- 22:48:33.594 INFO: GET 200 /img/flags/bg.svg
+- 22:48:33.594 INFO: GET 200 /img/flags/ca.svg
+- 22:48:33.594 INFO: GET 200 /img/flags/ceb.svg
+- 22:48:33.594 INFO: GET 200 /img/flags/zh-CN.svg
+- 22:48:33.594 INFO: GET 200 /img/flags/zh-TW.svg
+- 22:48:33.594 INFO: GET 200 /img/flags/co.svg
+- 22:48:33.594 INFO: GET 200 /img/flags/hr.svg
+- 22:48:33.609 INFO: GET 200 /img/flags/cs.svg
+- 22:48:33.609 INFO: GET 200 /img/flags/nl.svg
+- 22:48:33.609 INFO: GET 200 /img/flags/da.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/eo.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/et.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/fi.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/fy.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/fr.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/gl.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/ka.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/de.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/el.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/gu.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/ht.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/ha.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/haw.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/iw.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/hi.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/hmn.svg
+- 22:48:33.625 INFO: GET 200 /img/flags/hu.svg
+- 22:48:33.641 INFO: GET 200 /img/flags/is.svg
+- 22:48:33.641 INFO: GET 200 /img/flags/ig.svg
+- 22:48:33.641 INFO: GET 200 /img/flags/id.svg
+- 22:48:33.641 INFO: GET 200 /img/flags/ga.svg
+- 22:48:33.641 INFO: GET 200 /img/flags/it.svg
+- 22:48:33.641 INFO: GET 200 /img/flags/ja.svg
+- 22:48:33.656 INFO: GET 200 /img/flags/jw.svg
+- 22:48:33.656 INFO: GET 200 /img/flags/kn.svg
+- 22:48:33.656 INFO: GET 200 /img/flags/kk.svg
+- 22:48:33.656 INFO: GET 200 /img/flags/km.svg
+- 22:48:33.656 INFO: GET 200 /img/flags/ku.svg
+- 22:48:33.656 INFO: GET 200 /img/flags/ko.svg
+- 22:48:33.656 INFO: GET 200 /img/flags/ky.svg
+- 22:48:33.672 INFO: GET 200 /img/flags/lo.svg
+- 22:48:33.672 INFO: GET 200 /img/flags/la.svg
+- 22:48:33.672 INFO: GET 200 /img/flags/lv.svg
+- 22:48:33.672 INFO: GET 200 /img/flags/lt.svg
+- 22:48:33.672 INFO: GET 200 /img/flags/lb.svg
+- 22:48:33.672 INFO: GET 200 /img/flags/mk.svg
+- 22:48:33.672 INFO: GET 200 /img/flags/mg.svg
+- 22:48:33.672 INFO: GET 200 /img/flags/ms.svg
+- 22:48:33.672 INFO: GET 200 /img/flags/ml.svg
+- 22:48:33.672 INFO: GET 200 /img/flags/mt.svg
+- 22:48:33.672 INFO: GET 200 /img/flags/mi.svg
+- 22:48:33.672 INFO: GET 200 /img/flags/mr.svg
+- 22:48:33.672 INFO: GET 200 /img/flags/mn.svg
+- 22:48:33.672 INFO: GET 200 /img/flags/my.svg
+- 22:48:33.687 INFO: GET 200 /img/flags/no.svg
+- 22:48:33.687 INFO: GET 200 /img/flags/ne.svg
+- 22:48:33.687 INFO: GET 200 /img/flags/ny.svg
+- 22:48:33.687 INFO: GET 200 /img/flags/ps.svg
+- 22:48:33.687 INFO: GET 200 /img/flags/fa.svg
+- 22:48:33.687 INFO: GET 200 /img/flags/pl.svg
+- 22:48:33.687 INFO: GET 200 /img/flags/pt.svg
+- 22:48:33.687 INFO: GET 200 /img/flags/ro.svg
+- 22:48:33.687 INFO: GET 200 /img/flags/pa.svg
+- 22:48:33.687 INFO: GET 200 /img/flags/sm.svg
+- 22:48:33.687 INFO: GET 200 /img/flags/gd.svg
+- 22:48:33.687 INFO: GET 200 /img/flags/sr.svg
+- 22:48:33.703 INFO: GET 200 /img/flags/sn.svg
+- 22:48:33.703 INFO: GET 200 /img/flags/st.svg
+- 22:48:33.703 INFO: GET 200 /img/flags/si.svg
+- 22:48:33.703 INFO: GET 200 /img/flags/sd.svg
+- 22:48:33.703 INFO: GET 200 /img/flags/sk.svg
+- 22:48:33.734 INFO: GET 200 /img/flags/sl.svg
+- 22:48:33.734 INFO: GET 200 /img/flags/so.svg
+- 22:48:33.734 INFO: GET 200 /img/flags/su.svg
+- 22:48:33.734 INFO: GET 200 /img/flags/es.svg
+- 22:48:33.750 INFO: GET 200 /img/flags/sv.svg
+- 22:48:33.750 INFO: GET 200 /img/flags/sw.svg
+- 22:48:33.750 INFO: GET 200 /img/flags/tl.svg
+- 22:48:33.750 INFO: GET 200 /img/flags/tg.svg
+- 22:48:33.750 INFO: GET 200 /img/flags/te.svg
+- 22:48:33.750 INFO: GET 200 /img/flags/ta.svg
+- 22:48:33.750 INFO: GET 200 /img/flags/th.svg
+- 22:48:33.750 INFO: GET 200 /img/flags/tr.svg
+- 22:48:33.766 INFO: GET 200 /img/flags/uk.svg
+- 22:48:33.766 INFO: GET 200 /img/flags/ur.svg
+- 22:48:33.766 INFO: GET 200 /img/flags/uz.svg
+- 22:48:33.766 INFO: GET 200 /img/flags/vi.svg
+- 22:48:33.766 INFO: GET 200 /img/flags/cy.svg
+- 22:48:33.766 INFO: GET 200 /img/flags/xh.svg
+- 22:48:33.766 INFO: GET 200 /img/flags/yi.svg
+- 22:48:33.766 INFO: GET 200 /img/flags/yo.svg
+- 22:48:33.766 INFO: GET 200 /img/flags/zu.svg
+- 22:48:51.094 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7799/reader/settings
+- 22:48:52.188 DEBUG: OnContextCreated()
+- 22:48:52.297 INFO: GET 200 /
+- 22:48:52.328 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7799/
+- 22:48:52.125 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7799/
+- 22:48:53.235 DEBUG: OnContextCreated()
+- 22:48:53.344 INFO: GET 200 /reader/read/text/56?page=1
+- 22:48:53.375 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7799/reader/read/text/56?page=1
+- 22:49:09.953 DEBUG: WM_DESTROY
+- 22:49:09.953 DEBUG: RemoveBrowserWindow(): hwnd = 591660
+- 22:49:09.953 INFO: Stopping Mongoose web server
+- 22:49:09.953 DEBUG: Mongoose webserver stopped immediately
+- 22:49:09.953 DEBUG: OnBeforeClose() hwnd=853524
+- 22:49:09.953 DEBUG: RemoveBrowserWindow(): hwnd = 853524
+- 22:49:09.953 DEBUG: GetBrowserWindow(): not found, hwnd = 853524
+- 22:49:09.953 WARNING: RemoveBrowserWindow() failed: GetBrowserWindow() failed
+- 22:49:09.953 DEBUG: Calling CefQuitMessageLoop()
+- 22:49:09.860 DEBUG: OnBrowserDestroyed()
+- 22:49:09.078 INFO: Ended application
+- 22:49:09.078 INFO: --------------------------------------------------------
+- 22:49:38.000 INFO: --------------------------------------------------------
+- 22:49:38.000 INFO: Started application
+- 22:49:38.000 INFO: Logging to: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log
+- 22:49:38.000 INFO: Log level = DEBUG4
+- 22:49:38.000 INFO: Starting Mongoose 3.9c web server
+- 22:49:38.000 INFO: WWW directory: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\www\public
+- 22:49:38.000 INFO: Index files: index.html,index.php
+- 22:49:38.000 INFO: CGI interpreter: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\php\php-cgi.exe
+- 22:49:38.000 INFO: CGI pattern: **.php$
+- 22:49:38.000 INFO: Hide files patterns: 
+- 22:49:38.000 INFO: CGI environment variables set: TMP=C:\Users\user\AppData\Local\Temp\,TEMP=C:\Users\user\AppData\Local\Temp\,TMPDIR=C:\Users\user\AppData\Local\Temp\,SERVER_NAME=127.0.0.1,PHPDESKTOP_VERSION=57.0
+- 22:49:38.000 INFO: Web server url: http://127.0.0.1:7996/
+- 22:49:38.000 INFO: remote_debugging_port = 49729
+- 22:49:38.000 DEBUG: Command line string for the browser process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --no-sandbox --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --remote-debugging-port=49729
+- 22:49:38.031 DEBUG: App::OnContextInitialized()
+- 22:49:38.031 DEBUG: Window max width/height = 1840/992
+- 22:49:38.031 DEBUG: GetBrowserWindow(): not found, hwnd = 657196
+- 22:49:38.031 DEBUG: WindowProc(): event WM_GETMINMAXINFO: could not fetch BrowserWindow
+- 22:49:38.031 DEBUG: BrowserWindow::CreateBrowserControl()
+- 22:49:38.031 DEBUG: StoreBrowserWindow(): hwnd = 657196
+- 22:49:38.000 DEBUG: Command line string for the gpu-process process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --type=gpu-process --no-sandbox --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --disable-direct-composition --supports-dual-gpus=false --gpu-driver-bug-workarounds=7,10,18,19,20,23,41,74 --disable-gl-extensions="GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent" --gpu-vendor-id=0x10de --gpu-device-id=0x21c4 --gpu-driver-vendor=NVIDIA --gpu-driver-version=30.0.15.1215 --gpu-driver-date=3-17-2022 --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --service-request-channel-token=1740E00335D180A1FFA0FAA4D83098B9 --mojo-platform-channel-handle=1764 /prefetch:2
+- 22:49:38.063 DEBUG: ClientHandler::OnAfterCreated()
+- 22:49:38.063 DEBUG: SetCefBrowser() called in ClientHandler::OnAfterCreated()
+- 22:49:38.078 DEBUG: OnLoadingStateChange: loading=1, url=
+- 22:49:38.000 DEBUG: Command line string for the renderer process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --type=renderer --no-sandbox --primordial-pipe-token=1EB3D850C3713916EB9F78E4583BC1F3 --lang=en-US --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --enable-pinch --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553 --service-request-channel-token=1EB3D850C3713916EB9F78E4583BC1F3 --renderer-client-id=3 --mojo-platform-channel-handle=2300 /prefetch:1
+- 22:49:38.016 DEBUG: OnBrowserCreated()
+[0512/224938.998:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+- 22:49:40.344 INFO: GET 200 /css/bootstrap.min.css
+- 22:49:40.344 INFO: GET 200 /css/style.css
+- 22:49:40.344 INFO: GET 200 /css/bootstrap-select.min.css
+- 22:49:40.344 INFO: GET 200 /css/icofont.min.css
+- 22:49:40.360 INFO: GET 200 /
+- 22:49:40.266 DEBUG: OnContextCreated()
+- 22:49:40.391 INFO: GET 200 /img/logo.svg
+- 22:49:40.391 INFO: GET 200 /img/flags/en.svg
+- 22:49:40.391 INFO: GET 200 /img/flags/ru.svg
+- 22:49:40.391 INFO: GET 200 /fonts/icofont.woff2
+- 22:49:40.422 INFO: GET 200 /js/jquery-3.4.1.min.js
+- 22:49:40.422 INFO: GET 200 /js/popper.min.js
+- 22:49:40.422 INFO: GET 200 /js/bootstrap.min.js
+- 22:49:40.422 INFO: GET 200 /js/bootstrap-select.min.js
+- 22:49:40.422 INFO: GET 200 /js/reader.js
+- 22:49:40.422 INFO: GET 200 /js/js.cookie.js
+- 22:49:40.422 INFO: GET 200 /js/loadingoverlay.min.js
+- 22:49:40.500 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7996/
+- 22:49:43.485 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7996/
+- 22:49:43.609 DEBUG: OnContextCreated()
+- 22:49:43.703 INFO: GET 200 /reader/read/text/56?page=1
+- 22:49:43.750 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7996/reader/read/text/56?page=1
+- 22:49:45.781 INFO: POST 200 /reader/words/add-or-update
+- 22:49:47.172 INFO: POST 200 /reader/words/add-or-update
+- 22:49:50.094 INFO: POST 200 /reader/words/add-or-update
+- 22:49:52.875 INFO: POST 200 /reader/words/add-or-update
+- 22:49:57.391 INFO: POST 200 /reader/words/add-or-update
+- 22:50:01.485 INFO: POST 200 /reader/words/add-or-update
+- 22:50:05.485 INFO: POST 200 /reader/words/add-or-update
+- 22:50:07.141 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7996/reader/read/text/56?page=1
+- 22:50:08.266 DEBUG: OnContextCreated()
+- 22:50:08.375 INFO: GET 200 /reader/read/text/56/words
+- 22:50:08.422 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7996/reader/read/text/56/words
+- 22:50:13.500 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7996/reader/read/text/56/words
+- 22:50:13.609 DEBUG: OnContextCreated()
+- 22:50:13.703 INFO: GET 200 /reader/read/text/56?page=1
+- 22:50:13.719 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7996/reader/read/text/56?page=1
+[0512/225023.340:INFO:CONSOLE(1)] "Uncaught TypeError: $.LoadingOverlay is not a function", source: http://127.0.0.1:7996/js/reader.js (1)
+- 22:50:23.516 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7996/reader/read/text/56?page=1
+- 22:50:23.625 DEBUG: OnContextCreated()
+- 22:50:23.719 INFO: GET 200 /
+- 22:50:23.735 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7996/
+- 22:50:25.156 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7996/
+- 22:50:26.359 DEBUG: OnContextCreated()
+- 22:50:26.453 INFO: GET 200 /reader/text/stats/56
+- 22:50:26.485 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7996/reader/text/stats/56
+- 22:50:43.156 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7996/reader/text/stats/56
+- 22:50:44.266 DEBUG: OnContextCreated()
+- 22:50:44.360 INFO: GET 200 /
+- 22:50:44.375 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7996/
+- 22:50:47.391 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7996/
+- 22:50:47.500 DEBUG: OnContextCreated()
+- 22:50:47.594 INFO: GET 200 /reader/words
+- 22:50:47.625 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:7996/reader/words
+- 22:50:51.766 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:7996/reader/words
+- 22:50:52.422 DEBUG: OnContextCreated()
+[0512/225052.340:INFO:CONSOLE(0)] "The Content-Security-Policy directive 'worker-src' is implemented behind a flag which is currently disabled.
+", source: https://predewill.gumroad.com/l/ZVxga (0)
+[0512/225053.673:INFO:CONSOLE(1)] "Refused to execute inline script because it violates the following Content Security Policy directive: "script-src 'self' 'unsafe-eval' ajax.cloudflare.com static.cloudflareinsights.com js.stripe.com api.stripe.com *.braintreegateway.com *.braintree-api.com www.paypalobjects.com *.paypal.com www.google-analytics.com ssl.google-analytics.com www.googletagmanager.com optimize.google.com www.googleadservices.com www.google.com www.gstatic.com *.facebook.net *.facebook.com *.newrelic.com *.nr-data.net www.dropbox.com s.ytimg.com cdn.iframe.ly *.jwpcdn.com content.jwplatform.com/libraries/3vz4Z4wu.js *.jwpsrv.com blob: 'self' data: gumroad.us3.list-manage.com analytics.twitter.com app.gumroad.com assets.gumroad.com 'nonce-98K5Mi+TbPZ5WXPYotL8f3+E7Ksnl75M7by45kYQE7E=' 'unsafe-inline'". Note that 'unsafe-inline' is ignored if either a hash or nonce value is present in the source list.
+", source: https://predewill.gumroad.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js (1)
+- 22:50:53.875 DEBUG: OnLoadingStateChange: loading=0, url=https://predewill.gumroad.com/l/ZVxga
+[0512/225053.864:INFO:CONSOLE(1)] "Uncaught ReferenceError: globalThis is not defined", source: https://assets.gumroad.com/packs/js/webpack-runtime-bdb191055a09ae39f7db.js (1)
+[0512/225053.876:INFO:CONSOLE(1)] "Uncaught SyntaxError: Unexpected token ...", source: https://assets.gumroad.com/packs/js/webpack-commons-261b4860da028e8c04f5.js (1)
+[0512/225053.877:INFO:CONSOLE(1)] "Uncaught SyntaxError: Unexpected token ...", source: https://assets.gumroad.com/packs/js/product-2834afff9d99b785de55.js (1)
+[0512/225053.880:INFO:CONSOLE(1)] "The Content-Security-Policy directive 'worker-src' is implemented behind a flag which is currently disabled.
+", source: https://js.stripe.com/v3/ (1)
+- 22:50:53.063 DEBUG: OnLoadingStateChange: loading=1, url=https://predewill.gumroad.com/l/ZVxga
+- 22:50:53.000 DEBUG: OnContextCreated()
+- 22:50:54.156 DEBUG: OnContextCreated()
+- 22:50:54.438 DEBUG: OnLoadingStateChange: loading=0, url=https://predewill.gumroad.com/l/ZVxga
+[0512/225056.676:INFO:CONSOLE(0)] "The resource https://public-files.gumroad.com/variants/bb6rm3afgqcaiukt9mtvi7762usp/baaca0eb0e33dc4f9d45910b8c86623f0144cea0fe0c2093c546d17d535752eb was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it wasn't preloaded for nothing.", source: https://predewill.gumroad.com/l/ZVxga (0)
+[0512/225056.676:INFO:CONSOLE(0)] "The resource https://www.google.com/recaptcha/enterprise.js?render=explicit was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it wasn't preloaded for nothing.", source: https://predewill.gumroad.com/l/ZVxga (0)
+- 22:50:58.906 DEBUG: WM_DESTROY
+- 22:50:58.906 DEBUG: RemoveBrowserWindow(): hwnd = 657196
+- 22:50:58.906 INFO: Stopping Mongoose web server
+- 22:50:58.906 DEBUG: Mongoose webserver stopped immediately
+- 22:50:58.922 DEBUG: OnBeforeClose() hwnd=1706058
+- 22:50:58.922 DEBUG: RemoveBrowserWindow(): hwnd = 1706058
+- 22:50:58.922 DEBUG: GetBrowserWindow(): not found, hwnd = 1706058
+- 22:50:58.922 WARNING: RemoveBrowserWindow() failed: GetBrowserWindow() failed
+- 22:50:58.922 DEBUG: Calling CefQuitMessageLoop()
+- 22:50:59.641 INFO: Ended application
+- 22:50:59.641 INFO: --------------------------------------------------------
+- 22:51:00.000 INFO: --------------------------------------------------------
+- 22:51:00.000 INFO: Started application
+- 22:51:00.000 INFO: Logging to: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log
+- 22:51:00.000 INFO: Log level = DEBUG4
+- 22:51:00.000 INFO: Starting Mongoose 3.9c web server
+- 22:51:00.000 INFO: WWW directory: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\www\public
+- 22:51:00.000 INFO: Index files: index.html,index.php
+- 22:51:00.000 INFO: CGI interpreter: D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\php\php-cgi.exe
+- 22:51:00.000 INFO: CGI pattern: **.php$
+- 22:51:00.000 INFO: Hide files patterns: 
+- 22:51:00.000 INFO: CGI environment variables set: TMP=C:\Users\user\AppData\Local\Temp\,TEMP=C:\Users\user\AppData\Local\Temp\,TMPDIR=C:\Users\user\AppData\Local\Temp\,SERVER_NAME=127.0.0.1,PHPDESKTOP_VERSION=57.0
+- 22:51:00.000 INFO: Web server url: http://127.0.0.1:8088/
+- 22:51:00.000 INFO: remote_debugging_port = 57654
+- 22:51:00.000 DEBUG: Command line string for the browser process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --no-sandbox --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --remote-debugging-port=57654
+- 22:51:00.031 DEBUG: App::OnContextInitialized()
+- 22:51:00.031 DEBUG: Window max width/height = 1840/992
+- 22:51:00.031 DEBUG: GetBrowserWindow(): not found, hwnd = 1509122
+- 22:51:00.031 DEBUG: WindowProc(): event WM_GETMINMAXINFO: could not fetch BrowserWindow
+- 22:51:00.031 DEBUG: BrowserWindow::CreateBrowserControl()
+- 22:51:00.031 DEBUG: StoreBrowserWindow(): hwnd = 1509122
+- 22:51:00.000 DEBUG: Command line string for the gpu-process process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --type=gpu-process --no-sandbox --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --disable-direct-composition --supports-dual-gpus=false --gpu-driver-bug-workarounds=7,10,18,19,20,23,41,74 --disable-gl-extensions="GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent" --gpu-vendor-id=0x10de --gpu-device-id=0x21c4 --gpu-driver-vendor=NVIDIA --gpu-driver-version=30.0.15.1215 --gpu-driver-date=3-17-2022 --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --service-request-channel-token=36F6D949F34FF1F7C967DC25DA6B5CA2 --mojo-platform-channel-handle=1756 /prefetch:2
+- 22:51:00.063 DEBUG: ClientHandler::OnAfterCreated()
+- 22:51:00.063 DEBUG: SetCefBrowser() called in ClientHandler::OnAfterCreated()
+- 22:51:00.078 DEBUG: OnLoadingStateChange: loading=1, url=
+- 22:51:00.000 DEBUG: Command line string for the renderer process: "D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\WexLangReader.exe" --type=renderer --no-sandbox --primordial-pipe-token=96BF3EF8DFB9CB14572D0973E2B1521B --lang=en-US --lang=en-US --log-file="D:\Dev_Projects\WexLangReader_Desktop\WexLangReader\debug.log" --enable-pinch --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553 --service-request-channel-token=96BF3EF8DFB9CB14572D0973E2B1521B --renderer-client-id=3 --mojo-platform-channel-handle=2204 /prefetch:1
+- 22:51:00.016 DEBUG: OnBrowserCreated()
+[0512/225100.999:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+- 22:51:02.344 INFO: GET 200 /css/bootstrap.min.css
+- 22:51:02.344 INFO: GET 200 /css/style.css
+- 22:51:02.344 INFO: GET 200 /css/bootstrap-select.min.css
+- 22:51:02.344 INFO: GET 200 /css/icofont.min.css
+- 22:51:02.344 INFO: GET 200 /
+- 22:51:02.266 DEBUG: OnContextCreated()
+- 22:51:02.485 INFO: GET 200 /img/logo.svg
+- 22:51:02.485 INFO: GET 200 /img/flags/en.svg
+- 22:51:02.485 INFO: GET 200 /img/flags/ru.svg
+- 22:51:02.485 INFO: GET 200 /js/popper.min.js
+- 22:51:02.485 INFO: GET 200 /fonts/icofont.woff2
+- 22:51:02.485 INFO: GET 200 /js/jquery-3.4.1.min.js
+- 22:51:02.485 INFO: GET 200 /js/bootstrap.min.js
+- 22:51:02.485 INFO: GET 200 /js/reader.js
+- 22:51:02.485 INFO: GET 200 /js/bootstrap-select.min.js
+- 22:51:02.485 INFO: GET 200 /js/js.cookie.js
+- 22:51:02.485 INFO: GET 200 /js/loadingoverlay.min.js
+- 22:51:02.547 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:8088/
+- 22:51:17.594 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:8088/
+- 22:51:17.703 DEBUG: OnContextCreated()
+- 22:51:17.797 INFO: GET 200 /reader/upload_dictionary
+- 22:51:17.844 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:8088/reader/upload_dictionary
+- 22:51:20.235 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:8088/reader/upload_dictionary
+- 22:51:20.344 DEBUG: OnContextCreated()
+- 22:51:20.438 INFO: GET 200 /reader/words
+- 22:51:20.453 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:8088/reader/words
+- 22:51:44.047 DEBUG: F5 pressed, reloading page
+- 22:51:44.047 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:8088/reader/words
+- 22:51:45.187 DEBUG: OnContextCreated()
+- 22:51:45.281 INFO: GET 200 /css/style.css
+- 22:51:45.281 INFO: GET 200 /css/bootstrap-select.min.css
+- 22:51:45.281 INFO: GET 200 /css/icofont.min.css
+- 22:51:45.281 INFO: GET 200 /css/bootstrap.min.css
+- 22:51:45.297 INFO: GET 200 /reader/words
+- 22:51:45.297 INFO: GET 200 /img/logo.svg
+- 22:51:45.297 INFO: GET 200 /img/flags/ru.svg
+- 22:51:45.297 INFO: GET 200 /img/flags/en.svg
+- 22:51:45.360 INFO: GET 200 /js/popper.min.js
+- 22:51:45.360 INFO: GET 200 /js/jquery-3.4.1.min.js
+- 22:51:45.360 INFO: GET 200 /fonts/icofont.woff2
+- 22:51:45.360 INFO: GET 200 /js/bootstrap.min.js
+- 22:51:45.360 INFO: GET 200 /js/reader.js
+- 22:51:45.360 INFO: GET 200 /js/bootstrap-select.min.js
+- 22:51:45.375 INFO: GET 200 /js/js.cookie.js
+- 22:51:45.375 INFO: GET 200 /js/loadingoverlay.min.js
+- 22:51:45.422 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:8088/reader/words
+- 22:51:46.422 DEBUG: F5 pressed, reloading page
+- 22:51:46.422 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:8088/reader/words
+- 22:51:46.531 DEBUG: OnContextCreated()
+- 22:51:46.625 INFO: GET 200 /css/style.css
+- 22:51:46.625 INFO: GET 200 /css/bootstrap-select.min.css
+- 22:51:46.625 INFO: GET 200 /css/bootstrap.min.css
+- 22:51:46.625 INFO: GET 200 /css/icofont.min.css
+- 22:51:46.625 INFO: GET 200 /reader/words
+- 22:51:46.625 INFO: GET 200 /img/logo.svg
+- 22:51:46.625 INFO: GET 200 /img/flags/en.svg
+- 22:51:46.625 INFO: GET 200 /img/flags/ru.svg
+- 22:51:46.641 INFO: GET 200 /fonts/icofont.woff2
+- 22:51:46.641 INFO: GET 200 /js/popper.min.js
+- 22:51:46.641 INFO: GET 200 /js/bootstrap.min.js
+- 22:51:46.641 INFO: GET 200 /js/jquery-3.4.1.min.js
+- 22:51:46.641 INFO: GET 200 /js/bootstrap-select.min.js
+- 22:51:46.641 INFO: GET 200 /js/reader.js
+- 22:51:46.641 INFO: GET 200 /js/js.cookie.js
+- 22:51:46.656 INFO: GET 200 /js/loadingoverlay.min.js
+- 22:51:46.703 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:8088/reader/words
+- 22:53:28.016 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:8088/reader/words
+- 22:53:29.485 INFO: GET 302 /reader/words/delete-all
+- 22:53:29.578 DEBUG: OnContextCreated()
+- 22:53:29.688 INFO: GET 200 /reader/words
+- 22:53:29.735 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:8088/reader/words
+- 22:53:30.156 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:8088/reader/words
+- 22:53:31.266 DEBUG: OnContextCreated()
+- 22:53:31.375 INFO: GET 200 /reader/words
+- 22:53:31.391 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:8088/reader/words
+- 22:53:31.828 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:8088/reader/words
+- 22:53:31.937 DEBUG: OnContextCreated()
+- 22:53:31.031 INFO: GET 200 /
+- 22:53:31.063 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:8088/
+- 22:53:32.781 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:8088/
+- 22:53:32.906 DEBUG: OnContextCreated()
+- 22:53:32.000 INFO: GET 200 /reader/read/text/56?page=1
+- 22:53:32.031 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:8088/reader/read/text/56?page=1
+[0512/225334.052:INFO:CONSOLE(1)] "Uncaught TypeError: $.LoadingOverlay is not a function", source: http://127.0.0.1:8088/js/reader.js (1)
+- 22:53:34.235 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:8088/reader/read/text/56?page=1
+- 22:53:34.328 DEBUG: OnContextCreated()
+- 22:53:34.438 INFO: GET 200 /
+- 22:53:34.453 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:8088/
+- 22:53:35.578 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:8088/
+- 22:53:35.687 DEBUG: OnContextCreated()
+- 22:53:35.797 INFO: GET 200 /reader/settings
+- 22:53:35.797 INFO: GET 200 /img/api.png
+- 22:53:35.813 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:8088/reader/settings
+- 22:53:35.828 INFO: GET 200 /img/flags/af.svg
+- 22:53:35.828 INFO: GET 200 /img/flags/sq.svg
+- 22:53:35.828 INFO: GET 200 /img/flags/ar.svg
+- 22:53:35.828 INFO: GET 200 /img/flags/am.svg
+- 22:53:35.828 INFO: GET 200 /img/flags/hy.svg
+- 22:53:35.828 INFO: GET 200 /img/flags/az.svg
+- 22:53:35.828 INFO: GET 200 /img/flags/eu.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/be.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/bn.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/bs.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/bg.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/ca.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/ceb.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/zh-CN.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/zh-TW.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/co.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/hr.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/cs.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/da.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/nl.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/eo.svg
+- 22:53:35.922 INFO: GET 200 /img/flags/et.svg
+- 22:53:35.938 INFO: GET 200 /img/flags/fi.svg
+- 22:53:35.938 INFO: GET 200 /img/flags/fr.svg
+- 22:53:35.938 INFO: GET 200 /img/flags/fy.svg
+- 22:53:35.938 INFO: GET 200 /img/flags/gl.svg
+- 22:53:35.938 INFO: GET 200 /img/flags/ka.svg
+- 22:53:35.938 INFO: GET 200 /img/flags/de.svg
+- 22:53:35.938 INFO: GET 200 /img/flags/el.svg
+- 22:53:35.938 INFO: GET 200 /img/flags/gu.svg
+- 22:53:35.938 INFO: GET 200 /img/flags/ht.svg
+- 22:53:35.953 INFO: GET 200 /img/flags/ha.svg
+- 22:53:35.953 INFO: GET 200 /img/flags/haw.svg
+- 22:53:35.953 INFO: GET 200 /img/flags/iw.svg
+- 22:53:35.969 INFO: GET 200 /img/flags/hi.svg
+- 22:53:35.969 INFO: GET 200 /img/flags/hmn.svg
+- 22:53:35.969 INFO: GET 200 /img/flags/hu.svg
+- 22:53:35.969 INFO: GET 200 /img/flags/is.svg
+- 22:53:35.969 INFO: GET 200 /img/flags/ig.svg
+- 22:53:35.969 INFO: GET 200 /img/flags/id.svg
+- 22:53:35.969 INFO: GET 200 /img/flags/ga.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/it.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/ja.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/jw.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/kn.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/kk.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/km.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/ko.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/ku.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/ky.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/lo.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/lv.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/la.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/lt.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/lb.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/mk.svg
+- 22:53:35.063 INFO: GET 200 /img/flags/mg.svg
+- 22:53:35.156 INFO: GET 200 /img/flags/ms.svg
+- 22:53:35.156 INFO: GET 200 /img/flags/ml.svg
+- 22:53:35.156 INFO: GET 200 /img/flags/mi.svg
+- 22:53:35.156 INFO: GET 200 /img/flags/mt.svg
+- 22:53:35.156 INFO: GET 200 /img/flags/mr.svg
+- 22:53:35.156 INFO: GET 200 /img/flags/mn.svg
+- 22:53:35.156 INFO: GET 200 /img/flags/my.svg
+- 22:53:35.156 INFO: GET 200 /img/flags/ne.svg
+- 22:53:35.156 INFO: GET 200 /img/flags/ny.svg
+- 22:53:35.156 INFO: GET 200 /img/flags/no.svg
+- 22:53:35.156 INFO: GET 200 /img/flags/ps.svg
+- 22:53:35.156 INFO: GET 200 /img/flags/fa.svg
+- 22:53:35.156 INFO: GET 200 /img/flags/pl.svg
+- 22:53:35.156 INFO: GET 200 /img/flags/pt.svg
+- 22:53:35.172 INFO: GET 200 /img/flags/ro.svg
+- 22:53:35.172 INFO: GET 200 /img/flags/pa.svg
+- 22:53:35.172 INFO: GET 200 /img/flags/sm.svg
+- 22:53:35.172 INFO: GET 200 /img/flags/gd.svg
+- 22:53:35.172 INFO: GET 200 /img/flags/st.svg
+- 22:53:35.172 INFO: GET 200 /img/flags/sr.svg
+- 22:53:36.250 INFO: GET 200 /img/flags/sn.svg
+- 22:53:36.250 INFO: GET 200 /img/flags/sd.svg
+- 22:53:36.250 INFO: GET 200 /img/flags/si.svg
+- 22:53:36.250 INFO: GET 200 /img/flags/sk.svg
+- 22:53:36.250 INFO: GET 200 /img/flags/sl.svg
+- 22:53:36.250 INFO: GET 200 /img/flags/so.svg
+- 22:53:36.250 INFO: GET 200 /img/flags/es.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/su.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/sw.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/sv.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/tl.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/tg.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/ta.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/th.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/te.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/tr.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/uk.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/ur.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/uz.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/vi.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/cy.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/xh.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/yi.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/zu.svg
+- 22:53:36.266 INFO: GET 200 /img/flags/yo.svg
+- 22:53:36.531 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:8088/reader/settings
+- 22:53:36.625 DEBUG: OnContextCreated()
+- 22:53:36.719 INFO: GET 200 /reader/add/text
+- 22:53:36.735 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:8088/reader/add/text
+- 22:53:37.453 DEBUG: OnLoadingStateChange: loading=1, url=http://127.0.0.1:8088/reader/add/text
+- 22:53:37.562 DEBUG: OnContextCreated()
+- 22:53:37.656 INFO: GET 200 /reader/words
+- 22:53:37.672 DEBUG: OnLoadingStateChange: loading=0, url=http://127.0.0.1:8088/reader/words
+- 22:53:38.391 DEBUG: WM_DESTROY
+- 22:53:38.391 DEBUG: RemoveBrowserWindow(): hwnd = 1509122
+- 22:53:38.391 INFO: Stopping Mongoose web server
+- 22:53:38.391 DEBUG: Mongoose webserver stopped immediately
+- 22:53:38.391 DEBUG: OnBeforeClose() hwnd=722354
+- 22:53:38.391 DEBUG: RemoveBrowserWindow(): hwnd = 722354
+- 22:53:38.391 DEBUG: GetBrowserWindow(): not found, hwnd = 722354
+- 22:53:38.391 WARNING: RemoveBrowserWindow() failed: GetBrowserWindow() failed
+- 22:53:38.391 DEBUG: Calling CefQuitMessageLoop()
+- 22:53:38.516 INFO: Ended application
+- 22:53:38.516 INFO: --------------------------------------------------------

@@ -15,8 +15,8 @@ Language learning app. Learn a language by reading whatever you like.
 
 Just start **WexLangReader/WexLangReader.exe**
 
+<img src="img/Screenshot_4.png">
 <img src="img/Screenshot_2.png">
 <img src="img/Screenshot_3.png">
-<img src="img/Screenshot_4.png">
 <img src="img/Screenshot_5.png">
 <img src="img/Screenshot_1.png">
