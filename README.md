@@ -1,5 +1,5 @@
 # WexLangReader 1.1 (Desktop)
-##104 languages, any translation direction.
+### 104 languages, any translation direction.
 <br>
 <p align="center"> 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" width="70">
