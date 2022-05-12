@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="aXuIsQYXK9eyQC6tBa93OhiAY0wHxtXX43qJeg6Y">
+
+    <link rel="stylesheet" href="http://127.0.0.1:59266/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:59266/css/style.css">
+    <link rel="stylesheet" href="http://127.0.0.1:59266/css/icofont.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:59266/css/bootstrap-select.min.css">
+
+    <title>WexLang Reader 1.0</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-dark bg-dark fixed-top" style="padding-top: 0; padding-bottom: 0;">
+
+    <a class="navbar-brand" href="http://127.0.0.1:59266">
+
+        <img src="http://127.0.0.1:59266/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        <span class="mr-3">WexLang Reader</span>
+
+
+        <img src="http://127.0.0.1:59266/img/flags/en.svg" class="text_flag" alt=""> <i class="text-small">(English)</i>
+        <span class="q_lang_arrow">⟶</span>
+        <img src="http://127.0.0.1:59266/img/flags/ru.svg" class="text_flag" alt=""> <i class="text-small">(Русский)</i>
+
+    </a>
+
+
+    <div>
+
+        <form class="form-inline btn" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="padding: 0; margin: 0; padding-top: 7px;">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="UZVJNLNS3TEYL" />
+            <input type="image" src="http://127.0.0.1:59266/img/paypal2.png" width="204px" height="40px" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+        <a href="https://vk.com/wexlang" target="_blank" class="btn">
+            <i class="icofont-vk icofont-2x" style="color: white; vertical-align: middle;"></i>
+        </a>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        learned_lang_code = "en";
+        known_lang_code = "ru";
+    </script>
+
+</nav>
+
+
+<!-- Bootstrap row -->
+<div class="row" id="body-row">
+    <!-- Sidebar -->
+    <div id="sidebar-container" class="sidebar-expanded col-2">
+
+        <ul class="list-group sticky-top sticky-offset">
+
+            <br>
+
+            <a href="http://127.0.0.1:59266" class="bg-dark list-group-item list-group-item-action" onclick="showLoadingOverlay()"><i class="icofont-book"></i> Мои тексты</a>
+
+            <a href="http://127.0.0.1:59266/reader/words" class="bg-dark list-group-item list-group-item-action" onclick="showLoadingOverlay()"><i class="icofont-file-text"></i> Мои слова</a>
+
+            <br>
+
+            <a href="http://127.0.0.1:59266/reader/add/text" class="bg-dark list-group-item list-group-item-action"><i class="icofont-plus-square"></i> Добавить текст</a>
+
+            <br>
+
+            <a href="http://127.0.0.1:59266/reader/upload_dictionary" class="bg-dark list-group-item list-group-item-action"><i class="icofont-upload"></i> Загрузить словарь</a>
+
+            <br>
+
+            <a href="http://127.0.0.1:59266/reader/settings" class="bg-dark list-group-item list-group-item-action"><i class="icofont-gears"></i> Настройки</a>
+
+
+
+        </ul>
+
+    </div>
+    <!-- sidebar-container END -->
+
+    <!-- MAIN -->
+    <div class="col py-3">
+
+        
+
+    <form action="http://127.0.0.1:59266/reader/words/add-new" method="POST" >
+
+
+        <div class="form-inline">
+            <h2 class="mr-2">Добавить новое слово:</h2>
+            <input type="text" class="form-control mr-2" id="new_word" name="new_word" placeholder="слово" required>
+
+            <input type="text" class="form-control mr-2" id="new_translation" name="new_translation" placeholder="перевод" required>
+
+            <select class="form-control mr-2" id="new_word_state" name="new_word_state">
+                <option value="1">Изучить</option>
+                <option value="2">Знакомое</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary">ДОБАВИТЬ</button>
+        </div>
+
+
+    </form>
+
+    <hr style="border: 1px solid #DCDCDC;">
+
+
+        <div class="row">
+
+            <div class="col">
+                <form class="form-inline" method="GET" action="http://127.0.0.1:59266/reader/words">
+
+                    <span class="h2 pr-1">Найти:</span>
+                    <input type="text" class="form-control mr-2" id="word_to_find" name="word_to_find" placeholder="word" value="">
+
+                    <button type="submit" class="btn btn-primary mr-2">Поиск</button>
+                    <a href="http://127.0.0.1:59266/reader/words" class="btn btn-success">Сброс</a>
+                </form>
+            </div>
+
+
+            <div class="col-auto">
+                <a href="http://127.0.0.1:59266/reader/words/exportcsv" type="submit" class="btn btn-info" >ЭКСПОРТИРОВАТЬ ВСЕ КАК <b>CSV</b></a>
+                <a href="http://127.0.0.1:59266/reader/words/delete-all" type="button" class="btn btn-danger">Удалить все слова</a>
+            </div>
+
+        </div>
+
+    <hr style="border: 1px solid #DCDCDC;">
+
+    
+    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+
+        
+        <li class="nav-item" style="margin-right: 50px;">
+            <a href="http://127.0.0.1:59266/reader/words?show_words=0" type="button" class="btn btn-primary noradius ">
+                <span class="h2 uc">Все: <span class="badge badge-light">18</span> </span>
+            </a>
+        </li>
+
+        <li class="nav-item" style="margin-right: 50px;">
+            <a href="http://127.0.0.1:59266/reader/words?show_words=1" type="button" class="btn btn-primary disabled">
+                <span class="h2 uc">Изучить: <span class="badge badge-warning">13 </span> </span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="http://127.0.0.1:59266/reader/words?show_words=2" type="button" class="btn btn-primary noradius ">
+                <span class="h2 uc">Знакомое: <span class="badge badge-success">5</span> </span>
+            </a>
+        </li>
+
+    </ul>
+    
+
+
+    
+    <table class="table" id="all_text_words">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col" style="width: 2%">Id</th>
+            <th scope="col" style="width: 15%">Статус</th>
+            <th scope="col">Слово</th>
+            <th scope="col">Перевод</th>
+            <th scope="col" style="width: 10%">Удалить слово</th>
+        </tr>
+        </thead>
+        <tbody>
+
+    
+        <tr>
+            <td style="width: 2%">339141</td>
+
+            <td style="width: 15%">
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="339141" data-state="2">Знакомое</button>
+                
+                
+            </td>
+
+            <td>and</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="а также">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="339141">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="339141">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">339146</td>
+
+            <td style="width: 15%">
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="339146" data-state="2">Знакомое</button>
+                
+                
+            </td>
+
+            <td>like</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="подобно">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="339146">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="339146">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">339147</td>
+
+            <td style="width: 15%">
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="339147" data-state="2">Знакомое</button>
+                
+                
+            </td>
+
+            <td>a</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="339147">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="339147">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">339148</td>
+
+            <td style="width: 15%">
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="339148" data-state="2">Знакомое</button>
+                
+                
+            </td>
+
+            <td>tunnel</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="тоннель">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="339148">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="339148">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">339149</td>
+
+            <td style="width: 15%">
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="339149" data-state="2">Знакомое</button>
+                
+                
+            </td>
+
+            <td>for</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="за">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="339149">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="339149">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">339150</td>
+
+            <td style="width: 15%">
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="339150" data-state="2">Знакомое</button>
+                
+                
+            </td>
+
+            <td>cupboards</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="шкафы">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="339150">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="339150">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">339151</td>
+
+            <td style="width: 15%">
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="339151" data-state="2">Знакомое</button>
+                
+                
+            </td>
+
+            <td>some</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="несколько">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="339151">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="339151">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">339152</td>
+
+            <td style="width: 15%">
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="339152" data-state="2">Знакомое</button>
+                
+                
+            </td>
+
+            <td>way</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="путь">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="339152">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="339152">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">339153</td>
+
+            <td style="width: 15%">
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="339153" data-state="2">Знакомое</button>
+                
+                
+            </td>
+
+            <td>then</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="тогда">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="339153">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="339153">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">339154</td>
+
+            <td style="width: 15%">
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="339154" data-state="2">Знакомое</button>
+                
+                
+            </td>
+
+            <td>dipped</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="погружали">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="339154">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="339154">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">339155</td>
+
+            <td style="width: 15%">
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="339155" data-state="2">Знакомое</button>
+                
+                
+            </td>
+
+            <td>suddenly</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="вдруг, внезапно">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="339155">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="339155">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">339156</td>
+
+            <td style="width: 15%">
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="339156" data-state="2">Знакомое</button>
+                
+                
+            </td>
+
+            <td>down</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="вниз">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="339156">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="339156">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">339157</td>
+
+            <td style="width: 15%">
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="339157" data-state="2">Знакомое</button>
+                
+                
+            </td>
+
+            <td>so</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="так">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="339157">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="339157">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        </tbody>
+    </table>
+    
+
+    
+
+
+    </div>
+    <!-- Main Col END -->
+
+</div>
+<!-- body-row END -->
+
+
+<div class="alert alert-success fade show" id="alert" style="position: fixed; top: 57px; right: 0; z-index: 9999999 !important; display: none;" >
+
+    <strong>      Saved      </strong>
+
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://127.0.0.1:59266/js/jquery-3.4.1.min.js"></script>
+<script src="http://127.0.0.1:59266/js/popper.min.js"></script>
+<script src="http://127.0.0.1:59266/js/bootstrap.min.js"></script>
+<script src="http://127.0.0.1:59266/js/bootstrap-select.min.js"></script>
+
+<!-- App JavaScript -->
+<script src="http://127.0.0.1:59266/js/reader.js"></script>
+<script src="http://127.0.0.1:59266/js/js.cookie.js"></script>
+<script src="http://127.0.0.1:59266/js/loadingoverlay.min.js"></script>
+</body>
+</html>

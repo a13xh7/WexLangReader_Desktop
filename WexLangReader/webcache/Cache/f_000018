@@ -1,0 +1,1614 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="1O4XT9aVA34oEDCEl02e77ZCGH7DJFwxODsorHIB">
+
+    <link rel="stylesheet" href="http://127.0.0.1:54971/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:54971/css/style.css">
+    <link rel="stylesheet" href="http://127.0.0.1:54971/css/icofont.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:54971/css/bootstrap-select.min.css">
+
+    <title>WexLang</title>
+</head>
+<body>
+
+<!-- Bootstrap NavBar -->
+<nav class="navbar navbar-dark bg-dark fixed-top">
+
+    <a class="navbar-brand" href="http://127.0.0.1:54971">
+        <img src="https://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        <span>WexLang</span>
+
+    </a>
+
+
+
+
+
+
+
+    <div style="color: white;">
+        <img src="http://127.0.0.1:54971/img/flags/en.svg" class="text_flag" alt=""> <i class="text-small">(English)</i>
+        <span class="q_lang_arrow">⟶</span>
+        <img src="http://127.0.0.1:54971/img/flags/ru.svg" class="text_flag" alt=""> <i class="text-small">(Русский)</i>
+    </div>
+
+</nav>
+<!-- NavBar END -->
+
+<!-- Bootstrap row -->
+<div class="row" id="body-row">
+    <!-- Sidebar -->
+    <div id="sidebar-container" class="sidebar-expanded col-2">
+
+        <ul class="list-group sticky-top sticky-offset">
+
+            <br>
+
+            <a href="http://127.0.0.1:54971" class="bg-dark list-group-item list-group-item-action"><i class="icofont-book"></i> My Texts</a>
+
+            <a href="http://127.0.0.1:54971/reader/add/text" class="bg-dark list-group-item list-group-item-action"><i class="icofont-plus-square"></i> Add text</a>
+
+            <a href="http://127.0.0.1:54971/reader/words" class="bg-dark list-group-item list-group-item-action"><i class="icofont-file-text"></i> My words</a>
+
+            <a href="http://127.0.0.1:54971/reader/words_admin" class="bg-dark list-group-item list-group-item-action"><i class="icofont-gears"></i> Manage words</a>
+
+            <a href="http://127.0.0.1:54971/reader/upload_dictionary" class="bg-dark list-group-item list-group-item-action"><i class="icofont-upload"></i> Upload dictionary</a>
+
+        </ul>
+
+    </div>
+    <!-- sidebar-container END -->
+
+    <!-- MAIN -->
+    <div class="col py-3">
+
+        
+    <h1 class="uc">My words</h1>
+
+    
+    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+
+        
+        <li class="nav-item" style="margin-right: 50px;">
+            <a href="http://127.0.0.1:54971/reader/words?show_words=0" type="button" class="btn btn-primary noradius disabled">
+                <span class="h2">ALL: <span class="badge badge-light">2835</span> </span>
+            </a>
+        </li>
+
+        <li class="nav-item" style="margin-right: 50px;">
+            <a href="http://127.0.0.1:54971/reader/words?show_words=1" type="button" class="btn btn-primary ">
+                <span class="h2">TO STUDY: <span class="badge badge-warning">2827 </span> </span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="http://127.0.0.1:54971/reader/words?show_words=2" type="button" class="btn btn-primary noradius ">
+                <span class="h2">KNOWN: <span class="badge badge-success">8</span> </span>
+            </a>
+        </li>
+
+    </ul>
+    
+
+    
+    <table class="table" id="all_text_words">
+        <thead class="thead-light">
+        <tr>
+            <th>State</th>
+            <th scope="col">Word</th>
+            <th scope="col">Translation</th>
+        </tr>
+        </thead>
+        <tbody>
+
+    
+        <tr>
+            <td>
+
+                
+                
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="5653" data-state="1">To study</button>
+                    <span class="badge badge-success h4">Known</span>
+                
+            </td>
+            <td>apricot</td>
+            <td> абрикос2 </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5654" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>august</td>
+            <td> август </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5655" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>bus</td>
+            <td> автобус </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5656" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>car</td>
+            <td> автомобиль </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5657" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>lawyer</td>
+            <td> юрист </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5658" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>actor</td>
+            <td> актер </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5659" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>pineapple</td>
+            <td> ананас </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5660" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>orange</td>
+            <td> оранжевый </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5661" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>april</td>
+            <td> апрель </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5662" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>pharmacy</td>
+            <td> аптека </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5663" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>watermelon</td>
+            <td> арбуз </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5664" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>airport</td>
+            <td> аэропорт </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5665" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>grandmother</td>
+            <td> бабушка </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5666" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>luggage</td>
+            <td> багаж </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5667" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>eggplant</td>
+            <td> баклажан </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5668" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>balcony</td>
+            <td> балкон </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5669" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>banana</td>
+            <td> банан </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5670" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>bank</td>
+            <td> банка </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5671" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>lamb</td>
+            <td> ягненок </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5672" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>battery</td>
+            <td> батарейка </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5673" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>run</td>
+            <td> убегать </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5674" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>poor</td>
+            <td> скудный </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5675" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>hip</td>
+            <td> бедро </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5676" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>without</td>
+            <td> без </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5677" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>squirrel</td>
+            <td> белка </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5678" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>white</td>
+            <td> белый </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5679" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>gasoline</td>
+            <td> бензин </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5680" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>coast</td>
+            <td> берег </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5681" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>disturb</td>
+            <td> беспокоить </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5682" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>concern</td>
+            <td> относиться </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5683" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>ticket</td>
+            <td> билет </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5684" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>pale</td>
+            <td> бледный </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5685" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>note</td>
+            <td> заметка </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5686" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>dish</td>
+            <td> блюдо </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5687" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>saucer</td>
+            <td> блюдце </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5688" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>rich</td>
+            <td> богатый </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5689" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>goblet</td>
+            <td> бокал </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5690" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>disease</td>
+            <td> болезнь </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5691" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>pain</td>
+            <td> боль </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5692" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>hospital</td>
+            <td> больница </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5693" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>more</td>
+            <td> еще </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5694" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>big</td>
+            <td> большой </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5695" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>beard</td>
+            <td> борода </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5696" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>fight</td>
+            <td> бороться </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5697" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>shoe</td>
+            <td> туфля </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5698" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>fear</td>
+            <td> страх </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5699" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>brother</td>
+            <td> брат </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5700" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>take</td>
+            <td> занимать </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5701" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>eyebrow</td>
+            <td> бровь </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5702" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>throw</td>
+            <td> швырять </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5703" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>trousers</td>
+            <td> брюки </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5704" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>letter</td>
+            <td> письмо </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5705" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>paper</td>
+            <td> бумага </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5706" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>sandwich</td>
+            <td> бутерброд </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5707" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>bottle</td>
+            <td> бутылка </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5708" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>accountant</td>
+            <td> бухгалтер </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5709" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>quickly</td>
+            <td> быстро </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5710" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>be</td>
+            <td> происходить </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5711" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>in</td>
+            <td> в </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5712" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>jam</td>
+            <td> джем </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5713" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>up</td>
+            <td> подниматься </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5714" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>bucket</td>
+            <td> ведро </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5715" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>polite</td>
+            <td> вежливый </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5716" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>bicycle</td>
+            <td> велосипед </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5717" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>rope</td>
+            <td> веревка </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5718" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>believe</td>
+            <td> полагать </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5719" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>probably</td>
+            <td> вероятно </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5720" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>probability</td>
+            <td> вероятность </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5721" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>merry</td>
+            <td> веселый </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5722" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>fun</td>
+            <td> веселье </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5723" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>spring</td>
+            <td> весна </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5724" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>lead</td>
+            <td> свинец </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5725" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>all</td>
+            <td> весь </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5726" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>wind</td>
+            <td> ветер </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5727" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>ham</td>
+            <td> ветчина </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5728" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>evening</td>
+            <td> вечер </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5729" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>thing</td>
+            <td> вещь </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5730" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>see</td>
+            <td> посмотреть </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5731" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>fork</td>
+            <td> вилка </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5732" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>wine</td>
+            <td> вино </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5733" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>grapes</td>
+            <td> виноград </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5734" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>cherry</td>
+            <td> вишня </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5735" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>include</td>
+            <td> включать </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5736" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>delicious</td>
+            <td> вкусный </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5737" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>impact</td>
+            <td> влияние </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5738" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>affect</td>
+            <td> влиять </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5739" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>together</td>
+            <td> вместе </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5740" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>grandson</td>
+            <td> внук </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5741" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>involve</td>
+            <td> вовлекать </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5742" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>water</td>
+            <td> поливать </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5743" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>return</td>
+            <td> вернуть </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5744" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>air</td>
+            <td> воздух </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5745" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>possibly</td>
+            <td> возможно </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5746" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>opportunity</td>
+            <td> возможность </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5747" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>around</td>
+            <td> вокруг </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5748" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>wolf</td>
+            <td> волк </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5749" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>hair</td>
+            <td> волос </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5750" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>question</td>
+            <td> вопрос </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5751" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>eighteen</td>
+            <td> восемнадцать </td>
+        </tr>
+
+    
+        <tr>
+            <td>
+
+                
+                                    <span class="badge badge-warning h4">To study</span>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="5752" data-state="2">Known</button>
+                
+                
+            </td>
+            <td>eight</td>
+            <td> восемь </td>
+        </tr>
+
+    
+        </tbody>
+    </table>
+    
+
+    <ul class="pagination justify-content-center" role="navigation">
+        
+                    <li class="page-item disabled" aria-disabled="true" aria-label="&laquo; Previous">
+                <span class="page-link" aria-hidden="true">&lsaquo;</span>
+            </li>
+        
+        
+                    
+            
+            
+                                                                        <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:54971/reader/words?page=2">2</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:54971/reader/words?page=3">3</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:54971/reader/words?page=4">4</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:54971/reader/words?page=5">5</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:54971/reader/words?page=6">6</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:54971/reader/words?page=7">7</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:54971/reader/words?page=8">8</a></li>
+                                                                    
+                            <li class="page-item disabled" aria-disabled="true"><span class="page-link">...</span></li>
+            
+            
+                                
+            
+            
+                                                                        <li class="page-item"><a class="page-link" href="http://127.0.0.1:54971/reader/words?page=28">28</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:54971/reader/words?page=29">29</a></li>
+                                                        
+        
+                    <li class="page-item">
+                <a class="page-link" href="http://127.0.0.1:54971/reader/words?page=2" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
+            </li>
+            </ul>
+
+
+
+    </div>
+    <!-- Main Col END -->
+
+</div>
+<!-- body-row END -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://127.0.0.1:54971/js/jquery-3.4.1.min.js"></script>
+<script src="http://127.0.0.1:54971/js/popper.min.js"></script>
+<script src="http://127.0.0.1:54971/js/bootstrap.min.js"></script>
+<script src="http://127.0.0.1:54971/js/bootstrap-select.min.js"></script>
+
+<!-- App JavaScript -->
+<script src="http://127.0.0.1:54971/js/reader.js"></script>
+<script src="http://127.0.0.1:54971/js/js.cookie.js"></script>
+
+<link rel='stylesheet' type='text/css' property='stylesheet' href='//127.0.0.1:54971/_debugbar/assets/stylesheets?v=1585490052'><script type='text/javascript' src='//127.0.0.1:54971/_debugbar/assets/javascript?v=1585490052'></script><script type="text/javascript">jQuery.noConflict(true);</script>
+<script> Sfdump = window.Sfdump || (function (doc) { var refStyle = doc.createElement('style'), rxEsc = /([.*+?^${}()|\[\]\/\\])/g, idRx = /\bsf-dump-\d+-ref[012]\w+\b/, keyHint = 0 <= navigator.platform.toUpperCase().indexOf('MAC') ? 'Cmd' : 'Ctrl', addEventListener = function (e, n, cb) { e.addEventListener(n, cb, false); }; (doc.documentElement.firstElementChild || doc.documentElement.children[0]).appendChild(refStyle); if (!doc.addEventListener) { addEventListener = function (element, eventName, callback) { element.attachEvent('on' + eventName, function (e) { e.preventDefault = function () {e.returnValue = false;}; e.target = e.srcElement; callback(e); }); }; } function toggle(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className, arrow, newClass; if (/\bsf-dump-compact\b/.test(oldClass)) { arrow = '▼'; newClass = 'sf-dump-expanded'; } else if (/\bsf-dump-expanded\b/.test(oldClass)) { arrow = '▶'; newClass = 'sf-dump-compact'; } else { return false; } if (doc.createEvent && s.dispatchEvent) { var event = doc.createEvent('Event'); event.initEvent('sf-dump-expanded' === newClass ? 'sfbeforedumpexpand' : 'sfbeforedumpcollapse', true, false); s.dispatchEvent(event); } a.lastChild.innerHTML = arrow; s.className = s.className.replace(/\bsf-dump-(compact|expanded)\b/, newClass); if (recursive) { try { a = s.querySelectorAll('.'+oldClass); for (s = 0; s < a.length; ++s) { if (-1 == a[s].className.indexOf(newClass)) { a[s].className = newClass; a[s].previousSibling.lastChild.innerHTML = arrow; } } } catch (e) { } } return true; }; function collapse(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-expanded\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function expand(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className; if (/\bsf-dump-compact\b/.test(oldClass)) { toggle(a, recursive); return true; } return false; }; function collapseAll(root) { var a = root.querySelector('a.sf-dump-toggle'); if (a) { collapse(a, true); expand(a); return true; } return false; } function reveal(node) { var previous, parents = []; while ((node = node.parentNode || {}) && (previous = node.previousSibling) && 'A' === previous.tagName) { parents.push(previous); } if (0 !== parents.length) { parents.forEach(function (parent) { expand(parent); }); return true; } return false; } function highlight(root, activeNode, nodes) { resetHighlightedNodes(root); Array.from(nodes||[]).forEach(function (node) { if (!/\bsf-dump-highlight\b/.test(node.className)) { node.className = node.className + ' sf-dump-highlight'; } }); if (!/\bsf-dump-highlight-active\b/.test(activeNode.className)) { activeNode.className = activeNode.className + ' sf-dump-highlight-active'; } } function resetHighlightedNodes(root) { Array.from(root.querySelectorAll('.sf-dump-str, .sf-dump-key, .sf-dump-public, .sf-dump-protected, .sf-dump-private')).forEach(function (strNode) { strNode.className = strNode.className.replace(/\bsf-dump-highlight\b/, ''); strNode.className = strNode.className.replace(/\bsf-dump-highlight-active\b/, ''); }); } return function (root, x) { root = doc.getElementById(root); var indentRx = new RegExp('^('+(root.getAttribute('data-indent-pad') || ' ').replace(rxEsc, '\\$1')+')+', 'm'), options = {"maxDepth":1,"maxStringLength":160,"fileLinkFormat":false}, elt = root.getElementsByTagName('A'), len = elt.length, i = 0, s, h, t = []; while (i < len) t.push(elt[i++]); for (i in x) { options[i] = x[i]; } function a(e, f) { addEventListener(root, e, function (e, n) { if ('A' == e.target.tagName) { f(e.target, e); } else if ('A' == e.target.parentNode.tagName) { f(e.target.parentNode, e); } else { n = /\bsf-dump-ellipsis\b/.test(e.target.className) ? e.target.parentNode : e.target; if ((n = n.nextElementSibling) && 'A' == n.tagName) { if (!/\bsf-dump-toggle\b/.test(n.className)) { n = n.nextElementSibling || n; } f(n, e, true); } } }); }; function isCtrlKey(e) { return e.ctrlKey || e.metaKey; } function xpathString(str) { var parts = str.match(/[^'"]+|['"]/g).map(function (part) { if ("'" == part) { return '"\'"'; } if ('"' == part) { return "'\"'"; } return "'" + part + "'"; }); return "concat(" + parts.join(",") + ", '')"; } function xpathHasClass(className) { return "contains(concat(' ', normalize-space(@class), ' '), ' " + className +" ')"; } addEventListener(root, 'mouseover', function (e) { if ('' != refStyle.innerHTML) { refStyle.innerHTML = ''; } }); a('mouseover', function (a, e, c) { if (c) { e.target.style.cursor = "pointer"; } else if (a = idRx.exec(a.className)) { try { refStyle.innerHTML = '.phpdebugbar pre.sf-dump .'+a[0]+'{background-color: #B729D9; color: #FFF !important; border-radius: 2px}'; } catch (e) { } } }); a('click', function (a, e, c) { if (/\bsf-dump-toggle\b/.test(a.className)) { e.preventDefault(); if (!toggle(a, isCtrlKey(e))) { var r = doc.getElementById(a.getAttribute('href').substr(1)), s = r.previousSibling, f = r.parentNode, t = a.parentNode; t.replaceChild(r, a); f.replaceChild(a, s); t.insertBefore(s, r); f = f.firstChild.nodeValue.match(indentRx); t = t.firstChild.nodeValue.match(indentRx); if (f && t && f[0] !== t[0]) { r.innerHTML = r.innerHTML.replace(new RegExp('^'+f[0].replace(rxEsc, '\\$1'), 'mg'), t[0]); } if (/\bsf-dump-compact\b/.test(r.className)) { toggle(s, isCtrlKey(e)); } } if (c) { } else if (doc.getSelection) { try { doc.getSelection().removeAllRanges(); } catch (e) { doc.getSelection().empty(); } } else { doc.selection.empty(); } } else if (/\bsf-dump-str-toggle\b/.test(a.className)) { e.preventDefault(); e = a.parentNode.parentNode; e.className = e.className.replace(/\bsf-dump-str-(expand|collapse)\b/, a.parentNode.className); } }); elt = root.getElementsByTagName('SAMP'); len = elt.length; i = 0; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; if ('SAMP' == elt.tagName) { a = elt.previousSibling || {}; if ('A' != a.tagName) { a = doc.createElement('A'); a.className = 'sf-dump-ref'; elt.parentNode.insertBefore(a, elt); } else { a.innerHTML += ' '; } a.title = (a.title ? a.title+'\n[' : '[')+keyHint+'+click] Expand all children'; a.innerHTML += '<span>▼</span>'; a.className += ' sf-dump-toggle'; x = 1; if ('sf-dump' != elt.parentNode.className) { x += elt.parentNode.getAttribute('data-depth')/1; } elt.setAttribute('data-depth', x); var className = elt.className; elt.className = 'sf-dump-expanded'; if (className ? 'sf-dump-expanded' !== className : (x > options.maxDepth)) { toggle(a); } } else if (/\bsf-dump-ref\b/.test(elt.className) && (a = elt.getAttribute('href'))) { a = a.substr(1); elt.className += ' '+a; if (/[\[{]$/.test(elt.previousSibling.nodeValue)) { a = a != elt.nextSibling.id && doc.getElementById(a); try { s = a.nextSibling; elt.appendChild(a); s.parentNode.insertBefore(a, s); if (/^[@#]/.test(elt.innerHTML)) { elt.innerHTML += ' <span>▶</span>'; } else { elt.innerHTML = '<span>▶</span>'; elt.className = 'sf-dump-ref'; } elt.className += ' sf-dump-toggle'; } catch (e) { if ('&' == elt.innerHTML.charAt(0)) { elt.innerHTML = '…'; elt.className = 'sf-dump-ref'; } } } } } if (doc.evaluate && Array.from && root.children.length > 1) { root.setAttribute('tabindex', 0); SearchState = function () { this.nodes = []; this.idx = 0; }; SearchState.prototype = { next: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx < (this.nodes.length - 1) ? this.idx + 1 : 0; return this.current(); }, previous: function () { if (this.isEmpty()) { return this.current(); } this.idx = this.idx > 0 ? this.idx - 1 : (this.nodes.length - 1); return this.current(); }, isEmpty: function () { return 0 === this.count(); }, current: function () { if (this.isEmpty()) { return null; } return this.nodes[this.idx]; }, reset: function () { this.nodes = []; this.idx = 0; }, count: function () { return this.nodes.length; }, }; function showCurrent(state) { var currentNode = state.current(), currentRect, searchRect; if (currentNode) { reveal(currentNode); highlight(root, currentNode, state.nodes); if ('scrollIntoView' in currentNode) { currentNode.scrollIntoView(true); currentRect = currentNode.getBoundingClientRect(); searchRect = search.getBoundingClientRect(); if (currentRect.top < (searchRect.top + searchRect.height)) { window.scrollBy(0, -(searchRect.top + searchRect.height + 5)); } } } counter.textContent = (state.isEmpty() ? 0 : state.idx + 1) + ' of ' + state.count(); } var search = doc.createElement('div'); search.className = 'sf-dump-search-wrapper sf-dump-search-hidden'; search.innerHTML = ' <input type="text" class="sf-dump-search-input"> <span class="sf-dump-search-count">0 of 0<\/span> <button type="button" class="sf-dump-search-input-previous" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 1331l-166 165q-19 19-45 19t-45-19L896 965l-531 531q-19 19-45 19t-45-19l-166-165q-19-19-19-45.5t19-45.5l742-741q19-19 45-19t45 19l742 741q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> <button type="button" class="sf-dump-search-input-next" tabindex="-1"> <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1683 808l-742 741q-19 19-45 19t-45-19L109 808q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"\/><\/svg> <\/button> '; root.insertBefore(search, root.firstChild); var state = new SearchState(); var searchInput = search.querySelector('.sf-dump-search-input'); var counter = search.querySelector('.sf-dump-search-count'); var searchInputTimer = 0; var previousSearchQuery = ''; addEventListener(searchInput, 'keyup', function (e) { var searchQuery = e.target.value; /* Don't perform anything if the pressed key didn't change the query */ if (searchQuery === previousSearchQuery) { return; } previousSearchQuery = searchQuery; clearTimeout(searchInputTimer); searchInputTimer = setTimeout(function () { state.reset(); collapseAll(root); resetHighlightedNodes(root); if ('' === searchQuery) { counter.textContent = '0 of 0'; return; } var classMatches = [ "sf-dump-str", "sf-dump-key", "sf-dump-public", "sf-dump-protected", "sf-dump-private", ].map(xpathHasClass).join(' or '); var xpathResult = doc.evaluate('.//span[' + classMatches + '][contains(translate(child::text(), ' + xpathString(searchQuery.toUpperCase()) + ', ' + xpathString(searchQuery.toLowerCase()) + '), ' + xpathString(searchQuery.toLowerCase()) + ')]', root, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null); while (node = xpathResult.iterateNext()) state.nodes.push(node); showCurrent(state); }, 400); }); Array.from(search.querySelectorAll('.sf-dump-search-input-next, .sf-dump-search-input-previous')).forEach(function (btn) { addEventListener(btn, 'click', function (e) { e.preventDefault(); -1 !== e.target.className.indexOf('next') ? state.next() : state.previous(); searchInput.focus(); collapseAll(root); showCurrent(state); }) }); addEventListener(root, 'keydown', function (e) { var isSearchActive = !/\bsf-dump-search-hidden\b/.test(search.className); if ((114 === e.keyCode && !isSearchActive) || (isCtrlKey(e) && 70 === e.keyCode)) { /* F3 or CMD/CTRL + F */ if (70 === e.keyCode && document.activeElement === searchInput) { /* * If CMD/CTRL + F is hit while having focus on search input, * the user probably meant to trigger browser search instead. * Let the browser execute its behavior: */ return; } e.preventDefault(); search.className = search.className.replace(/\bsf-dump-search-hidden\b/, ''); searchInput.focus(); } else if (isSearchActive) { if (27 === e.keyCode) { /* ESC key */ search.className += ' sf-dump-search-hidden'; e.preventDefault(); resetHighlightedNodes(root); searchInput.value = ''; } else if ( (isCtrlKey(e) && 71 === e.keyCode) /* CMD/CTRL + G */ || 13 === e.keyCode /* Enter */ || 114 === e.keyCode /* F3 */ ) { e.preventDefault(); e.shiftKey ? state.previous() : state.next(); collapseAll(root); showCurrent(state); } } }); } if (0 >= options.maxStringLength) { return; } try { elt = root.querySelectorAll('.sf-dump-str'); len = elt.length; i = 0; t = []; while (i < len) t.push(elt[i++]); len = t.length; for (i = 0; i < len; ++i) { elt = t[i]; s = elt.innerText || elt.textContent; x = s.length - options.maxStringLength; if (0 < x) { h = elt.innerHTML; elt[elt.innerText ? 'innerText' : 'textContent'] = s.substring(0, options.maxStringLength); elt.className += ' sf-dump-str-collapse'; elt.innerHTML = '<span class=sf-dump-str-collapse>'+h+'<a class="sf-dump-ref sf-dump-str-toggle" title="Collapse"> ◀</a></span>'+ '<span class=sf-dump-str-expand>'+elt.innerHTML+'<a class="sf-dump-ref sf-dump-str-toggle" title="'+x+' remaining characters"> ▶</a></span>'; } } } catch (e) { } }; })(document); </script><style> .phpdebugbar pre.sf-dump { display: block; white-space: pre; padding: 5px; overflow: initial !important; } .phpdebugbar pre.sf-dump:after { content: ""; visibility: hidden; display: block; height: 0; clear: both; } .phpdebugbar pre.sf-dump span { display: inline; } .phpdebugbar pre.sf-dump .sf-dump-compact { display: none; } .phpdebugbar pre.sf-dump a { text-decoration: none; cursor: pointer; border: 0; outline: none; color: inherit; } .phpdebugbar pre.sf-dump img { max-width: 50em; max-height: 50em; margin: .5em 0 0 0; padding: 0; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAHUlEQVQY02O8zAABilCaiQEN0EeA8QuUcX9g3QEAAjcC5piyhyEAAAAASUVORK5CYII=) #D3D3D3; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis { display: inline-block; overflow: visible; text-overflow: ellipsis; max-width: 5em; white-space: nowrap; overflow: hidden; vertical-align: top; } .phpdebugbar pre.sf-dump .sf-dump-ellipsis+.sf-dump-ellipsis { max-width: none; } .phpdebugbar pre.sf-dump code { display:inline; padding:0; background:none; } .sf-dump-str-collapse .sf-dump-str-collapse { display: none; } .sf-dump-str-expand .sf-dump-str-expand { display: none; } .sf-dump-public.sf-dump-highlight, .sf-dump-protected.sf-dump-highlight, .sf-dump-private.sf-dump-highlight, .sf-dump-str.sf-dump-highlight, .sf-dump-key.sf-dump-highlight { background: rgba(111, 172, 204, 0.3); border: 1px solid #7DA0B1; border-radius: 3px; } .sf-dump-public.sf-dump-highlight-active, .sf-dump-protected.sf-dump-highlight-active, .sf-dump-private.sf-dump-highlight-active, .sf-dump-str.sf-dump-highlight-active, .sf-dump-key.sf-dump-highlight-active { background: rgba(253, 175, 0, 0.4); border: 1px solid #ffa500; border-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-hidden { display: none !important; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper { font-size: 0; white-space: nowrap; margin-bottom: 5px; display: flex; position: -webkit-sticky; position: sticky; top: 5px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > * { vertical-align: top; box-sizing: border-box; height: 21px; font-weight: normal; border-radius: 0; background: #FFF; color: #757575; border: 1px solid #BBB; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > input.sf-dump-search-input { padding: 3px; height: 21px; font-size: 12px; border-right: none; border-top-left-radius: 3px; border-bottom-left-radius: 3px; color: #000; min-width: 15px; width: 100%; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous { background: #F2F2F2; outline: none; border-left: none; font-size: 0; line-height: 0; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next { border-top-right-radius: 3px; border-bottom-right-radius: 3px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-next > svg, .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-input-previous > svg { pointer-events: none; width: 12px; height: 12px; } .phpdebugbar pre.sf-dump .sf-dump-search-wrapper > .sf-dump-search-count { display: inline-block; padding: 0 5px; margin: 0; border-left: none; line-height: 21px; font-size: 12px; }.phpdebugbar pre.sf-dump, .phpdebugbar pre.sf-dump .sf-dump-default{word-wrap: break-word; white-space: pre-wrap; word-break: normal}.phpdebugbar pre.sf-dump .sf-dump-num{font-weight:bold; color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-const{font-weight:bold}.phpdebugbar pre.sf-dump .sf-dump-str{font-weight:bold; color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-note{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ref{color:#7B7B7B}.phpdebugbar pre.sf-dump .sf-dump-public{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-protected{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-private{color:#000000}.phpdebugbar pre.sf-dump .sf-dump-meta{color:#B729D9}.phpdebugbar pre.sf-dump .sf-dump-key{color:#3A9B26}.phpdebugbar pre.sf-dump .sf-dump-index{color:#1299DA}.phpdebugbar pre.sf-dump .sf-dump-ellipsis{color:#A0A000}.phpdebugbar pre.sf-dump .sf-dump-ns{user-select:none;}.phpdebugbar pre.sf-dump .sf-dump-ellipsis-note{color:#1299DA}</style>
+<script type="text/javascript">
+var phpdebugbar = new PhpDebugBar.DebugBar();
+phpdebugbar.addIndicator("php_version", new PhpDebugBar.DebugBar.Indicator({"icon":"code","tooltip":"Version"}), "right");
+phpdebugbar.addTab("messages", new PhpDebugBar.DebugBar.Tab({"icon":"list-alt","title":"Messages", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
+phpdebugbar.addIndicator("time", new PhpDebugBar.DebugBar.Indicator({"icon":"clock-o","tooltip":"Request Duration"}), "right");
+phpdebugbar.addTab("timeline", new PhpDebugBar.DebugBar.Tab({"icon":"tasks","title":"Timeline", "widget": new PhpDebugBar.Widgets.TimelineWidget()}));
+phpdebugbar.addIndicator("memory", new PhpDebugBar.DebugBar.Indicator({"icon":"cogs","tooltip":"Memory Usage"}), "right");
+phpdebugbar.addTab("exceptions", new PhpDebugBar.DebugBar.Tab({"icon":"bug","title":"Exceptions", "widget": new PhpDebugBar.Widgets.ExceptionsWidget()}));
+phpdebugbar.addTab("views", new PhpDebugBar.DebugBar.Tab({"icon":"leaf","title":"Views", "widget": new PhpDebugBar.Widgets.TemplatesWidget()}));
+phpdebugbar.addTab("route", new PhpDebugBar.DebugBar.Tab({"icon":"share","title":"Route", "widget": new PhpDebugBar.Widgets.VariableListWidget()}));
+phpdebugbar.addIndicator("currentroute", new PhpDebugBar.DebugBar.Indicator({"icon":"share","tooltip":"Route"}), "right");
+phpdebugbar.addTab("queries", new PhpDebugBar.DebugBar.Tab({"icon":"database","title":"Queries", "widget": new PhpDebugBar.Widgets.LaravelSQLQueriesWidget()}));
+phpdebugbar.addTab("emails", new PhpDebugBar.DebugBar.Tab({"icon":"inbox","title":"Mails", "widget": new PhpDebugBar.Widgets.MailsWidget()}));
+phpdebugbar.addTab("gate", new PhpDebugBar.DebugBar.Tab({"icon":"list-alt","title":"Gate", "widget": new PhpDebugBar.Widgets.MessagesWidget()}));
+phpdebugbar.addTab("session", new PhpDebugBar.DebugBar.Tab({"icon":"archive","title":"Session", "widget": new PhpDebugBar.Widgets.VariableListWidget()}));
+phpdebugbar.addTab("request", new PhpDebugBar.DebugBar.Tab({"icon":"tags","title":"Request", "widget": new PhpDebugBar.Widgets.HtmlVariableListWidget()}));
+phpdebugbar.setDataMap({
+"php_version": ["php.version", ],
+"messages": ["messages.messages", []],
+"messages:badge": ["messages.count", null],
+"time": ["time.duration_str", '0ms'],
+"timeline": ["time", {}],
+"memory": ["memory.peak_usage_str", '0B'],
+"exceptions": ["exceptions.exceptions", []],
+"exceptions:badge": ["exceptions.count", null],
+"views": ["views", []],
+"views:badge": ["views.nb_templates", 0],
+"route": ["route", {}],
+"currentroute": ["route.uri", ],
+"queries": ["queries", []],
+"queries:badge": ["queries.nb_statements", 0],
+"emails": ["swiftmailer_mails.mails", []],
+"emails:badge": ["swiftmailer_mails.count", null],
+"gate": ["gate.messages", []],
+"gate:badge": ["gate.count", null],
+"session": ["session", {}],
+"request": ["request", {}]
+});
+phpdebugbar.restoreState();
+phpdebugbar.ajaxHandler = new PhpDebugBar.AjaxHandler(phpdebugbar, undefined, true);
+phpdebugbar.ajaxHandler.bindToFetch();
+phpdebugbar.ajaxHandler.bindToXHR();
+phpdebugbar.setOpenHandler(new PhpDebugBar.OpenHandler({"url":"http:\/\/127.0.0.1:54971\/_debugbar\/open"}));
+phpdebugbar.addDataSet({"__meta":{"id":"Xf434af22404a36e8927d15a9d7f298f7","datetime":"2020-03-29 14:30:28","utime":1585492228.674981,"method":"GET","uri":"\/reader\/words","ip":"127.0.0.1"},"php":{"version":"7.1.3","interface":"cgi-fcgi"},"messages":{"count":0,"messages":[]},"time":{"start":1585492228.407173,"end":1585492228.674995,"duration":0.2678220272064209,"duration_str":"267.82ms","measures":[{"label":"Booting","start":1585492228.407173,"relative_start":0,"end":1585492228.55391,"relative_end":1585492228.55391,"duration":0.14673709869384766,"duration_str":"146.74ms","params":[],"collector":null},{"label":"Application","start":1585492228.556335,"relative_start":0.14916205406188965,"end":1585492228.674997,"relative_end":2.1457672119140625e-6,"duration":0.11866211891174316,"duration_str":"118.66ms","params":[],"collector":null}]},"memory":{"peak_usage":13180384,"peak_usage_str":"12.57MB"},"exceptions":{"count":0,"exceptions":[]},"views":{"nb_templates":3,"templates":[{"name":"words (\\resources\\views\\words.blade.php)","param_count":4,"params":["words","totalWords","totalKnownWords","totalNewWords"],"type":"blade"},{"name":"pagination::bootstrap-4 (\\resources\\views\\vendor\\pagination\\bootstrap-4.blade.php)","param_count":2,"params":["paginator","elements"],"type":"blade"},{"name":"main_layout (\\resources\\views\\main_layout.blade.php)","param_count":14,"params":["obLevel","__env","app","errors","words","totalWords","totalKnownWords","totalNewWords","isAllDisabled","isUnknownDisabled","isKnownDisabled","__currentLoopData","word","loop"],"type":"blade"}]},"route":{"uri":"GET reader\/words","middleware":"web","controller":"App\\Http\\Controllers\\WordsController@showPage","namespace":"App\\Http\\Controllers","prefix":null,"where":[],"as":"words","file":"\\app\\Http\\Controllers\\WordsController.php:102-129"},"queries":{"nb_statements":5,"nb_failed_statements":0,"accumulated_duration":0.0023899999999999998,"accumulated_duration_str":"2.39ms","statements":[{"sql":"select count(*) as aggregate from \"word\" where \"state\" = 2 or \"state\" = 1","type":"query","params":[],"bindings":["2","1"],"hints":[],"backtrace":[{"index":15,"namespace":null,"name":"\\app\\Http\\Controllers\\WordsController.php","line":115},{"index":18,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php","line":45},{"index":19,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php","line":219},{"index":20,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php","line":176},{"index":21,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":680},{"index":22,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":30},{"index":23,"namespace":"middleware","name":"bindings","line":41},{"index":24,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":25,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":26,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php","line":49},{"index":27,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":28,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":29,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php","line":56},{"index":30,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":31,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":32,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php","line":37},{"index":33,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":34,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":35,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php","line":66},{"index":36,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":37,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":38,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":104},{"index":39,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":682},{"index":40,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":657},{"index":41,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":623},{"index":42,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":612},{"index":43,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php","line":176},{"index":44,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":30},{"index":46,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":47,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":48,"namespace":null,"name":"\\vendor\\fideloper\\proxy\\src\\TrustProxies.php","line":57},{"index":49,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163}],"duration":0.00116,"duration_str":"1.16ms","stmt_id":"\\app\\Http\\Controllers\\WordsController.php:115","connection":"C:\\Users\\User\\Downloads\\phpdesktop-chrome-57.0-rc-php-7.1.3\\www\\database\\database.sqlite"},{"sql":"select * from \"word\" where \"state\" = 2 or \"state\" = 1 limit 100 offset 0","type":"query","params":[],"bindings":["2","1"],"hints":["Use <code>SELECT *<\/code> only if you need all columns from table","<code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"],"backtrace":[{"index":15,"namespace":null,"name":"\\app\\Http\\Controllers\\WordsController.php","line":115},{"index":18,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php","line":45},{"index":19,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php","line":219},{"index":20,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php","line":176},{"index":21,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":680},{"index":22,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":30},{"index":23,"namespace":"middleware","name":"bindings","line":41},{"index":24,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":25,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":26,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php","line":49},{"index":27,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":28,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":29,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php","line":56},{"index":30,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":31,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":32,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php","line":37},{"index":33,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":34,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":35,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php","line":66},{"index":36,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":37,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":38,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":104},{"index":39,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":682},{"index":40,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":657},{"index":41,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":623},{"index":42,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":612},{"index":43,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php","line":176},{"index":44,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":30},{"index":46,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":47,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":48,"namespace":null,"name":"\\vendor\\fideloper\\proxy\\src\\TrustProxies.php","line":57},{"index":49,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163}],"duration":0.00027,"duration_str":"270\u03bcs","stmt_id":"\\app\\Http\\Controllers\\WordsController.php:115","connection":"C:\\Users\\User\\Downloads\\phpdesktop-chrome-57.0-rc-php-7.1.3\\www\\database\\database.sqlite"},{"sql":"select count(*) as aggregate from \"word\" where \"state\" = 2 or \"state\" = 1","type":"query","params":[],"bindings":["2","1"],"hints":[],"backtrace":[{"index":15,"namespace":null,"name":"\\app\\Http\\Controllers\\WordsController.php","line":120},{"index":18,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php","line":45},{"index":19,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php","line":219},{"index":20,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php","line":176},{"index":21,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":680},{"index":22,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":30},{"index":23,"namespace":"middleware","name":"bindings","line":41},{"index":24,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":25,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":26,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php","line":49},{"index":27,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":28,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":29,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php","line":56},{"index":30,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":31,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":32,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php","line":37},{"index":33,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":34,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":35,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php","line":66},{"index":36,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":37,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":38,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":104},{"index":39,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":682},{"index":40,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":657},{"index":41,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":623},{"index":42,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":612},{"index":43,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php","line":176},{"index":44,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":30},{"index":46,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":47,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":48,"namespace":null,"name":"\\vendor\\fideloper\\proxy\\src\\TrustProxies.php","line":57},{"index":49,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163}],"duration":0.00037,"duration_str":"370\u03bcs","stmt_id":"\\app\\Http\\Controllers\\WordsController.php:120","connection":"C:\\Users\\User\\Downloads\\phpdesktop-chrome-57.0-rc-php-7.1.3\\www\\database\\database.sqlite"},{"sql":"select count(*) as aggregate from \"word\" where \"state\" = 2","type":"query","params":[],"bindings":["2"],"hints":[],"backtrace":[{"index":15,"namespace":null,"name":"\\app\\Http\\Controllers\\WordsController.php","line":121},{"index":18,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php","line":45},{"index":19,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php","line":219},{"index":20,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php","line":176},{"index":21,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":680},{"index":22,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":30},{"index":23,"namespace":"middleware","name":"bindings","line":41},{"index":24,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":25,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":26,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php","line":49},{"index":27,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":28,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":29,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php","line":56},{"index":30,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":31,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":32,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php","line":37},{"index":33,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":34,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":35,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php","line":66},{"index":36,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":37,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":38,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":104},{"index":39,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":682},{"index":40,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":657},{"index":41,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":623},{"index":42,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":612},{"index":43,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php","line":176},{"index":44,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":30},{"index":46,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":47,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":48,"namespace":null,"name":"\\vendor\\fideloper\\proxy\\src\\TrustProxies.php","line":57},{"index":49,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163}],"duration":0.00029,"duration_str":"290\u03bcs","stmt_id":"\\app\\Http\\Controllers\\WordsController.php:121","connection":"C:\\Users\\User\\Downloads\\phpdesktop-chrome-57.0-rc-php-7.1.3\\www\\database\\database.sqlite"},{"sql":"select count(*) as aggregate from \"word\" where \"state\" = 1","type":"query","params":[],"bindings":["1"],"hints":[],"backtrace":[{"index":15,"namespace":null,"name":"\\app\\Http\\Controllers\\WordsController.php","line":122},{"index":18,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php","line":45},{"index":19,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php","line":219},{"index":20,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php","line":176},{"index":21,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":680},{"index":22,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":30},{"index":23,"namespace":"middleware","name":"bindings","line":41},{"index":24,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":25,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":26,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php","line":49},{"index":27,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":28,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":29,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php","line":56},{"index":30,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":31,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":32,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php","line":37},{"index":33,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":34,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":35,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php","line":66},{"index":36,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":37,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":38,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":104},{"index":39,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":682},{"index":40,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":657},{"index":41,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":623},{"index":42,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php","line":612},{"index":43,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php","line":176},{"index":44,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":30},{"index":46,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163},{"index":47,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php","line":53},{"index":48,"namespace":null,"name":"\\vendor\\fideloper\\proxy\\src\\TrustProxies.php","line":57},{"index":49,"namespace":null,"name":"\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php","line":163}],"duration":0.0003,"duration_str":"300\u03bcs","stmt_id":"\\app\\Http\\Controllers\\WordsController.php:122","connection":"C:\\Users\\User\\Downloads\\phpdesktop-chrome-57.0-rc-php-7.1.3\\www\\database\\database.sqlite"}]},"swiftmailer_mails":{"count":0,"mails":[]},"gate":{"count":0,"messages":[]},"session":{"_token":"1O4XT9aVA34oEDCEl02e77ZCGH7DJFwxODsorHIB","_previous":"array:1 [\n  \"url\" => \"http:\/\/127.0.0.1:54971\/reader\/words\"\n]","_flash":"array:2 [\n  \"old\" => []\n  \"new\" => []\n]","PHPDEBUGBAR_STACK_DATA":"[]"},"request":{"path_info":"\/reader\/words","status_code":"<pre class=sf-dump id=sf-dump-1886306283 data-indent-pad=\"  \"><span class=sf-dump-num>200<\/span>\n<\/pre><script>Sfdump(\"sf-dump-1886306283\", {\"maxDepth\":0})<\/script>\n","status_text":"OK","format":"html","content_type":"text\/html; charset=UTF-8","request_query":"<pre class=sf-dump id=sf-dump-298490468 data-indent-pad=\"  \">[]\n<\/pre><script>Sfdump(\"sf-dump-298490468\", {\"maxDepth\":0})<\/script>\n","request_request":"<pre class=sf-dump id=sf-dump-61220234 data-indent-pad=\"  \">[]\n<\/pre><script>Sfdump(\"sf-dump-61220234\", {\"maxDepth\":0})<\/script>\n","request_headers":"<pre class=sf-dump id=sf-dump-422801209 data-indent-pad=\"  \"><span class=sf-dump-note>array:9<\/span> [<samp>\n  \"<span class=sf-dump-key>host<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"15 characters\">127.0.0.1:54971<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>connection<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"10 characters\">keep-alive<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>upgrade-insecure-requests<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str>1<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>user-agent<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"108 characters\">Mozilla\/5.0 (Windows NT 6.2; WOW64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/57.0.2987.98 Safari\/537.36<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>accept<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"74 characters\">text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,*\/*;q=0.8<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>referer<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"38 characters\">http:\/\/127.0.0.1:54971\/reader\/add\/text<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>accept-encoding<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"13 characters\">gzip, deflate<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>accept-language<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"14 characters\">en-US,en;q=0.8<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>cookie<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"268 characters\">laravel_session=eyJpdiI6IkRpcENcL3k0bng4SmMyTG0rYWdXWU13PT0iLCJ2YWx1ZSI6IjB6alhlNzU3VzhuTFwvcDRwVlN5enBsU3dPcjFGVjFGWVViVUJaSHZaXC8rclAzK3EwMDNXb1ZWRE5qOVZ3OWZ5NSIsIm1hYyI6ImM3YjY5Mjk0ZDRmYTVlYjA4ZTE4MjAzNmQ0ZTFjYTdjYmFiYjM0NjQ3YWNhMDQ2Nzg4NTViZjhkNTFmNjQ1YmUifQ%3D%3D<\/span>\"\n  <\/samp>]\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-422801209\", {\"maxDepth\":0})<\/script>\n","request_server":"<pre class=sf-dump id=sf-dump-1453117370 data-indent-pad=\"  \"><span class=sf-dump-note>array:67<\/span> [<samp>\n  \"<span class=sf-dump-key>SERVER_NAME<\/span>\" => \"<span class=sf-dump-str title=\"9 characters\">127.0.0.1<\/span>\"\n  \"<span class=sf-dump-key>SERVER_ROOT<\/span>\" => \"<span class=sf-dump-str title=\"70 characters\">C:\\Users\\User\\Downloads\\phpdesktop-chrome-57.0-rc-php-7.1.3\\www\\public<\/span>\"\n  \"<span class=sf-dump-key>DOCUMENT_ROOT<\/span>\" => \"<span class=sf-dump-str title=\"70 characters\">C:\\Users\\User\\Downloads\\phpdesktop-chrome-57.0-rc-php-7.1.3\\www\\public<\/span>\"\n  \"<span class=sf-dump-key>SERVER_SOFTWARE<\/span>\" => \"<span class=sf-dump-str title=\"13 characters\">Mongoose\/3.9c<\/span>\"\n  \"<span class=sf-dump-key>GATEWAY_INTERFACE<\/span>\" => \"<span class=sf-dump-str title=\"7 characters\">CGI\/1.1<\/span>\"\n  \"<span class=sf-dump-key>SERVER_PROTOCOL<\/span>\" => \"<span class=sf-dump-str title=\"8 characters\">HTTP\/1.1<\/span>\"\n  \"<span class=sf-dump-key>REDIRECT_STATUS<\/span>\" => \"<span class=sf-dump-str title=\"3 characters\">200<\/span>\"\n  \"<span class=sf-dump-key>SERVER_PORT<\/span>\" => \"<span class=sf-dump-str title=\"5 characters\">54971<\/span>\"\n  \"<span class=sf-dump-key>REQUEST_METHOD<\/span>\" => \"<span class=sf-dump-str title=\"3 characters\">GET<\/span>\"\n  \"<span class=sf-dump-key>REMOTE_ADDR<\/span>\" => \"<span class=sf-dump-str title=\"9 characters\">127.0.0.1<\/span>\"\n  \"<span class=sf-dump-key>REMOTE_PORT<\/span>\" => \"<span class=sf-dump-str title=\"5 characters\">54990<\/span>\"\n  \"<span class=sf-dump-key>REQUEST_URI<\/span>\" => \"<span class=sf-dump-str title=\"13 characters\">\/reader\/words<\/span>\"\n  \"<span class=sf-dump-key>SCRIPT_NAME<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">\/index.php<\/span>\"\n  \"<span class=sf-dump-key>SCRIPT_FILENAME<\/span>\" => \"<span class=sf-dump-str title=\"80 characters\">C:\\Users\\User\\Downloads\\phpdesktop-chrome-57.0-rc-php-7.1.3\\www\\public\\index.php<\/span>\"\n  \"<span class=sf-dump-key>PATH_TRANSLATED<\/span>\" => \"<span class=sf-dump-str title=\"80 characters\">C:\\Users\\User\\Downloads\\phpdesktop-chrome-57.0-rc-php-7.1.3\\www\\public\\index.php<\/span>\"\n  \"<span class=sf-dump-key>HTTPS<\/span>\" => \"<span class=sf-dump-str title=\"3 characters\">off<\/span>\"\n  \"<span class=sf-dump-key>PATH<\/span>\" => \"<span class=sf-dump-str title=\"409 characters\">C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Java\\jdk-14\\bin;D:\\OSPanel\\modules\\php\\PHP_7.3-x64;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\AppData\\Roaming\\Composer\\vendor\\bin<\/span>\"\n  \"<span class=sf-dump-key>PATH_INFO<\/span>\" => \"<span class=sf-dump-str title=\"13 characters\">\/reader\/words<\/span>\"\n  \"<span class=sf-dump-key>APPDATA<\/span>\" => \"<span class=sf-dump-str title=\"29 characters\">C:\\Users\\User\\AppData\\Roaming<\/span>\"\n  \"<span class=sf-dump-key>LOCALAPPDATA<\/span>\" => \"<span class=sf-dump-str title=\"27 characters\">C:\\Users\\User\\AppData\\Local<\/span>\"\n  \"<span class=sf-dump-key>ComSpec<\/span>\" => \"<span class=sf-dump-str title=\"27 characters\">C:\\Windows\\system32\\cmd.exe<\/span>\"\n  \"<span class=sf-dump-key>COMSPEC<\/span>\" => \"<span class=sf-dump-str title=\"27 characters\">C:\\Windows\\system32\\cmd.exe<\/span>\"\n  \"<span class=sf-dump-key>OS<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">Windows_NT<\/span>\"\n  \"<span class=sf-dump-key>ProgramFiles<\/span>\" => \"<span class=sf-dump-str title=\"22 characters\">C:\\Program Files (x86)<\/span>\"\n  \"<span class=sf-dump-key>PROGRAMFILES<\/span>\" => \"<span class=sf-dump-str title=\"22 characters\">C:\\Program Files (x86)<\/span>\"\n  \"<span class=sf-dump-key>ProgramFiles(x86)<\/span>\" => \"<span class=sf-dump-str title=\"22 characters\">C:\\Program Files (x86)<\/span>\"\n  \"<span class=sf-dump-key>ProgramW6432<\/span>\" => \"<span class=sf-dump-str title=\"16 characters\">C:\\Program Files<\/span>\"\n  \"<span class=sf-dump-key>CommonProgramFiles<\/span>\" => \"<span class=sf-dump-str title=\"35 characters\">C:\\Program Files (x86)\\Common Files<\/span>\"\n  \"<span class=sf-dump-key>CommonProgramFiles(x86)<\/span>\" => \"<span class=sf-dump-str title=\"35 characters\">C:\\Program Files (x86)\\Common Files<\/span>\"\n  \"<span class=sf-dump-key>CommonProgramW6432<\/span>\" => \"<span class=sf-dump-str title=\"29 characters\">C:\\Program Files\\Common Files<\/span>\"\n  \"<span class=sf-dump-key>SystemDrive<\/span>\" => \"<span class=sf-dump-str title=\"2 characters\">C:<\/span>\"\n  \"<span class=sf-dump-key>SYSTEMDRIVE<\/span>\" => \"<span class=sf-dump-str title=\"2 characters\">C:<\/span>\"\n  \"<span class=sf-dump-key>SystemRoot<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">C:\\Windows<\/span>\"\n  \"<span class=sf-dump-key>SYSTEMROOT<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">C:\\Windows<\/span>\"\n  \"<span class=sf-dump-key>windir<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">C:\\Windows<\/span>\"\n  \"<span class=sf-dump-key>WINDIR<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">C:\\Windows<\/span>\"\n  \"<span class=sf-dump-key>ALLUSERSPROFILE<\/span>\" => \"<span class=sf-dump-str title=\"14 characters\">C:\\ProgramData<\/span>\"\n  \"<span class=sf-dump-key>ProgramData<\/span>\" => \"<span class=sf-dump-str title=\"14 characters\">C:\\ProgramData<\/span>\"\n  \"<span class=sf-dump-key>PROGRAMDATA<\/span>\" => \"<span class=sf-dump-str title=\"14 characters\">C:\\ProgramData<\/span>\"\n  \"<span class=sf-dump-key>PUBLIC<\/span>\" => \"<span class=sf-dump-str title=\"15 characters\">C:\\Users\\Public<\/span>\"\n  \"<span class=sf-dump-key>USERDOMAIN<\/span>\" => \"<span class=sf-dump-str title=\"15 characters\">WIN-6TU0QOJ8INK<\/span>\"\n  \"<span class=sf-dump-key>USERPROFILE<\/span>\" => \"<span class=sf-dump-str title=\"13 characters\">C:\\Users\\User<\/span>\"\n  \"<span class=sf-dump-key>HOMEPATH<\/span>\" => \"<span class=sf-dump-str title=\"11 characters\">\\Users\\User<\/span>\"\n  \"<span class=sf-dump-key>HOMEDRIVE<\/span>\" => \"<span class=sf-dump-str title=\"2 characters\">C:<\/span>\"\n  \"<span class=sf-dump-key>COMPUTERNAME<\/span>\" => \"<span class=sf-dump-str title=\"15 characters\">WIN-6TU0QOJ8INK<\/span>\"\n  \"<span class=sf-dump-key>LOGONSERVER<\/span>\" => \"<span class=sf-dump-str title=\"17 characters\">\\\\WIN-6TU0QOJ8INK<\/span>\"\n  \"<span class=sf-dump-key>PATHEXT<\/span>\" => \"<span class=sf-dump-str title=\"53 characters\">.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC<\/span>\"\n  \"<span class=sf-dump-key>PSModulePath<\/span>\" => \"<span class=sf-dump-str title=\"93 characters\">C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules<\/span>\"\n  \"<span class=sf-dump-key>USERNAME<\/span>\" => \"<span class=sf-dump-str title=\"4 characters\">User<\/span>\"\n  \"<span class=sf-dump-key>HTTP_HOST<\/span>\" => \"<span class=sf-dump-str title=\"15 characters\">127.0.0.1:54971<\/span>\"\n  \"<span class=sf-dump-key>HTTP_CONNECTION<\/span>\" => \"<span class=sf-dump-str title=\"10 characters\">keep-alive<\/span>\"\n  \"<span class=sf-dump-key>HTTP_UPGRADE_INSECURE_REQUESTS<\/span>\" => \"<span class=sf-dump-str>1<\/span>\"\n  \"<span class=sf-dump-key>HTTP_USER_AGENT<\/span>\" => \"<span class=sf-dump-str title=\"108 characters\">Mozilla\/5.0 (Windows NT 6.2; WOW64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/57.0.2987.98 Safari\/537.36<\/span>\"\n  \"<span class=sf-dump-key>HTTP_ACCEPT<\/span>\" => \"<span class=sf-dump-str title=\"74 characters\">text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/webp,*\/*;q=0.8<\/span>\"\n  \"<span class=sf-dump-key>HTTP_REFERER<\/span>\" => \"<span class=sf-dump-str title=\"38 characters\">http:\/\/127.0.0.1:54971\/reader\/add\/text<\/span>\"\n  \"<span class=sf-dump-key>HTTP_ACCEPT_ENCODING<\/span>\" => \"<span class=sf-dump-str title=\"13 characters\">gzip, deflate<\/span>\"\n  \"<span class=sf-dump-key>HTTP_ACCEPT_LANGUAGE<\/span>\" => \"<span class=sf-dump-str title=\"14 characters\">en-US,en;q=0.8<\/span>\"\n  \"<span class=sf-dump-key>HTTP_COOKIE<\/span>\" => \"<span class=sf-dump-str title=\"268 characters\">laravel_session=eyJpdiI6IkRpcENcL3k0bng4SmMyTG0rYWdXWU13PT0iLCJ2YWx1ZSI6IjB6alhlNzU3VzhuTFwvcDRwVlN5enBsU3dPcjFGVjFGWVViVUJaSHZaXC8rclAzK3EwMDNXb1ZWRE5qOVZ3OWZ5NSIsIm1hYyI6ImM3YjY5Mjk0ZDRmYTVlYjA4ZTE4MjAzNmQ0ZTFjYTdjYmFiYjM0NjQ3YWNhMDQ2Nzg4NTViZjhkNTFmNjQ1YmUifQ%3D%3D<\/span>\"\n  \"<span class=sf-dump-key>TMP<\/span>\" => \"<span class=sf-dump-str title=\"33 characters\">C:\\Users\\User\\AppData\\Local\\Temp\\<\/span>\"\n  \"<span class=sf-dump-key>TEMP<\/span>\" => \"<span class=sf-dump-str title=\"33 characters\">C:\\Users\\User\\AppData\\Local\\Temp\\<\/span>\"\n  \"<span class=sf-dump-key>TMPDIR<\/span>\" => \"<span class=sf-dump-str title=\"33 characters\">C:\\Users\\User\\AppData\\Local\\Temp\\<\/span>\"\n  \"<span class=sf-dump-key>PHPDESKTOP_VERSION<\/span>\" => \"<span class=sf-dump-str title=\"4 characters\">57.0<\/span>\"\n  \"<span class=sf-dump-key>PHP_SELF<\/span>\" => \"<span class=sf-dump-str title=\"23 characters\">\/index.php\/reader\/words<\/span>\"\n  \"<span class=sf-dump-key>REQUEST_TIME_FLOAT<\/span>\" => <span class=sf-dump-num>1585492228.4072<\/span>\n  \"<span class=sf-dump-key>REQUEST_TIME<\/span>\" => <span class=sf-dump-num>1585492228<\/span>\n  \"<span class=sf-dump-key>argv<\/span>\" => []\n  \"<span class=sf-dump-key>argc<\/span>\" => <span class=sf-dump-num>0<\/span>\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-1453117370\", {\"maxDepth\":0})<\/script>\n","request_cookies":"<pre class=sf-dump id=sf-dump-1595109587 data-indent-pad=\"  \"><span class=sf-dump-note>array:1<\/span> [<samp>\n  \"<span class=sf-dump-key>laravel_session<\/span>\" => \"<span class=sf-dump-str title=\"40 characters\">ckMmI6KKT9IzsM3X3GswhQecdWM0Df1DKxev5Cdy<\/span>\"\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-1595109587\", {\"maxDepth\":0})<\/script>\n","response_headers":"<pre class=sf-dump id=sf-dump-484209096 data-indent-pad=\"  \"><span class=sf-dump-note>array:5<\/span> [<samp>\n  \"<span class=sf-dump-key>cache-control<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"17 characters\">no-cache, private<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>date<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"29 characters\">Sun, 29 Mar 2020 14:30:28 GMT<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>content-type<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"24 characters\">text\/html; charset=UTF-8<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>set-cookie<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"333 characters\">laravel_session=eyJpdiI6InpCM1wvcmc5Q2ZsMXhHVHY3T3p4S2lRPT0iLCJ2YWx1ZSI6IkZSODZpVUZmYkxCSTZpRDVrNzc0Tis0SXhNVzA0QXFadjUxVkU5RW5vT3ZaTHJ5cWVlYitNNGh0QU1HV1JER0kiLCJtYWMiOiI2N2ViOWM1ZTYwZTY2ZjQ0MzY5YzNlNDRjZjU1N2FlOTg1MTk5YTVjNjYxNzI0YzRmMDgzMzY0YmQyMzczZjg1In0%3D; expires=Sun, 29-Mar-2020 16:30:28 GMT; Max-Age=7200; path=\/; httponly<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>Set-Cookie<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    <span class=sf-dump-index>0<\/span> => \"<span class=sf-dump-str title=\"319 characters\">laravel_session=eyJpdiI6InpCM1wvcmc5Q2ZsMXhHVHY3T3p4S2lRPT0iLCJ2YWx1ZSI6IkZSODZpVUZmYkxCSTZpRDVrNzc0Tis0SXhNVzA0QXFadjUxVkU5RW5vT3ZaTHJ5cWVlYitNNGh0QU1HV1JER0kiLCJtYWMiOiI2N2ViOWM1ZTYwZTY2ZjQ0MzY5YzNlNDRjZjU1N2FlOTg1MTk5YTVjNjYxNzI0YzRmMDgzMzY0YmQyMzczZjg1In0%3D; expires=Sun, 29-Mar-2020 16:30:28 GMT; path=\/; httponly<\/span>\"\n  <\/samp>]\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-484209096\", {\"maxDepth\":0})<\/script>\n","session_attributes":"<pre class=sf-dump id=sf-dump-933353135 data-indent-pad=\"  \"><span class=sf-dump-note>array:4<\/span> [<samp>\n  \"<span class=sf-dump-key>_token<\/span>\" => \"<span class=sf-dump-str title=\"40 characters\">1O4XT9aVA34oEDCEl02e77ZCGH7DJFwxODsorHIB<\/span>\"\n  \"<span class=sf-dump-key>_previous<\/span>\" => <span class=sf-dump-note>array:1<\/span> [<samp>\n    \"<span class=sf-dump-key>url<\/span>\" => \"<span class=sf-dump-str title=\"35 characters\">http:\/\/127.0.0.1:54971\/reader\/words<\/span>\"\n  <\/samp>]\n  \"<span class=sf-dump-key>_flash<\/span>\" => <span class=sf-dump-note>array:2<\/span> [<samp>\n    \"<span class=sf-dump-key>old<\/span>\" => []\n    \"<span class=sf-dump-key>new<\/span>\" => []\n  <\/samp>]\n  \"<span class=sf-dump-key>PHPDEBUGBAR_STACK_DATA<\/span>\" => []\n<\/samp>]\n<\/pre><script>Sfdump(\"sf-dump-933353135\", {\"maxDepth\":0})<\/script>\n"}}, "Xf434af22404a36e8927d15a9d7f298f7");
+
+</script>
+</body>
+</html>

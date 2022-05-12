@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="uIBadwZJXIMJReBV1bMK6w8aC4ip3KWwr1IXSDD9">
+
+    <link rel="stylesheet" href="http://127.0.0.1:52147/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:52147/css/style.css">
+    <link rel="stylesheet" href="http://127.0.0.1:52147/css/icofont.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:52147/css/bootstrap-select.min.css">
+
+    <title>WexLang Reader 1.0</title>
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark fixed-top" style="padding-top: 0; padding-bottom: 0;">
+
+    <a class="navbar-brand" href="http://127.0.0.1:52147">
+
+        <img src="http://127.0.0.1:52147/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        <span class="mr-3">WexLang Reader</span>
+
+
+        <img src="http://127.0.0.1:52147/img/flags/en.svg" class="text_flag" alt=""> <i class="text-small">(English)</i>
+        <span class="q_lang_arrow">⟶</span>
+        <img src="http://127.0.0.1:52147/img/flags/ru.svg" class="text_flag" alt=""> <i class="text-small">(Русский)</i>
+
+    </a>
+
+
+    <div>
+
+        <form class="form-inline btn" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="padding: 0; margin: 0; padding-top: 7px;">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="UZVJNLNS3TEYL" />
+            <input type="image" src="http://127.0.0.1:52147/img/paypal2.png" width="204px" height="40px" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+        <a href="https://vk.com/wexlang" target="_blank" class="btn">
+            <i class="icofont-vk icofont-2x" style="color: white; vertical-align: middle;"></i>
+        </a>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        learned_lang_code = "en";
+        known_lang_code = "ru";
+    </script>
+
+</nav>
+
+
+
+
+<!-- Bootstrap row -->
+<div class="row" id="body-row">
+
+    <!-- LEFT SIDEBAR START -->
+    <div class="sidebar-expanded text_page_sidebar col-2">
+
+        <div class="position-fixed" style="width: 15%;">
+
+            <a class="btn btn-primary text-light noradius w-100" href="http://127.0.0.1:52147" onclick="showLoadingOverlay()">
+                <b><< Мои тексты</b>
+            </a>
+
+            <hr>
+
+            <h4 class="sidebar-heading mt-2 mb-1 text-muted">
+                <span>Слова</span> <br>
+                <span style="font-size: 16px">(Нажмите на слово для перевода)</span>
+            </h4>
+
+            <hr>
+
+            <p><mark>word</mark> - знакомые слова</p>
+            <p><mark class="study">word</mark> - изучаемые слова</p>
+            <p><mark class="unknown">word</mark> - незнакомые слова</p>
+
+            <h4 class="sidebar-heading mt-4 mb-1 text-muted">
+                <span>Опции</span>
+            </h4>
+
+            <hr>
+
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="h_known" checked>
+                <label class="custom-control-label" for="h_known">Выделить изучаемые слова</label>
+            </div>
+
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="h_unknown" checked>
+                <label class="custom-control-label" for="h_unknown">Выделить незнакомые слова</label>
+            </div>
+
+            <hr>
+
+
+            
+                <button type="button" id="mark_all_as_to_study" class="btn btn-warning mb-3"><b>Отметить все как ИЗУЧАЕМОЕ</b></button>
+                <br>
+                <button type="button" id="mark_all_as_known_btn" class="btn btn-success"><b>Отметить все как ЗНАКОМОЕ</b></button>
+
+            
+
+            </div>
+    </div>
+    <!-- LEFT SIDEBAR END -->
+
+    <!-- MAIN -->
+    <div class="col py-3">
+
+        <div class="row justify-content-md-center mt-3">
+            <div class="col-md-auto">
+                <ul class="nav nav-pills mb-3" >
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link active" href="http://127.0.0.1:52147/reader/read/text/56?page=1"><b class="uc">Текст</b></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="http://127.0.0.1:52147/reader/read/text/56/words"><b class="uc">Слова</b></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        
+    
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" style="text-align: center;">
+
+        <div class="page_text_wrapper">
+                            <mark class='study' data-word='alice's' data-state='1' data-word_id='386818'><span class='translation' style='display: none;'>(Элис) </span>ALICE'S</mark> <mark class='study' data-word='adventures' data-state='1' data-word_id='386819'><span class='translation' style='display: none;'>(приключения) </span>ADVENTURES</mark> <mark class='study' data-word='in' data-state='1' data-word_id='386820'><span class='translation' style='display: none;'>(в) </span>IN</mark> <mark class='study' data-word='wonderland' data-state='1' data-word_id='386821'><span class='translation' style='display: none;'>(Волшебная страна) </span>WONDERLAND</mark> 
+
+                          <mark class='study' data-word='lewis' data-state='1' data-word_id='386822'><span class='translation' style='display: none;'>(Льюис) </span>Lewis</mark> <mark class='study' data-word='carroll' data-state='1' data-word_id='386823'><span class='translation' style='display: none;'>(Кэрролл) </span>Carroll</mark> 
+
+                            <mark class='study' data-word='chapter' data-state='1' data-word_id='386824'><span class='translation' style='display: none;'>(глава) </span>CHAPTER</mark> <mark class='study' data-word='i' data-state='1' data-word_id='386825'><span class='translation' style='display: none;'>(я) </span>I</mark> 
+
+                      <mark class='study' data-word='down' data-state='1' data-word_id='386826'><span class='translation' style='display: none;'>(вниз) </span>Down</mark> <mark class='study' data-word='the' data-state='1' data-word_id='386827'><span class='translation' style='display: none;'>() </span>the</mark> <mark class='study' data-word='rabbit-hole' data-state='1' data-word_id='386829'><span class='translation' style='display: none;'>(Кроличья нора) </span>Rabbit-Hole</mark> 
+
+  <mark class='study' data-word='alice' data-state='1' data-word_id='386830'><span class='translation' style='display: none;'>(Алиса) </span>Alice</mark> <mark class='study' data-word='was' data-state='1' data-word_id='386831'><span class='translation' style='display: none;'>(было) </span>was</mark> <mark class='study' data-word='beginning' data-state='1' data-word_id='386832'><span class='translation' style='display: none;'>(начало) </span>beginning</mark> <mark class='study' data-word='to' data-state='1' data-word_id='386833'><span class='translation' style='display: none;'>(в) </span>to</mark> <mark class='study' data-word='get' data-state='1' data-word_id='386834'><span class='translation' style='display: none;'>(получить) </span>get</mark> <mark class='study' data-word='very' data-state='1' data-word_id='386835'><span class='translation' style='display: none;'>(очень) </span>very</mark> <mark class='study' data-word='tired' data-state='1' data-word_id='386836'><span class='translation' style='display: none;'>(усталый) </span>tired</mark> <mark class='study' data-word='of' data-state='1' data-word_id='386837'><span class='translation' style='display: none;'>(из) </span>of</mark> <mark class='study' data-word='sitting' data-state='1' data-word_id='386838'><span class='translation' style='display: none;'>(сидящий) </span>sitting</mark> <mark class='study' data-word='by' data-state='1' data-word_id='386839'><span class='translation' style='display: none;'>(по) </span>by</mark> <mark class='study' data-word='her' data-state='1' data-word_id='386840'><span class='translation' style='display: none;'>(ей) </span>her</mark> <mark class='study' data-word='sister' data-state='1' data-word_id='386841'><span class='translation' style='display: none;'>(сестра) </span>sister</mark> 
+<mark class='study' data-word='on' data-state='1' data-word_id='386842'><span class='translation' style='display: none;'>(на) </span>on</mark> <mark class='study' data-word='the' data-state='1' data-word_id='386827'><span class='translation' style='display: none;'>() </span>the</mark> <mark class='study' data-word='bank' data-state='1' data-word_id='386843'><span class='translation' style='display: none;'>(банка) </span>bank</mark> , <mark class='study' data-word='and' data-state='1' data-word_id='386844'><span class='translation' style='display: none;'>(а также) </span>and</mark> <mark class='study' data-word='of' data-state='1' data-word_id='386837'><span class='translation' style='display: none;'>(из) </span>of</mark> <mark class='study' data-word='having' data-state='1' data-word_id='386845'><span class='translation' style='display: none;'>(имеющий) </span>having</mark> <mark class='study' data-word='nothing' data-state='1' data-word_id='386846'><span class='translation' style='display: none;'>(ничего) </span>nothing</mark> <mark class='study' data-word='to' data-state='1' data-word_id='386833'><span class='translation' style='display: none;'>(в) </span>to</mark> <mark class='study' data-word='do' data-state='1' data-word_id='386847'><span class='translation' style='display: none;'>(делать) </span>do</mark> :  <mark class='study' data-word='once' data-state='1' data-word_id='386848'><span class='translation' style='display: none;'>(один раз) </span>once</mark> <mark class='study' data-word='or' data-state='1' data-word_id='386849'><span class='translation' style='display: none;'>(или) </span>or</mark> <mark class='study' data-word='twice' data-state='1' data-word_id='386850'><span class='translation' style='display: none;'>(дважды) </span>twice</mark> <mark class='study' data-word='she' data-state='1' data-word_id='386851'><span class='translation' style='display: none;'>(она) </span>she</mark> <mark class='study' data-word='had' data-state='1' data-word_id='386852'><span class='translation' style='display: none;'>(было) </span>had</mark> 
+<mark class='study' data-word='peeped' data-state='1' data-word_id='386853'><span class='translation' style='display: none;'>(подсмотренное) </span>peeped</mark> <mark class='study' data-word='into' data-state='1' data-word_id='386854'><span class='translation' style='display: none;'>(в) </span>into</mark> <mark class='study' data-word='the' data-state='1' data-word_id='386827'><span class='translation' style='display: none;'>() </span>the</mark> <mark class='study' data-word='book' data-state='1' data-word_id='386855'><span class='translation' style='display: none;'>(книга) </span>book</mark> <mark class='study' data-word='her' data-state='1' data-word_id='386840'><span class='translation' style='display: none;'>(ей) </span>her</mark> <mark class='study' data-word='sister' data-state='1' data-word_id='386841'><span class='translation' style='display: none;'>(сестра) </span>sister</mark> <mark class='study' data-word='was' data-state='1' data-word_id='386831'><span class='translation' style='display: none;'>(было) </span>was</mark> <mark class='study' data-word='reading' data-state='1' data-word_id='386856'><span class='translation' style='display: none;'>(чтение) </span>reading</mark> , <mark class='study' data-word='but' data-state='1' data-word_id='386857'><span class='translation' style='display: none;'>(но) </span>but</mark> <mark class='study' data-word='it' data-state='1' data-word_id='386858'><span class='translation' style='display: none;'>(Это) </span>it</mark> <mark class='study' data-word='had' data-state='1' data-word_id='386852'><span class='translation' style='display: none;'>(было) </span>had</mark> <mark class='study' data-word='no' data-state='1' data-word_id='386859'><span class='translation' style='display: none;'>(нет) </span>no</mark> 
+<mark class='study' data-word='pictures' data-state='1' data-word_id='386860'><span class='translation' style='display: none;'>(картинки) </span>pictures</mark> <mark class='study' data-word='or' data-state='1' data-word_id='386849'><span class='translation' style='display: none;'>(или) </span>or</mark> <mark class='study' data-word='conversations' data-state='1' data-word_id='386861'><span class='translation' style='display: none;'>(разговоры) </span>conversations</mark> <mark class='study' data-word='in' data-state='1' data-word_id='386820'><span class='translation' style='display: none;'>(в) </span>in</mark> <mark class='study' data-word='it' data-state='1' data-word_id='386858'><span class='translation' style='display: none;'>(Это) </span>it</mark> , `<mark class='study' data-word='and' data-state='1' data-word_id='386844'><span class='translation' style='display: none;'>(а также) </span>and</mark> <mark class='study' data-word='what' data-state='1' data-word_id='386862'><span class='translation' style='display: none;'>(что) </span>what</mark> <mark class='study' data-word='is' data-state='1' data-word_id='386863'><span class='translation' style='display: none;'>(является) </span>is</mark> <mark class='study' data-word='the' data-state='1' data-word_id='386827'><span class='translation' style='display: none;'>() </span>the</mark> <mark class='study' data-word='use' data-state='1' data-word_id='386864'><span class='translation' style='display: none;'>(использование) </span>use</mark> <mark class='study' data-word='of' data-state='1' data-word_id='386837'><span class='translation' style='display: none;'>(из) </span>of</mark> <mark class='study' data-word='a' data-state='1' data-word_id='386865'><span class='translation' style='display: none;'>() </span>a</mark> <mark class='study' data-word='book' data-state='1' data-word_id='386855'><span class='translation' style='display: none;'>(книга) </span>book</mark> ,'
+<mark class='study' data-word='thought' data-state='1' data-word_id='386866'><span class='translation' style='display: none;'>(думал) </span>thought</mark> <mark class='study' data-word='alice' data-state='1' data-word_id='386830'><span class='translation' style='display: none;'>(Алиса) </span>Alice</mark> `<mark class='unknown' data-word="without" data-state='0' >without</mark> <mark class='study' data-word='pictures' data-state='1' data-word_id='386860'><span class='translation' style='display: none;'>(картинки) </span>pictures</mark> <mark class='study' data-word='or' data-state='1' data-word_id='386849'><span class='translation' style='display: none;'>(или) </span>or</mark> <mark class='study' data-word='conversation' data-state='1' data-word_id='386868'><span class='translation' style='display: none;'>(разговор) </span>conversation</mark> ?'
+
+  <mark class='study' data-word='so' data-state='1' data-word_id='386869'><span class='translation' style='display: none;'>(так) </span>So</mark> <mark class='study' data-word='she' data-state='1' data-word_id='386851'><span class='translation' style='display: none;'>(она) </span>she</mark> <mark class='study' data-word='was' data-state='1' data-word_id='386831'><span class='translation' style='display: none;'>(было) </span>was</mark> <mark class='study' data-word='considering' data-state='1' data-word_id='386870'><span class='translation' style='display: none;'>(принимая во внимание) </span>considering</mark> <mark class='study' data-word='in' data-state='1' data-word_id='386820'><span class='translation' style='display: none;'>(в) </span>in</mark> <mark class='study' data-word='her' data-state='1' data-word_id='386840'><span class='translation' style='display: none;'>(ей) </span>her</mark> <mark class='study' data-word='own' data-state='1' data-word_id='386871'><span class='translation' style='display: none;'>(своя) </span>own</mark> <mark class='study' data-word='mind' data-state='1' data-word_id='386872'><span class='translation' style='display: none;'>(разум) </span>mind</mark> (<mark class='study' data-word='as' data-state='1' data-word_id='386873'><span class='translation' style='display: none;'>(в виде) </span>as</mark> <mark class='study' data-word='well' data-state='1' data-word_id='386874'><span class='translation' style='display: none;'>(хорошо) </span>well</mark> <mark class='study' data-word='as' data-state='1' data-word_id='386873'><span class='translation' style='display: none;'>(в виде) </span>as</mark> <mark class='study' data-word='she' data-state='1' data-word_id='386851'><span class='translation' style='display: none;'>(она) </span>she</mark> <mark class='study' data-word='could' data-state='1' data-word_id='386875'><span class='translation' style='display: none;'>(мог) </span>could</mark> ,
+<mark class='study' data-word='for' data-state='1' data-word_id='386876'><span class='translation' style='display: none;'>(за) </span>for</mark> <mark class='study' data-word='the' data-state='1' data-word_id='386827'><span class='translation' style='display: none;'>() </span>the</mark> <mark class='study' data-word='hot' data-state='1' data-word_id='386877'><span class='translation' style='display: none;'>(жарко) </span>hot</mark> <mark class='study' data-word='day' data-state='1' data-word_id='386878'><span class='translation' style='display: none;'>(день) </span>day</mark> <mark class='study' data-word='made' data-state='1' data-word_id='386879'><span class='translation' style='display: none;'>(сделали) </span>made</mark> <mark class='study' data-word='her' data-state='1' data-word_id='386840'><span class='translation' style='display: none;'>(ей) </span>her</mark> <mark class='study' data-word='feel' data-state='1' data-word_id='386880'><span class='translation' style='display: none;'>(Чувствовать) </span>feel</mark> <mark class='study' data-word='very' data-state='1' data-word_id='386835'><span class='translation' style='display: none;'>(очень) </span>very</mark> <mark class='study' data-word='sleepy' data-state='1' data-word_id='386881'><span class='translation' style='display: none;'>(сонный) </span>sleepy</mark> <mark class='study' data-word='and' data-state='1' data-word_id='386844'><span class='translation' style='display: none;'>(а также) </span>and</mark> <mark class='study' data-word='stupid' data-state='1' data-word_id='386882'><span class='translation' style='display: none;'>(глупый) </span>stupid</mark> ), <mark class='study' data-word='whether' data-state='1' data-word_id='386883'><span class='translation' style='display: none;'>(будь то) </span>whether</mark> 
+<mark class='study' data-word='the' data-state='1' data-word_id='386827'><span class='translation' style='display: none;'>() </span>the</mark> <mark class='study' data-word='pleasure' data-state='1' data-word_id='386828'><span class='translation' style='display: none;'>(удовольствие) </span>pleasure</mark> <mark class='study' data-word='of' data-state='1' data-word_id='386837'><span class='translation' style='display: none;'>(из) </span>of</mark> <mark class='study' data-word='making' data-state='1' data-word_id='386884'><span class='translation' style='display: none;'>(изготовление) </span>making</mark> <mark class='study' data-word='a' data-state='1' data-word_id='386865'><span class='translation' style='display: none;'>() </span>a</mark> <mark class='study' data-word='daisy-chain' data-state='1' data-word_id='386885'><span class='translation' style='display: none;'>(гирляндного) </span>daisy-chain</mark> <mark class='study' data-word='would' data-state='1' data-word_id='386886'><span class='translation' style='display: none;'>(было бы) </span>would</mark> <mark class='study' data-word='be' data-state='1' data-word_id='386887'><span class='translation' style='display: none;'>(быть) </span>be</mark> <mark class='study' data-word='worth' data-state='1' data-word_id='386888'><span class='translation' style='display: none;'>(ценность) </span>worth</mark> <mark class='study' data-word='the' data-state='1' data-word_id='386827'><span class='translation' style='display: none;'>() </span>the</mark> <mark class='study' data-word='trouble' data-state='1' data-word_id='386889'><span class='translation' style='display: none;'>(беда) </span>trouble</mark> 
+<mark class='study' data-word='of' data-state='1' data-word_id='386837'><span class='translation' style='display: none;'>(из) </span>of</mark> <mark class='study' data-word='getting' data-state='1' data-word_id='386890'><span class='translation' style='display: none;'>(получение) </span>getting</mark> <mark class='study' data-word='up' data-state='1' data-word_id='386891'><span class='translation' style='display: none;'>(вверх) </span>up</mark> <mark class='study' data-word='and' data-state='1' data-word_id='386844'><span class='translation' style='display: none;'>(а также) </span>and</mark> <mark class='study' data-word='picking' data-state='1' data-word_id='386892'><span class='translation' style='display: none;'>(Сбор) </span>picking</mark> <mark class='study' data-word='the' data-state='1' data-word_id='386827'><span class='translation' style='display: none;'>() </span>the</mark> <mark class='study' data-word='daisies' data-state='1' data-word_id='386893'><span class='translation' style='display: none;'>(маргаритки) </span>daisies</mark> , <mark class='study' data-word='when' data-state='1' data-word_id='386894'><span class='translation' style='display: none;'>(когда) </span>when</mark> <mark class='study' data-word='suddenly' data-state='1' data-word_id='386895'><span class='translation' style='display: none;'>(вдруг) </span>suddenly</mark> <mark class='study' data-word='a' data-state='1' data-word_id='386865'><span class='translation' style='display: none;'>() </span>a</mark> <mark class='study' data-word='white' data-state='1' data-word_id='386896'><span class='translation' style='display: none;'>(белый) </span>White</mark> 
+<mark class='study' data-word='rabbit' data-state='1' data-word_id='386897'><span class='translation' style='display: none;'>(кролик) </span>Rabbit</mark> <mark class='study' data-word='with' data-state='1' data-word_id='386898'><span class='translation' style='display: none;'>(с) </span>with</mark> <mark class='study' data-word='pink' data-state='1' data-word_id='386899'><span class='translation' style='display: none;'>(розовый) </span>pink</mark> <mark class='study' data-word='eyes' data-state='1' data-word_id='386900'><span class='translation' style='display: none;'>(глаза) </span>eyes</mark> <mark class='study' data-word='ran' data-state='1' data-word_id='386901'><span class='translation' style='display: none;'>(RAN) </span>ran</mark> <mark class='study' data-word='close' data-state='1' data-word_id='386902'><span class='translation' style='display: none;'>(близко) </span>close</mark> <mark class='study' data-word='by' data-state='1' data-word_id='386839'><span class='translation' style='display: none;'>(по) </span>by</mark> <mark class='study' data-word='her' data-state='1' data-word_id='386840'><span class='translation' style='display: none;'>(ей) </span>her</mark> .
+
+  <mark class='study' data-word='there' data-state='1' data-word_id='386903'><span class='translation' style='display: none;'>(там) </span>There</mark> <mark class='study' data-word='was' data-state='1' data-word_id='386831'><span class='translation' style='display: none;'>(было) </span>was</mark> <mark class='study' data-word='nothing' data-state='1' data-word_id='386846'><span class='translation' style='display: none;'>(ничего) </span>nothing</mark> <mark class='study' data-word='so' data-state='1' data-word_id='386869'><span class='translation' style='display: none;'>(так) </span>so</mark> <mark class='study' data-word='very' data-state='1' data-word_id='386835'><span class='translation' style='display: none;'>(очень) </span>VERY</mark> <mark class='study' data-word='remarkable' data-state='1' data-word_id='386904'><span class='translation' style='display: none;'>(замечательный) </span>remarkable</mark> <mark class='study' data-word='in' data-state='1' data-word_id='386820'><span class='translation' style='display: none;'>(в) </span>in</mark> <mark class='study' data-word='that' data-state='1' data-word_id='386905'><span class='translation' style='display: none;'>(который) </span>that</mark> ; <mark class='study' data-word='nor' data-state='1' data-word_id='386906'><span class='translation' style='display: none;'>(ни) </span>nor</mark> <mark class='study' data-word='did' data-state='1' data-word_id='386907'><span class='translation' style='display: none;'>(сделал) </span>did</mark> <mark class='study' data-word='alice' data-state='1' data-word_id='386830'><span class='translation' style='display: none;'>(Алиса) </span>Alice</mark> 
+<mark class='study' data-word='think' data-state='1' data-word_id='386908'><span class='translation' style='display: none;'>(считать) </span>think</mark> <mark class='study' data-word='it' data-state='1' data-word_id='386858'><span class='translation' style='display: none;'>(Это) </span>it</mark> <mark class='study' data-word='so' data-state='1' data-word_id='386869'><span class='translation' style='display: none;'>(так) </span>so</mark> <mark class='study' data-word='very' data-state='1' data-word_id='386835'><span class='translation' style='display: none;'>(очень) </span>VERY</mark> <mark class='study' data-word='much' data-state='1' data-word_id='386909'><span class='translation' style='display: none;'>(много) </span>much</mark> <mark class='study' data-word='out' data-state='1' data-word_id='386910'><span class='translation' style='display: none;'>(вне) </span>out</mark> <mark class='study' data-word='of' data-state='1' data-word_id='386837'><span class='translation' style='display: none;'>(из) </span>of</mark> <mark class='study' data-word='the' data-state='1' data-word_id='386827'><span class='translation' style='display: none;'>() </span>the</mark> <mark class='study' data-word='way' data-state='1' data-word_id='386911'><span class='translation' style='display: none;'>(путь) </span>way</mark> <mark class='study' data-word='to' data-state='1' data-word_id='386833'><span class='translation' style='display: none;'>(в) </span>to</mark> <mark class='study' data-word='hear' data-state='1' data-word_id='386912'><span class='translation' style='display: none;'>(заслушивать) </span>hear</mark> <mark class='study' data-word='the' data-state='1' data-word_id='386827'><span class='translation' style='display: none;'>() </span>the</mark> <mark class='study' data-word='rabbit' data-state='1' data-word_id='386897'><span class='translation' style='display: none;'>(кролик) </span>Rabbit</mark> <mark class='study' data-word='say' data-state='1' data-word_id='386913'><span class='translation' style='display: none;'>(сказать) </span>say</mark> <mark class='study' data-word='to' data-state='1' data-word_id='386833'><span class='translation' style='display: none;'>(в) </span>to</mark> 
+<mark class='study' data-word='itself' data-state='1' data-word_id='386914'><span class='translation' style='display: none;'>(сам) </span>itself</mark> , `<mark class='study' data-word='oh' data-state='1' data-word_id='386915'><span class='translation' style='display: none;'>(ой) </span>Oh</mark> <mark class='study' data-word='dear' data-state='1' data-word_id='386916'><span class='translation' style='display: none;'>(дорогой) </span>dear</mark> !  <mark class='study' data-word='oh' data-state='1' data-word_id='386915'><span class='translation' style='display: none;'>(ой) </span>Oh</mark> <mark class='study' data-word='dear' data-state='1' data-word_id='386916'><span class='translation' style='display: none;'>(дорогой) </span>dear</mark> !  <mark class='study' data-word='i' data-state='1' data-word_id='386825'><span class='translation' style='display: none;'>(я) </span>I</mark> <mark class='study' data-word='shall' data-state='1' data-word_id='386917'><span class='translation' style='display: none;'>(должен) </span>shall</mark> <mark class='study' data-word='be' data-state='1' data-word_id='386887'><span class='translation' style='display: none;'>(быть) </span>be</mark> <mark class='study' data-word='late' data-state='1' data-word_id='386918'><span class='translation' style='display: none;'>(поздно) </span>late</mark> !'  (<mark class='study' data-word='when' data-state='1' data-word_id='386894'><span class='translation' style='display: none;'>(когда) </span>when</mark> <mark class='study' data-word='she' data-state='1' data-word_id='386851'><span class='translation' style='display: none;'>(она) </span>she</mark> <mark class='study' data-word='thought' data-state='1' data-word_id='386866'><span class='translation' style='display: none;'>(думал) </span>thought</mark> 
+<mark class='study' data-word='it' data-state='1' data-word_id='386858'><span class='translation' style='display: none;'>(Это) </span>it</mark> <mark class='study' data-word='over' data-state='1' data-word_id='386919'><span class='translation' style='display: none;'>(над) </span>over</mark> <mark class='study' data-word='afterwards' data-state='1' data-word_id='386920'><span class='translation' style='display: none;'>(впоследствии) </span>afterwards</mark> , <mark class='study' data-word='it' data-state='1' data-word_id='386858'><span class='translation' style='display: none;'>(Это) </span>it</mark> <mark class='study' data-word='occurred' data-state='1' data-word_id='386921'><span class='translation' style='display: none;'>(произошло) </span>occurred</mark> <mark class='study' data-word='to' data-state='1' data-word_id='386833'><span class='translation' style='display: none;'>(в) </span>to</mark> <mark class='study' data-word='her' data-state='1' data-word_id='386840'><span class='translation' style='display: none;'>(ей) </span>her</mark> <mark class='study' data-word='that' data-state='1' data-word_id='386905'><span class='translation' style='display: none;'>(который) </span>that</mark> <mark class='study' data-word='she' data-state='1' data-word_id='386851'><span class='translation' style='display: none;'>(она) </span>she</mark> <mark class='study' data-word='ought' data-state='1' data-word_id='386922'><span class='translation' style='display: none;'>(должен) </span>ought</mark> <mark class='study' data-word='to' data-state='1' data-word_id='386833'><span class='translation' style='display: none;'>(в) </span>to</mark> <mark class='study' data-word='have' data-state='1' data-word_id='386923'><span class='translation' style='display: none;'>(иметь) </span>have</mark> 
+<mark class='study' data-word='wondered' data-state='1' data-word_id='386924'><span class='translation' style='display: none;'>(задавались вопросом) </span>wondered</mark> <mark class='study' data-word='at' data-state='1' data-word_id='386925'><span class='translation' style='display: none;'>(в) </span>at</mark> <mark class='study' data-word='this' data-state='1' data-word_id='386926'><span class='translation' style='display: none;'>(это) </span>this</mark> , <mark class='study' data-word='but' data-state='1' data-word_id='386857'><span class='translation' style='display: none;'>(но) </span>but</mark> <mark class='study' data-word='at' data-state='1' data-word_id='386925'><span class='translation' style='display: none;'>(в) </span>at</mark> <mark class='study' data-word='the' data-state='1' data-word_id='386827'><span class='translation' style='display: none;'>() </span>the</mark> <mark class='study' data-word='time' data-state='1' data-word_id='386927'><span class='translation' style='display: none;'>(время) </span>time</mark> <mark class='study' data-word='it' data-state='1' data-word_id='386858'><span class='translation' style='display: none;'>(Это) </span>it</mark> <mark class='study' data-word='all' data-state='1' data-word_id='386928'><span class='translation' style='display: none;'>(все) </span>all</mark> <mark class='study' data-word='seemed' data-state='1' data-word_id='386929'><span class='translation' style='display: none;'>(казалось) </span>seemed</mark> <mark class='study' data-word='quite' data-state='1' data-word_id='386930'><span class='translation' style='display: none;'>(довольно) </span>quite</mark> <mark class='study' data-word='natural' data-state='1' data-word_id='386931'><span class='translation' style='display: none;'>(натуральный) </span>natural</mark> );
+<mark class='study' data-word='but' data-state='1' data-word_id='386857'><span class='translation' style='display: none;'>(но) </span>but</mark> <mark class='study' data-word='when' data-state='1' data-word_id='386894'><span class='translation' style='display: none;'>(когда) </span>when</mark> <mark class='study' data-word='the' data-state='1' data-word_id='386827'><span class='translation' style='display: none;'>() </span>the</mark> <mark class='study' data-word='rabbit' data-state='1' data-word_id='386897'><span class='translation' style='display: none;'>(кролик) </span>Rabbit</mark> <mark class='study' data-word='actually' data-state='1' data-word_id='386932'><span class='translation' style='display: none;'>(фактически) </span>actually</mark> <mark class='study' data-word='took' data-state='1' data-word_id='386933'><span class='translation' style='display: none;'>(взял) </span>TOOK</mark> <mark class='study' data-word='a' data-state='1' data-word_id='386865'><span class='translation' style='display: none;'>() </span>A</mark> <mark class='study' data-word='watch' data-state='1' data-word_id='386934'><span class='translation' style='display: none;'>(смотреть) </span>WATCH</mark> <mark class='study' data-word='out' data-state='1' data-word_id='386910'><span class='translation' style='display: none;'>(вне) </span>OUT</mark> <mark class='study' data-word='of' data-state='1' data-word_id='386837'><span class='translation' style='display: none;'>(из) </span>OF</mark> <mark class='study' data-word='its' data-state='1' data-word_id='386935'><span class='translation' style='display: none;'>(его) </span>ITS</mark> <mark class='study' data-word='waistcoat' data-state='1' data-word_id='386936'><span class='translation' style='display: none;'>(жилет) </span>WAISTCOAT-</mark> 
+<mark class='study' data-word='pocket' data-state='1' data-word_id='386937'><span class='translation' style='display: none;'>(карман) </span>POCKET</mark> , <mark class='study' data-word='and' data-state='1' data-word_id='386844'><span class='translation' style='display: none;'>(а также) </span>and</mark> <mark class='study' data-word='looked' data-state='1' data-word_id='386938'><span class='translation' style='display: none;'>(смотрел) </span>looked</mark> <mark class='study' data-word='at' data-state='1' data-word_id='386925'><span class='translation' style='display: none;'>(в) </span>at</mark> <mark class='study' data-word='it' data-state='1' data-word_id='386858'><span class='translation' style='display: none;'>(Это) </span>it</mark> , <mark class='study' data-word='and' data-state='1' data-word_id='386844'><span class='translation' style='display: none;'>(а также) </span>and</mark> <mark class='study' data-word='then' data-state='1' data-word_id='386939'><span class='translation' style='display: none;'>(тогда) </span>then</mark> <mark class='study' data-word='hurried' data-state='1' data-word_id='386940'><span class='translation' style='display: none;'>(поспешный) </span>hurried</mark> <mark class='study' data-word='on' data-state='1' data-word_id='386842'><span class='translation' style='display: none;'>(на) </span>on</mark> , <mark class='study' data-word='alice' data-state='1' data-word_id='386830'><span class='translation' style='display: none;'>(Алиса) </span>Alice</mark> <mark class='study' data-word='started' data-state='1' data-word_id='386941'><span class='translation' style='display: none;'>(начал) </span>started</mark> <mark class='study' data-word='to' data-state='1' data-word_id='386833'><span class='translation' style='display: none;'>(в) </span>to</mark> 
+<mark class='study' data-word='her' data-state='1' data-word_id='386840'><span class='translation' style='display: none;'>(ей) </span>her</mark> <mark class='study' data-word='feet' data-state='1' data-word_id='386942'><span class='translation' style='display: none;'>(ноги) </span>feet</mark> , <mark class='study' data-word='for' data-state='1' data-word_id='386876'><span class='translation' style='display: none;'>(за) </span>for</mark> <mark class='study' data-word='it' data-state='1' data-word_id='386858'><span class='translation' style='display: none;'>(Это) </span>it</mark> <mark class='study' data-word='flashed' data-state='1' data-word_id='386943'><span class='translation' style='display: none;'>(мелькнуло) </span>flashed</mark> <mark class='study' data-word='across' data-state='1' data-word_id='386944'><span class='translation' style='display: none;'>(через) </span>across</mark> <mark class='study' data-word='her' data-state='1' data-word_id='386840'><span class='translation' style='display: none;'>(ей) </span>her</mark> <mark class='study' data-word='mind' data-state='1' data-word_id='386872'><span class='translation' style='display: none;'>(разум) </span>mind</mark> <mark class='study' data-word='that' data-state='1' data-word_id='386905'><span class='translation' style='display: none;'>(который) </span>that</mark> <mark class='study' data-word='she' data-state='1' data-word_id='386851'><span class='translation' style='display: none;'>(она) </span>she</mark> <mark class='study' data-word='had' data-state='1' data-word_id='386852'><span class='translation' style='display: none;'>(было) </span>had</mark> <mark class='study' data-word='never' data-state='1' data-word_id='386945'><span class='translation' style='display: none;'>(никогда) </span>never</mark> 
+<mark class='study' data-word='before' data-state='1' data-word_id='386946'><span class='translation' style='display: none;'>(перед) </span>before</mark> <mark class='study' data-word='seen' data-state='1' data-word_id='386947'><span class='translation' style='display: none;'>(видели) </span>seen</mark> <mark class='study' data-word='a' data-state='1' data-word_id='386865'><span class='translation' style='display: none;'>() </span>a</mark> <mark class='study' data-word='rabbit' data-state='1' data-word_id='386897'><span class='translation' style='display: none;'>(кролик) </span>rabbit</mark> <mark class='study' data-word='with' data-state='1' data-word_id='386898'><span class='translation' style='display: none;'>(с) </span>with</mark> <mark class='study' data-word='either' data-state='1' data-word_id='386948'><span class='translation' style='display: none;'>(или) </span>either</mark> <mark class='study' data-word='a' data-state='1' data-word_id='386865'><span class='translation' style='display: none;'>() </span>a</mark> <mark class='study' data-word='waistcoat-pocket' data-state='1' data-word_id='386949'><span class='translation' style='display: none;'>(Жилет-карман) </span>waistcoat-pocket</mark> , <mark class='study' data-word='or' data-state='1' data-word_id='386849'><span class='translation' style='display: none;'>(или) </span>or</mark> <mark class='study' data-word='a' data-state='1' data-word_id='386865'><span class='translation' style='display: none;'>() </span>a</mark> <mark class='study' data-word='watch' data-state='1' data-word_id='386934'><span class='translation' style='display: none;'>(смотреть) </span>watch</mark> <mark class='study' data-word='to' data-state='1' data-word_id='386833'><span class='translation' style='display: none;'>(в) </span>to</mark> 
+<mark class='study' data-word='take' data-state='1' data-word_id='386950'><span class='translation' style='display: none;'>(принимать) </span>take</mark> <mark class='study' data-word='out' data-state='1' data-word_id='386910'><span class='translation' style='display: none;'>(вне) </span>out</mark> <mark class='study' data-word='of' data-state='1' data-word_id='386837'><span class='translation' style='display: none;'>(из) </span>of</mark> <mark class='study' data-word='it' data-state='1' data-word_id='386858'><span class='translation' style='display: none;'>(Это) </span>it</mark> , <mark class='study' data-word='and' data-state='1' data-word_id='386844'><span class='translation' style='display: none;'>(а также) </span>and</mark> <mark class='study' data-word='burning' data-state='1' data-word_id='386951'><span class='translation' style='display: none;'>(сжигание) </span>burning</mark> <mark class='study' data-word='with' data-state='1' data-word_id='386898'><span class='translation' style='display: none;'>(с) </span>with</mark> <mark class='study' data-word='curiosity' data-state='1' data-word_id='386952'><span class='translation' style='display: none;'>(любопытство) </span>curiosity</mark> , <mark class='study' data-word='she' data-state='1' data-word_id='386851'><span class='translation' style='display: none;'>(она) </span>she</mark> <mark class='study' data-word='ran' data-state='1' data-word_id='386901'><span class='translation' style='display: none;'>(RAN) </span>ran</mark> <mark class='study' data-word='across' data-state='1' data-word_id='386944'><span class='translation' style='display: none;'>(через) </span>across</mark> <mark class='study' data-word='the' data-state='1' data-word_id='386827'><span class='translation' style='display: none;'>() </span>the</mark> 
+<mark class='study' data-word='field' data-state='1' data-word_id='386953'><span class='translation' style='display: none;'>(поле) </span>field</mark> <mark class='study' data-word='after' data-state='1' data-word_id='386954'><span class='translation' style='display: none;'>(после) </span>after</mark> <mark class='study' data-word='it' data-state='1' data-word_id='386858'><span class='translation' style='display: none;'>(Это) </span>it</mark> , <mark class='study' data-word='and' data-state='1' data-word_id='386844'><span class='translation' style='display: none;'>(а также) </span>and</mark> <mark class='study' data-word='fortunately' data-state='1' data-word_id='386955'><span class='translation' style='display: none;'>(к счастью) </span>fortunately</mark> <mark class='study' data-word='was' data-state='1' data-word_id='386831'><span class='translation' style='display: none;'>(было) </span>was</mark> <mark class='study' data-word='just' data-state='1' data-word_id='386956'><span class='translation' style='display: none;'>(просто) </span>just</mark> <mark class='study' data-word='in' data-state='1' data-word_id='386820'><span class='translation' style='display: none;'>(в) </span>in</mark> <mark class='study' data-word='time' data-state='1' data-word_id='386927'><span class='translation' style='display: none;'>(время) </span>time</mark> <mark class='study' data-word='to' data-state='1' data-word_id='386833'><span class='translation' style='display: none;'>(в) </span>to</mark> <mark class='study' data-word='see' data-state='1' data-word_id='386957'><span class='translation' style='display: none;'>(видеть) </span>see</mark> <mark class='study' data-word='it' data-state='1' data-word_id='386858'><span class='translation' style='display: none;'>(Это) </span>it</mark> <mark class='study' data-word='pop' data-state='1' data-word_id='386958'><span class='translation' style='display: none;'>(поп) </span>pop</mark> 
+<mark class='study' data-word='down' data-state='1' data-word_id='386826'><span class='translation' style='display: none;'>(вниз) </span>down</mark> <mark class='study' data-word='a' data-state='1' data-word_id='386865'><span class='translation' style='display: none;'>() </span>a</mark> <mark class='study' data-word='large' data-state='1' data-word_id='386959'><span class='translation' style='display: none;'>(большой) </span>large</mark> <mark class='study' data-word='rabbit-hole' data-state='1' data-word_id='386829'><span class='translation' style='display: none;'>(Кроличья нора) </span>rabbit-hole</mark> <mark class='study' data-word='under' data-state='1' data-word_id='386960'><span class='translation' style='display: none;'>(под) </span>under</mark> <mark class='study' data-word='the' data-state='1' data-word_id='386827'><span class='translation' style='display: none;'>() </span>the</mark> <mark class='study' data-word='hedge' data-state='1' data-word_id='386961'><span class='translation' style='display: none;'>(живая изгородь) </span>hedge</mark> .
+
+
+        </div>
+
+        <div class="mt-3">
+            <ul class="pagination justify-content-center" role="navigation">
+        
+                    <li class="page-item disabled" aria-disabled="true" aria-label="&laquo; Previous">
+                <span class="page-link" aria-hidden="true">&lsaquo;</span>
+            </li>
+        
+        
+                    
+            
+            
+                                                                        <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:52147/reader/read/text/56?page=2">2</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:52147/reader/read/text/56?page=3">3</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:52147/reader/read/text/56?page=4">4</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:52147/reader/read/text/56?page=5">5</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:52147/reader/read/text/56?page=6">6</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:52147/reader/read/text/56?page=7">7</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:52147/reader/read/text/56?page=8">8</a></li>
+                                                                    
+                            <li class="page-item disabled" aria-disabled="true"><span class="page-link">...</span></li>
+            
+            
+                                
+            
+            
+                                                                        <li class="page-item"><a class="page-link" href="http://127.0.0.1:52147/reader/read/text/56?page=91">91</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:52147/reader/read/text/56?page=92">92</a></li>
+                                                        
+        
+                    <li class="page-item">
+                <a class="page-link" href="http://127.0.0.1:52147/reader/read/text/56?page=2" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
+            </li>
+            </ul>
+
+        </div>
+
+    </div>
+    
+
+
+
+    </div>
+    <!-- Main Col END -->
+
+
+    <!-- RIGHT SIDEBAR START -->
+    <div class="sidebar-expanded text_page_sidebar col-2">
+
+        <div class="position-fixed">
+
+            <div>
+                <span style="font-size:30px" id="rs_word">Слово</span>
+                <span class="badge badge-warning h4" id="rs_word_state" style="vertical-align: middle">Изучить</span>
+            </div>
+
+            <hr>
+
+            <div>
+                <b>Перевод:</b>
+            </div>
+
+            <textarea id="rs_word_translation" cols="30" rows="10">word translation</textarea>
+
+            <div id="rs_mark_known_wrapper">
+                <hr>
+
+                <button type="button" id="rs_save_translation_btn" class="btn btn-info">Сохранить перевод</button>
+
+                <hr>
+
+                <b>Отметить слово как:</b>
+                <br>
+                <span class="text-muted">Значение по умолчанию - Изучить</span>
+                <br>
+
+                <button type="button" id="rs_mark_as_known_btn" class="btn btn-success btn-sm" data-state="2">Знакомое</button>
+
+                <button type="button" id="rs_mark_as_to_study_btn" class="btn btn-warning btn-sm" data-state="1">Изучить</button>
+
+
+            </div>
+
+            <hr>
+
+            <div class="pr-3 pt-3">
+                <a href="#" class="btn btn-primary w-100 mb-2" id="gt_btn">Перевести в Google</a>
+                <a href="#" class="btn btn-primary w-100 mb-2" id="yt_btn">Перевести в Yandex</a>
+            </div>
+
+        </div>
+    </div>
+    <!-- RIGHT SIDEBAR END -->
+
+</div>
+<!-- body-row END -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://127.0.0.1:52147/js/jquery-3.4.1.min.js"></script>
+<script src="http://127.0.0.1:52147/js/popper.min.js"></script>
+<script src="http://127.0.0.1:52147/js/bootstrap.min.js"></script>
+<script src="http://127.0.0.1:52147/js/bootstrap-select.min.js"></script>
+
+<!-- App JavaScript -->
+<script src="http://127.0.0.1:52147/js/reader.js"></script>
+<script src="http://127.0.0.1:52147/js/js.cookie.js"></script>
+
+</body>
+</html>
+

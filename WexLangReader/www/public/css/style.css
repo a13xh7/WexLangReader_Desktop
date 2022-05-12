@@ -1,0 +1,274 @@
+/************************** HELPERS AND SERVICE CLASSES*************************/
+
+.nopadding {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.nomargin {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.noradius {
+    border-radius: 0;
+}
+
+/*************************************** COMMON STYLES START ****************************************/
+
+html, body {
+    height: 100%;
+}
+
+body,h1,h2,h3,h4,h5,h6 {
+    font-family:open sans,sans-serif;
+}
+
+h1 {
+    color: #606060;
+    border-bottom: 1px solid #afafaf;
+    margin-bottom: 20px;
+}
+
+.uc{
+    text-transform: uppercase;
+}
+
+.header {
+    min-height: 60px;
+    background-color: #272930;
+}
+
+.logo {
+    color: white;
+    font-size: xx-large;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logo:hover {
+    color: white;
+    font-size: xx-large;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-menu > a{
+    padding-right: 5%;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    font-size: large;
+    white-space: nowrap
+}
+
+
+/*************************************** COMMON STYLES END ****************************************/
+
+
+/**************************READER STYLES START*************************/
+
+#sidebar {
+    height:100%;
+    background-color: #f3f3f3;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#sidebar  li {
+    border-bottom: 1px solid dimgray;
+}
+
+#sidebar a {
+    font-size: large;
+    text-transform: uppercase;
+}
+
+.sidebar_menu_link {
+    font-size: large;
+    text-transform: uppercase;
+}
+
+.reader_main_content {
+    padding-top: 10px;
+}
+
+.reader_sidebar_menu_title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #2e21df;
+    font-size: xx-large;
+    padding-left: 20px;
+}
+
+.reader_sidebar_menu_item {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #606060;
+    font-size: large;
+}
+
+.text_flag {
+    width: 35px;
+    height: 20px;
+}
+
+.admin_flag {
+    width: 20px;
+    height: 15px;
+}
+
+.admin_lang_name {
+    font-size: 12px;
+}
+
+.admin_word_size {
+    font-size: 24px;
+}
+
+.text_item_wrapper {
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+.text_item {
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+.text_controls {
+    float:right;
+}
+
+
+/* фикс для цвета селектора языков*/
+
+button[data-id="lang_to"], button[data-id="lang_from"], button[data-id="lang_known"], button[data-id="lang_learn"] {
+    background-color: white;
+    border: 1px solid #ced4da;
+}
+
+#all_text_words td, #all_text_words th {
+    text-align: center;
+    width: 25%;
+}
+
+/**********************READER TEXT PAGE*********************/
+
+.page_text_wrapper {
+    white-space: pre-line;
+    font-size: 18px;
+    line-height: 2;
+    display: inline-block;
+    text-align: left;
+}
+
+mark {
+    background-color: white;
+    border-radius: 10%
+}
+
+mark.study {
+    background-color: #fcf8e3;
+}
+
+mark.unknown {
+    background-color: #aee0f4;
+}
+
+.unknown_mw {
+    background-color:#aee0f4;
+}
+
+span.translation {
+    color: green;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+/**************************************/
+
+body {
+    padding-top: 56px;
+}
+
+.sticky-offset {
+    top: 56px;
+}
+
+#body-row {
+    margin-left:0;
+    margin-right:0;
+}
+
+#sidebar-container {
+    min-height: 100vh;
+    background-color: #333;
+    padding: 0;
+}
+
+.text_page_sidebar {
+    min-height: 100vh;
+    background-color: #eceeee;
+    padding: 10px;
+}
+
+/* Sidebar sizes when expanded and expanded */
+.sidebar-expanded {
+    width: 230px;
+}
+.sidebar-collapsed {
+    width: 60px;
+}
+
+/* Menu item*/
+#sidebar-container .list-group a {
+    height: 50px;
+    color: white;
+}
+
+/* Submenu item*/
+#sidebar-container .list-group .sidebar-submenu a {
+    height: 45px;
+    padding-left: 30px;
+}
+.sidebar-submenu {
+    font-size: 0.9rem;
+}
+
+/* Separators */
+.sidebar-separator-title {
+    background-color: #333;
+    height: 35px;
+}
+.sidebar-separator {
+    background-color: #333;
+    height: 25px;
+}
+.logo-separator {
+    background-color: #333;
+    height: 60px;
+}
+
+/* Closed submenu icon */
+#sidebar-container .list-group .list-group-item[aria-expanded="false"] .submenu-icon::after {
+    content: " \f0d7";
+    font-family: FontAwesome;
+    display: inline;
+    text-align: right;
+    padding-left: 10px;
+}
+/* Opened submenu icon */
+#sidebar-container .list-group .list-group-item[aria-expanded="true"] .submenu-icon::after {
+    content: " \f0da";
+    font-family: FontAwesome;
+    display: inline;
+    text-align: right;
+    padding-left: 10px;
+}
+
+#sidebar-container a {
+    text-transform: uppercase;
+    font-weight: bold;
+}

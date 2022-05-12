@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="aXuIsQYXK9eyQC6tBa93OhiAY0wHxtXX43qJeg6Y">
+
+    <link rel="stylesheet" href="http://127.0.0.1:59266/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:59266/css/style.css">
+    <link rel="stylesheet" href="http://127.0.0.1:59266/css/icofont.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:59266/css/bootstrap-select.min.css">
+
+    <title>WexLang Reader 1.0</title>
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark fixed-top" style="padding-top: 0; padding-bottom: 0;">
+
+    <a class="navbar-brand" href="http://127.0.0.1:59266">
+
+        <img src="http://127.0.0.1:59266/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        <span class="mr-3">WexLang Reader</span>
+
+
+        <img src="http://127.0.0.1:59266/img/flags/en.svg" class="text_flag" alt=""> <i class="text-small">(English)</i>
+        <span class="q_lang_arrow">⟶</span>
+        <img src="http://127.0.0.1:59266/img/flags/ru.svg" class="text_flag" alt=""> <i class="text-small">(Русский)</i>
+
+    </a>
+
+
+    <div>
+
+        <form class="form-inline btn" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="padding: 0; margin: 0; padding-top: 7px;">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="UZVJNLNS3TEYL" />
+            <input type="image" src="http://127.0.0.1:59266/img/paypal2.png" width="204px" height="40px" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+        <a href="https://vk.com/wexlang" target="_blank" class="btn">
+            <i class="icofont-vk icofont-2x" style="color: white; vertical-align: middle;"></i>
+        </a>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        learned_lang_code = "en";
+        known_lang_code = "ru";
+    </script>
+
+</nav>
+
+
+
+
+<!-- Bootstrap row -->
+<div class="row" id="body-row">
+
+    <!-- LEFT SIDEBAR START -->
+    <div class="sidebar-expanded text_page_sidebar col-2">
+
+        <div class="position-fixed" style="width: 15%;">
+
+            <a class="btn btn-primary text-light noradius w-100" href="http://127.0.0.1:59266" onclick="showLoadingOverlay()">
+                <b><< Мои тексты</b>
+            </a>
+
+            <hr>
+
+            <h4 class="sidebar-heading mt-2 mb-1 text-muted">
+                <span>Слова</span> <br>
+                <span style="font-size: 16px">(Нажмите на слово для перевода)</span>
+            </h4>
+
+            <hr>
+
+            <p><mark>word</mark> - знакомые слова</p>
+            <p><mark class="study">word</mark> - изучаемые слова</p>
+            <p><mark class="unknown">word</mark> - незнакомые слова</p>
+
+            <h4 class="sidebar-heading mt-4 mb-1 text-muted">
+                <span>Опции</span>
+            </h4>
+
+            <hr>
+
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="h_known" checked>
+                <label class="custom-control-label" for="h_known">Выделить изучаемые слова</label>
+            </div>
+
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="h_unknown" checked>
+                <label class="custom-control-label" for="h_unknown">Выделить незнакомые слова</label>
+            </div>
+
+            <hr>
+
+
+            
+                <button type="button" id="mark_all_as_to_study" class="btn btn-warning mb-3"><b>Отметить все как ИЗУЧАЕМОЕ</b></button>
+                <br>
+                <button type="button" id="mark_all_as_known_btn" class="btn btn-success"><b>Отметить все как ЗНАКОМОЕ</b></button>
+
+            
+
+            </div>
+    </div>
+    <!-- LEFT SIDEBAR END -->
+
+    <!-- MAIN -->
+    <div class="col py-3">
+
+        <div class="row justify-content-md-center mt-3">
+            <div class="col-md-auto">
+                <ul class="nav nav-pills mb-3" >
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link active" href="http://127.0.0.1:59266/reader/read/text/53?page=101"><b class="uc">Текст</b></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="http://127.0.0.1:59266/reader/read/text/53/words"><b class="uc">Слова</b></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        
+    
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" style="text-align: center;">
+
+        <div class="page_text_wrapper">
+            
+
+<mark class='unknown' data-word="so" data-state='0' >So</mark> <mark class='unknown' data-word="she" data-state='0' >she</mark> <mark class='unknown' data-word="sat" data-state='0' >sat</mark> <mark class='unknown' data-word="on" data-state='0' >on</mark>, <mark class='unknown' data-word="with" data-state='0' >with</mark> <mark class='unknown' data-word="closed" data-state='0' >closed</mark> <mark class='unknown' data-word="eyes" data-state='0' >eyes</mark>, <mark class='unknown' data-word="and" data-state='0' >and</mark> <mark class='unknown' data-word="half" data-state='0' >half</mark> <mark class='unknown' data-word="believed" data-state='0' >believed</mark> <mark class='unknown' data-word="herself" data-state='0' >herself</mark> <mark class='unknown' data-word="in" data-state='0' >in</mark>
+<mark class='unknown' data-word="wonderland" data-state='0' >Wonderland</mark>, <mark class='unknown' data-word="though" data-state='0' >though</mark> <mark class='unknown' data-word="she" data-state='0' >she</mark> <mark class='unknown' data-word="knew" data-state='0' >knew</mark> <mark class='unknown' data-word="she" data-state='0' >she</mark> <mark class='unknown' data-word="had" data-state='0' >had</mark> <mark class='unknown' data-word="but" data-state='0' >but</mark> <mark class='unknown' data-word="to" data-state='0' >to</mark> <mark class='unknown' data-word="open" data-state='0' >open</mark> <mark class='unknown' data-word="them" data-state='0' >them</mark> <mark class='unknown' data-word="again" data-state='0' >again</mark>, <mark class='unknown' data-word="and" data-state='0' >and</mark> <mark class='unknown' data-word="all" data-state='0' >all</mark>
+<mark class='unknown' data-word="would" data-state='0' >would</mark> <mark class='unknown' data-word="change" data-state='0' >change</mark> <mark class='unknown' data-word="to" data-state='0' >to</mark> <mark class='unknown' data-word="dull" data-state='0' >dull</mark> <mark class='unknown' data-word="realityвђ" data-state='0' >realityвЂ</mark>”<mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="grass" data-state='0' >grass</mark> <mark class='unknown' data-word="would" data-state='0' >would</mark> <mark class='unknown' data-word="be" data-state='0' >be</mark> <mark class='unknown' data-word="only" data-state='0' >only</mark> <mark class='unknown' data-word="rustling" data-state='0' >rustling</mark> <mark class='unknown' data-word="in" data-state='0' >in</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark>
+<mark class='unknown' data-word="wind" data-state='0' >wind</mark>, <mark class='unknown' data-word="and" data-state='0' >and</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="pool" data-state='0' >pool</mark> <mark class='unknown' data-word="rippling" data-state='0' >rippling</mark> <mark class='unknown' data-word="to" data-state='0' >to</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="waving" data-state='0' >waving</mark> <mark class='unknown' data-word="of" data-state='0' >of</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="reedsвђ" data-state='0' >reedsвЂ</mark>”<mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="rattling" data-state='0' >rattling</mark>
+<mark class='unknown' data-word="teacups" data-state='0' >teacups</mark> <mark class='unknown' data-word="would" data-state='0' >would</mark> <mark class='unknown' data-word="change" data-state='0' >change</mark> <mark class='unknown' data-word="to" data-state='0' >to</mark> <mark class='unknown' data-word="tinkling" data-state='0' >tinkling</mark> <mark class='unknown' data-word="sheep-bells" data-state='0' >sheep-bells</mark>, <mark class='unknown' data-word="and" data-state='0' >and</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="queenвђ" data-state='0' >QueenвЂ</mark>™<mark class='unknown' data-word="s" data-state='0' >s</mark> <mark class='unknown' data-word="shrill" data-state='0' >shrill</mark>
+<mark class='unknown' data-word="cries" data-state='0' >cries</mark> <mark class='unknown' data-word="to" data-state='0' >to</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="voice" data-state='0' >voice</mark> <mark class='unknown' data-word="of" data-state='0' >of</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="shepherd" data-state='0' >shepherd</mark> <mark class='unknown' data-word="boyвђ" data-state='0' >boyвЂ</mark>”<mark class='unknown' data-word="and" data-state='0' >and</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="sneeze" data-state='0' >sneeze</mark> <mark class='unknown' data-word="of" data-state='0' >of</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="baby" data-state='0' >baby</mark>, <mark class='unknown' data-word="the" data-state='0' >the</mark>
+<mark class='unknown' data-word="shriek" data-state='0' >shriek</mark> <mark class='unknown' data-word="of" data-state='0' >of</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="gryphon" data-state='0' >Gryphon</mark>, <mark class='unknown' data-word="and" data-state='0' >and</mark> <mark class='unknown' data-word="all" data-state='0' >all</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="other" data-state='0' >other</mark> <mark class='unknown' data-word="queer" data-state='0' >queer</mark> <mark class='unknown' data-word="noises" data-state='0' >noises</mark>, <mark class='unknown' data-word="would" data-state='0' >would</mark> <mark class='unknown' data-word="change" data-state='0' >change</mark>
+(<mark class='unknown' data-word="she" data-state='0' >she</mark> <mark class='unknown' data-word="knew" data-state='0' >knew</mark>) <mark class='unknown' data-word="to" data-state='0' >to</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="confused" data-state='0' >confused</mark> <mark class='unknown' data-word="clamour" data-state='0' >clamour</mark> <mark class='unknown' data-word="of" data-state='0' >of</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="busy" data-state='0' >busy</mark> <mark class='unknown' data-word="farm-yardвђ" data-state='0' >farm-yardвЂ</mark>”<mark class='unknown' data-word="while" data-state='0' >while</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark>
+<mark class='unknown' data-word="lowing" data-state='0' >lowing</mark> <mark class='unknown' data-word="of" data-state='0' >of</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="cattle" data-state='0' >cattle</mark> <mark class='unknown' data-word="in" data-state='0' >in</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="distance" data-state='0' >distance</mark> <mark class='unknown' data-word="would" data-state='0' >would</mark> <mark class='unknown' data-word="take" data-state='0' >take</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="place" data-state='0' >place</mark> <mark class='unknown' data-word="of" data-state='0' >of</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="mock" data-state='0' >Mock</mark>
+<mark class='unknown' data-word="turtleвђ" data-state='0' >TurtleвЂ</mark>™<mark class='unknown' data-word="s" data-state='0' >s</mark> <mark class='unknown' data-word="heavy" data-state='0' >heavy</mark> <mark class='unknown' data-word="sobs" data-state='0' >sobs</mark>.
+
+<mark class='unknown' data-word="lastly" data-state='0' >Lastly</mark>, <mark class='unknown' data-word="she" data-state='0' >she</mark> <mark class='unknown' data-word="pictured" data-state='0' >pictured</mark> <mark class='unknown' data-word="to" data-state='0' >to</mark> <mark class='unknown' data-word="herself" data-state='0' >herself</mark> <mark class='unknown' data-word="how" data-state='0' >how</mark> <mark class='unknown' data-word="this" data-state='0' >this</mark> <mark class='unknown' data-word="same" data-state='0' >same</mark> <mark class='unknown' data-word="little" data-state='0' >little</mark> <mark class='unknown' data-word="sister" data-state='0' >sister</mark> <mark class='unknown' data-word="of" data-state='0' >of</mark> <mark class='unknown' data-word="hers" data-state='0' >hers</mark>
+<mark class='unknown' data-word="would" data-state='0' >would</mark>, <mark class='unknown' data-word="in" data-state='0' >in</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="after-time" data-state='0' >after-time</mark>, <mark class='unknown' data-word="be" data-state='0' >be</mark> <mark class='unknown' data-word="herself" data-state='0' >herself</mark> <mark class='unknown' data-word="a" data-state='0' >a</mark> <mark class='unknown' data-word="grown" data-state='0' >grown</mark> <mark class='unknown' data-word="woman" data-state='0' >woman</mark>; <mark class='unknown' data-word="and" data-state='0' >and</mark> <mark class='unknown' data-word="how" data-state='0' >how</mark> <mark class='unknown' data-word="she" data-state='0' >she</mark> <mark class='unknown' data-word="would" data-state='0' >would</mark>
+<mark class='unknown' data-word="keep" data-state='0' >keep</mark>, <mark class='unknown' data-word="through" data-state='0' >through</mark> <mark class='unknown' data-word="all" data-state='0' >all</mark> <mark class='unknown' data-word="her" data-state='0' >her</mark> <mark class='unknown' data-word="riper" data-state='0' >riper</mark> <mark class='unknown' data-word="years" data-state='0' >years</mark>, <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="simple" data-state='0' >simple</mark> <mark class='unknown' data-word="and" data-state='0' >and</mark> <mark class='unknown' data-word="loving" data-state='0' >loving</mark> <mark class='unknown' data-word="heart" data-state='0' >heart</mark> <mark class='unknown' data-word="of" data-state='0' >of</mark> <mark class='unknown' data-word="her" data-state='0' >her</mark>
+<mark class='unknown' data-word="childhood" data-state='0' >childhood</mark>: <mark class='unknown' data-word="and" data-state='0' >and</mark> <mark class='unknown' data-word="how" data-state='0' >how</mark> <mark class='unknown' data-word="she" data-state='0' >she</mark> <mark class='unknown' data-word="would" data-state='0' >would</mark> <mark class='unknown' data-word="gather" data-state='0' >gather</mark> <mark class='unknown' data-word="about" data-state='0' >about</mark> <mark class='unknown' data-word="her" data-state='0' >her</mark> <mark class='unknown' data-word="other" data-state='0' >other</mark> <mark class='unknown' data-word="little" data-state='0' >little</mark> <mark class='unknown' data-word="children" data-state='0' >children</mark>,
+<mark class='unknown' data-word="and" data-state='0' >and</mark> <mark class='unknown' data-word="make" data-state='0' >make</mark> <mark class='unknown' data-word="_their_" data-state='0' >_their_</mark> <mark class='unknown' data-word="eyes" data-state='0' >eyes</mark> <mark class='unknown' data-word="bright" data-state='0' >bright</mark> <mark class='unknown' data-word="and" data-state='0' >and</mark> <mark class='unknown' data-word="eager" data-state='0' >eager</mark> <mark class='unknown' data-word="with" data-state='0' >with</mark> <mark class='unknown' data-word="many" data-state='0' >many</mark> <mark class='unknown' data-word="a" data-state='0' >a</mark> <mark class='unknown' data-word="strange" data-state='0' >strange</mark> <mark class='unknown' data-word="tale" data-state='0' >tale</mark>,
+<mark class='unknown' data-word="perhaps" data-state='0' >perhaps</mark> <mark class='unknown' data-word="even" data-state='0' >even</mark> <mark class='unknown' data-word="with" data-state='0' >with</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="dream" data-state='0' >dream</mark> <mark class='unknown' data-word="of" data-state='0' >of</mark> <mark class='unknown' data-word="wonderland" data-state='0' >Wonderland</mark> <mark class='unknown' data-word="of" data-state='0' >of</mark> <mark class='unknown' data-word="long" data-state='0' >long</mark> <mark class='unknown' data-word="ago" data-state='0' >ago</mark>: <mark class='unknown' data-word="and" data-state='0' >and</mark> <mark class='unknown' data-word="how" data-state='0' >how</mark> <mark class='unknown' data-word="she" data-state='0' >she</mark>
+<mark class='unknown' data-word="would" data-state='0' >would</mark> <mark class='unknown' data-word="feel" data-state='0' >feel</mark> <mark class='unknown' data-word="with" data-state='0' >with</mark> <mark class='unknown' data-word="all" data-state='0' >all</mark> <mark class='unknown' data-word="their" data-state='0' >their</mark> <mark class='unknown' data-word="simple" data-state='0' >simple</mark> <mark class='unknown' data-word="sorrows" data-state='0' >sorrows</mark>, <mark class='unknown' data-word="and" data-state='0' >and</mark> <mark class='unknown' data-word="find" data-state='0' >find</mark> <mark class='unknown' data-word="a" data-state='0' >a</mark> <mark class='unknown' data-word="pleasure" data-state='0' >pleasure</mark> <mark class='unknown' data-word="in" data-state='0' >in</mark> <mark class='unknown' data-word="all" data-state='0' >all</mark>
+<mark class='unknown' data-word="their" data-state='0' >their</mark> <mark class='unknown' data-word="simple" data-state='0' >simple</mark> <mark class='unknown' data-word="joys" data-state='0' >joys</mark>, <mark class='unknown' data-word="remembering" data-state='0' >remembering</mark> <mark class='unknown' data-word="her" data-state='0' >her</mark> <mark class='unknown' data-word="own" data-state='0' >own</mark> <mark class='unknown' data-word="child-life" data-state='0' >child-life</mark>, <mark class='unknown' data-word="and" data-state='0' >and</mark> <mark class='unknown' data-word="the" data-state='0' >the</mark> <mark class='unknown' data-word="happy" data-state='0' >happy</mark> <mark class='unknown' data-word="summer" data-state='0' >summer</mark>
+<mark class='unknown' data-word="days" data-state='0' >days</mark>.
+
+<mark class='unknown' data-word="the" data-state='0' >THE</mark> <mark class='unknown' data-word="end" data-state='0' >END</mark> 
+
+
+        </div>
+
+        <div class="mt-3">
+            <ul class="pagination justify-content-center" role="navigation">
+        
+                    <li class="page-item">
+                <a class="page-link" href="http://127.0.0.1:59266/reader/read/text/53?page=100" rel="prev" aria-label="&laquo; Previous">&lsaquo;</a>
+            </li>
+        
+        
+                    
+            
+            
+                                                                        <li class="page-item"><a class="page-link" href="http://127.0.0.1:59266/reader/read/text/53?page=1">1</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:59266/reader/read/text/53?page=2">2</a></li>
+                                                                    
+                            <li class="page-item disabled" aria-disabled="true"><span class="page-link">...</span></li>
+            
+            
+                                
+            
+            
+                                                                        <li class="page-item"><a class="page-link" href="http://127.0.0.1:59266/reader/read/text/53?page=93">93</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:59266/reader/read/text/53?page=94">94</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:59266/reader/read/text/53?page=95">95</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:59266/reader/read/text/53?page=96">96</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:59266/reader/read/text/53?page=97">97</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:59266/reader/read/text/53?page=98">98</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:59266/reader/read/text/53?page=99">99</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:59266/reader/read/text/53?page=100">100</a></li>
+                                                                                <li class="page-item active" aria-current="page"><span class="page-link">101</span></li>
+                                                        
+        
+                    <li class="page-item disabled" aria-disabled="true" aria-label="Next &raquo;">
+                <span class="page-link" aria-hidden="true">&rsaquo;</span>
+            </li>
+            </ul>
+
+        </div>
+
+    </div>
+    
+
+
+
+    </div>
+    <!-- Main Col END -->
+
+
+    <!-- RIGHT SIDEBAR START -->
+    <div class="sidebar-expanded text_page_sidebar col-2">
+
+        <div class="position-fixed">
+
+            <div>
+                <span style="font-size:30px" id="rs_word">Слово</span>
+                <span class="badge badge-warning h4" id="rs_word_state" style="vertical-align: middle">Изучить</span>
+            </div>
+
+            <hr>
+
+            <div>
+                <b>Перевод:</b>
+            </div>
+
+            <textarea id="rs_word_translation" cols="30" rows="10">word translation</textarea>
+
+            <div id="rs_mark_known_wrapper">
+                <hr>
+
+                <button type="button" id="rs_save_translation_btn" class="btn btn-info">Сохранить перевод</button>
+
+                <hr>
+
+                <b>Отметить слово как:</b>
+                <br>
+                <span class="text-muted">Значение по умолчанию - Изучить</span>
+                <br>
+
+                <button type="button" id="rs_mark_as_known_btn" class="btn btn-success btn-sm" data-state="2">Знакомое</button>
+
+                <button type="button" id="rs_mark_as_to_study_btn" class="btn btn-warning btn-sm" data-state="1">Изучить</button>
+
+
+            </div>
+
+            <hr>
+
+            <div class="pr-3 pt-3">
+                <a href="#" class="btn btn-primary w-100 mb-2" id="gt_btn">Перевести в Google</a>
+                <a href="#" class="btn btn-primary w-100 mb-2" id="yt_btn">Перевести в Yandex</a>
+            </div>
+
+        </div>
+    </div>
+    <!-- RIGHT SIDEBAR END -->
+
+</div>
+<!-- body-row END -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://127.0.0.1:59266/js/jquery-3.4.1.min.js"></script>
+<script src="http://127.0.0.1:59266/js/popper.min.js"></script>
+<script src="http://127.0.0.1:59266/js/bootstrap.min.js"></script>
+<script src="http://127.0.0.1:59266/js/bootstrap-select.min.js"></script>
+
+<!-- App JavaScript -->
+<script src="http://127.0.0.1:59266/js/reader.js"></script>
+<script src="http://127.0.0.1:59266/js/js.cookie.js"></script>
+
+</body>
+</html>
+

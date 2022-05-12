@@ -1,0 +1,1739 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="s58bZZAMV85ZuNl2Tcz38nkr5xz3UdrofWiezgFI">
+
+    <link rel="stylesheet" href="http://127.0.0.1:52495/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:52495/css/style.css">
+    <link rel="stylesheet" href="http://127.0.0.1:52495/css/icofont.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:52495/css/bootstrap-select.min.css">
+
+    <title>WexLang Reader 1.0</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-dark bg-dark fixed-top" style="padding-top: 0; padding-bottom: 0;">
+
+    <a class="navbar-brand" href="http://127.0.0.1:52495">
+
+        <img src="http://127.0.0.1:52495/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        <span class="mr-3">WexLang Reader</span>
+
+
+        <img src="http://127.0.0.1:52495/img/flags/en.svg" class="text_flag" alt=""> <i class="text-small">(English)</i>
+        <span class="q_lang_arrow">⟶</span>
+        <img src="http://127.0.0.1:52495/img/flags/ru.svg" class="text_flag" alt=""> <i class="text-small">(Русский)</i>
+
+    </a>
+
+
+    <div>
+
+        <form class="form-inline btn" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="padding: 0; margin: 0; padding-top: 7px;">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="UZVJNLNS3TEYL" />
+            <input type="image" src="http://127.0.0.1:52495/img/paypal2.png" width="204px" height="40px" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+        <a href="https://vk.com/wexlang" target="_blank" class="btn">
+            <i class="icofont-vk icofont-2x" style="color: white; vertical-align: middle;"></i>
+        </a>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        learned_lang_code = "en";
+        known_lang_code = "ru";
+    </script>
+
+</nav>
+
+
+<!-- Bootstrap row -->
+<div class="row" id="body-row">
+    <!-- Sidebar -->
+    <div id="sidebar-container" class="sidebar-expanded col-2">
+
+        <ul class="list-group sticky-top sticky-offset">
+
+            <br>
+
+            <a href="http://127.0.0.1:52495" class="bg-dark list-group-item list-group-item-action" onclick="showLoadingOverlay()"><i class="icofont-book"></i> Мои тексты</a>
+
+            <a href="http://127.0.0.1:52495/reader/words" class="bg-dark list-group-item list-group-item-action" onclick="showLoadingOverlay()"><i class="icofont-file-text"></i> Мои слова</a>
+
+            <br>
+
+            <a href="http://127.0.0.1:52495/reader/add/text" class="bg-dark list-group-item list-group-item-action"><i class="icofont-plus-square"></i> Добавить текст</a>
+
+            <br>
+
+            <a href="http://127.0.0.1:52495/reader/upload_dictionary" class="bg-dark list-group-item list-group-item-action"><i class="icofont-upload"></i> Загрузить словарь</a>
+
+            <br>
+
+            <a href="http://127.0.0.1:52495/reader/settings" class="bg-dark list-group-item list-group-item-action"><i class="icofont-gears"></i> Настройки</a>
+
+
+
+        </ul>
+
+    </div>
+    <!-- sidebar-container END -->
+
+    <!-- MAIN -->
+    <div class="col py-3">
+
+        
+    <h1>Статистика текста</h1>
+
+    <div class="w3-border-bottom">
+        <ul>
+            <li>Всего слов: <b>26384</b></li>
+            <li>Уникальные слова: <b>2775</b></li>
+            <li>Незнакомые: <span class="badge badge-info">2775</span></li>
+            <li>Изучаемые: <span class="badge badge-warning">0</span></li>
+            <li>Знакомые: <span class="badge badge-success">2</span></li>
+            <li>Символы: <b>147726</b></li>
+            <li>Страницы: <b>90</b></li>
+            <br>
+            <li> <a href="http://127.0.0.1:52495/reader/text/stats/52/exportcsv" type="submit" class="btn btn-info" >ЭКСПОРТИРОВАТЬ ВСЕ КАК <b>CSV</b></a></li>
+        </ul>
+
+    </div>
+
+
+
+    <h1>Слова из текста</h1>
+
+    
+    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+
+        
+        <li class="nav-item" style="margin-right: 50px;">
+            <a href="http://127.0.0.1:52495/reader/text/stats/52?show_words=0" type="button" class="btn btn-primary noradius ">
+                <span class="h3 uc">Все: <span class="badge badge-dark"> 2775</span> </span>
+            </a>
+        </li>
+
+        <li class="nav-item" style="margin-right: 50px;">
+            <a href="http://127.0.0.1:52495/reader/text/stats/52?show_words=1" type="button" class="btn btn-primary noradius disabled">
+                <span class="h3">НОВЫЕ: <span class="badge badge-dark"> 2775</span> </span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="http://127.0.0.1:52495/reader/text/stats/52?show_words=2" type="button" class="btn btn-primary noradius ">
+                <span class="h3">ЗНАКОМЫЕ / ИЗУЧИТЬ: <span class="badge badge-success">0</span> </span>
+            </a>
+        </li>
+
+    </ul>
+    
+
+    
+    <div class="row">
+
+        <table class="table" id="all_text_words">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Статус</th>
+                <th scope="col">Слово</th>
+                <th scope="col">Перевод</th>
+                <th scope="col">Частота использования</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="the"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="the"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>the</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>1630 <span class="small text-muted">6.178%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="and"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="and"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>and</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>844 <span class="small text-muted">3.1989%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="to"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="to"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>to</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>721 <span class="small text-muted">2.7327%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="a"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="a"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>a</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>627 <span class="small text-muted">2.3764%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="she"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="she"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>she</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>537 <span class="small text-muted">2.0353%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="it"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="it"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>it</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>526 <span class="small text-muted">1.9936%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="of"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="of"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>of</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>508 <span class="small text-muted">1.9254%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="said"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="said"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>said</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>462 <span class="small text-muted">1.7511%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="i"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="i"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>i</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>400 <span class="small text-muted">1.5161%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="alice"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="alice"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>alice</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>385 <span class="small text-muted">1.4592%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="in"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="in"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>in</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>366 <span class="small text-muted">1.3872%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="you"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="you"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>you</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>360 <span class="small text-muted">1.3645%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="was"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="was"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>was</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>357 <span class="small text-muted">1.3531%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="that"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="that"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>that</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>276 <span class="small text-muted">1.0461%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="as"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="as"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>as</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>262 <span class="small text-muted">0.993%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="her"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="her"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>her</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>248 <span class="small text-muted">0.94%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="at"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="at"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>at</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>209 <span class="small text-muted">0.7921%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="on"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="on"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>on</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>193 <span class="small text-muted">0.7315%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="with"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="with"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>with</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>181 <span class="small text-muted">0.686%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="all"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="all"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>all</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>179 <span class="small text-muted">0.6784%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="had"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="had"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>had</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>178 <span class="small text-muted">0.6747%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="but"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="but"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>but</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>164 <span class="small text-muted">0.6216%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="for"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="for"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>for</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>153 <span class="small text-muted">0.5799%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="so"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="so"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>so</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>150 <span class="small text-muted">0.5685%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="be"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="be"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>be</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>146 <span class="small text-muted">0.5534%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="very"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="very"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>very</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>144 <span class="small text-muted">0.5458%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="not"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="not"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>not</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>144 <span class="small text-muted">0.5458%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="what"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="what"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>what</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>136 <span class="small text-muted">0.5155%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="this"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="this"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>this</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>134 <span class="small text-muted">0.5079%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="little"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="little"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>little</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>128 <span class="small text-muted">0.4851%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="they"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="they"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>they</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>127 <span class="small text-muted">0.4814%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="he"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="he"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>he</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>120 <span class="small text-muted">0.4548%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="out"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="out"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>out</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>113 <span class="small text-muted">0.4283%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="is"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="is"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>is</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>102 <span class="small text-muted">0.3866%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="one"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="one"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>one</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>101 <span class="small text-muted">0.3828%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="down"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="down"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>down</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>101 <span class="small text-muted">0.3828%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="up"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="up"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>up</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>98 <span class="small text-muted">0.3714%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="his"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="his"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>his</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>96 <span class="small text-muted">0.3639%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="about"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="about"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>about</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>94 <span class="small text-muted">0.3563%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="if"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="if"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>if</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>94 <span class="small text-muted">0.3563%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="then"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="then"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>then</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>90 <span class="small text-muted">0.3411%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="no"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="no"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>no</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>87 <span class="small text-muted">0.3297%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="like"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="like"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>like</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>85 <span class="small text-muted">0.3222%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="know"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="know"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>know</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>85 <span class="small text-muted">0.3222%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="were"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="were"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>were</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>85 <span class="small text-muted">0.3222%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="them"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="them"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>them</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>84 <span class="small text-muted">0.3184%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="would"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="would"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>would</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>83 <span class="small text-muted">0.3146%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="went"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="went"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>went</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>83 <span class="small text-muted">0.3146%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="herself"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="herself"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>herself</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>83 <span class="small text-muted">0.3146%</span> </td>
+                </tr>
+
+            
+                <tr>
+                    
+                    <td>
+
+                                                    <button type="button" class="btn btn-warning btn-sm word_btn"
+                                    data-word="again"
+                                    data-state="1">Изучить</button>
+
+                            <button type="button" class="btn btn-success btn-sm word_btn"
+                                    data-word="again"
+                                    data-state="2">Знакомое</button>
+                        
+                    </td>
+                    
+
+                    <td>again</td>
+
+                    
+
+                    <td>
+                                                    -
+                                            </td>
+
+                    
+
+
+                    <td>82 <span class="small text-muted">0.3108%</span> </td>
+                </tr>
+
+            
+            </tbody>
+        </table>
+
+    </div>
+    
+
+    <ul class="pagination justify-content-center" role="navigation">
+        
+                    <li class="page-item disabled" aria-disabled="true" aria-label="&laquo; Previous">
+                <span class="page-link" aria-hidden="true">&lsaquo;</span>
+            </li>
+        
+        
+                    
+            
+            
+                                                                        <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+                                                                                <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="?page=4">4</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="?page=5">5</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="?page=6">6</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="?page=7">7</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="?page=8">8</a></li>
+                                                                    
+                            <li class="page-item disabled" aria-disabled="true"><span class="page-link">...</span></li>
+            
+            
+                                
+            
+            
+                                                                        <li class="page-item"><a class="page-link" href="?page=55">55</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="?page=56">56</a></li>
+                                                        
+        
+                    <li class="page-item">
+                <a class="page-link" href="?page=2" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
+            </li>
+            </ul>
+
+
+
+    </div>
+    <!-- Main Col END -->
+
+</div>
+<!-- body-row END -->
+
+
+<div class="alert alert-success fade show" id="alert" style="position: fixed; top: 57px; right: 0; z-index: 9999999 !important; display: none;" >
+
+    <strong>      Saved      </strong>
+
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://127.0.0.1:52495/js/jquery-3.4.1.min.js"></script>
+<script src="http://127.0.0.1:52495/js/popper.min.js"></script>
+<script src="http://127.0.0.1:52495/js/bootstrap.min.js"></script>
+<script src="http://127.0.0.1:52495/js/bootstrap-select.min.js"></script>
+
+<!-- App JavaScript -->
+<script src="http://127.0.0.1:52495/js/reader.js"></script>
+<script src="http://127.0.0.1:52495/js/js.cookie.js"></script>
+<script src="http://127.0.0.1:52495/js/loadingoverlay.min.js"></script>
+</body>
+</html>

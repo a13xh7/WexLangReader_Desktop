@@ -1,0 +1,4220 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="NMKHvsy8Zv3ayrAcLrFBFhjIe2sqmSH6hNtYsKGg">
+
+    <link rel="stylesheet" href="http://127.0.0.1:50500/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:50500/css/style.css">
+    <link rel="stylesheet" href="http://127.0.0.1:50500/css/icofont.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:50500/css/bootstrap-select.min.css">
+
+    <title>WexLang Reader 1.0</title>
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark fixed-top" style="padding-top: 0; padding-bottom: 0;">
+
+    <a class="navbar-brand" href="http://127.0.0.1:50500">
+
+        <img src="http://127.0.0.1:50500/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        <span class="mr-3">WexLang Reader</span>
+
+
+        <img src="http://127.0.0.1:50500/img/flags/en.svg" class="text_flag" alt=""> <i class="text-small">(English)</i>
+        <span class="q_lang_arrow">⟶</span>
+        <img src="http://127.0.0.1:50500/img/flags/ru.svg" class="text_flag" alt=""> <i class="text-small">(Русский)</i>
+
+    </a>
+
+
+
+
+    <div>
+
+        <form class="form-inline btn" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="padding: 0; margin: 0; padding-top: 7px;">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="UZVJNLNS3TEYL" />
+            <input type="image" src="http://127.0.0.1:50500/img/paypal2.png" width="204px" height="40px" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" src="https://www.paypal.com/en_MD/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+
+        <a href="https://www.patreon.com/bePatron?u=33315836" target="_blank">
+            <img src="http://127.0.0.1:50500/img/patreon.png" height="40px">
+        </a>
+
+
+        <a href="https://www.patreon.com/bePatron?u=33315836" target="_blank" class="btn">
+            <i class="icofont-facebook icofont-2x" style="color: white; vertical-align: middle;"></i>
+        </a>
+
+        <a href="https://vk.com/wexlang" target="_blank" class="btn">
+            <i class="icofont-vk icofont-2x" style="color: white; vertical-align: middle;"></i>
+        </a>
+
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        learned_lang_code = "en";
+        known_lang_code = "ru";
+    </script>
+
+</nav>
+
+
+
+
+<!-- Bootstrap row -->
+<div class="row" id="body-row">
+
+    <!-- LEFT SIDEBAR START -->
+    <div class="sidebar-expanded text_page_sidebar col-2">
+
+        <div class="position-fixed">
+
+            <a class="btn btn-primary text-light noradius w-100" href="http://127.0.0.1:50500" onclick="showLoadingOverlay()">
+                <b><< My texts</b>
+            </a>
+
+            <hr>
+
+            <h4 class="sidebar-heading mt-2 mb-1 text-muted">
+                <span>Words</span> <br>
+                <span style="font-size: 16px">(Click to translate)</span>
+            </h4>
+
+            <hr>
+
+            <p><mark>word</mark> - known words</p>
+            <p><mark class="study">word</mark> - to study words</p>
+            <p><mark class="unknown">word</mark> - unknown words</p>
+
+            <h4 class="sidebar-heading mt-4 mb-1 text-muted">
+                <span>Options</span>
+            </h4>
+
+            <hr>
+
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="h_known" checked>
+                <label class="custom-control-label" for="h_known">Highlight to study words</label>
+            </div>
+
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="h_unknown" checked>
+                <label class="custom-control-label" for="h_unknown">Highlight unknown words</label>
+            </div>
+
+            <hr>
+
+
+            
+                <button type="button" id="mark_all_as_to_study_on_words_page" class="btn btn-warning mb-3"><b>Mark all as TO STUDY</b></button>
+                <br>
+                <button type="button" id="mark_all_as_known_on_words_page" class="btn btn-success"><b>Mark all as KNOWN</b></button>
+
+            
+
+            </div>
+    </div>
+    <!-- LEFT SIDEBAR END -->
+
+    <!-- MAIN -->
+    <div class="col py-3">
+
+        <div class="row justify-content-md-center mt-3">
+            <div class="col-md-auto">
+                <ul class="nav nav-pills mb-3" >
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link " href="http://127.0.0.1:50500/reader/read/text/3?page=2"><b class="uc">Text</b></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="http://127.0.0.1:50500/reader/read/text/3/words"><b class="uc">Words</b></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        
+<div>
+
+    <h2>Unique words on this page (153)</h2>
+
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col" style="width:20%">State</th>
+            <th scope="col" style="width:25%">Word</th>
+            <th scope="col" style="width:30%">Translation</th>
+            <th scope="col" style="width:25%">Usage frequency</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="she"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="she"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>she</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>14 <span class="small text-muted">(4.9296%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="to"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="to"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>to</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>13 <span class="small text-muted">(4.5775%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="the"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="the"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>the</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>13 <span class="small text-muted">(4.5775%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="down"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="down"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>down</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>10 <span class="small text-muted">(3.5211%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="was"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="was"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>was</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>8 <span class="small text-muted">(2.8169%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="of"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="of"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>of</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>8 <span class="small text-muted">(2.8169%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="and"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="and"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>and</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>7 <span class="small text-muted">(2.4648%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="it"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="it"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>it</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>7 <span class="small text-muted">(2.4648%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="a"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="a"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>a</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>5 <span class="small text-muted">(1.7606%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="i"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="i"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>i</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>5 <span class="small text-muted">(1.7606%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="as"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="as"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>as</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>4 <span class="small text-muted">(1.4085%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="well"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="well"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>well</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>4 <span class="small text-muted">(1.4085%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="very"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="very"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>very</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>4 <span class="small text-muted">(1.4085%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="fell"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="fell"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>fell</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>3 <span class="small text-muted">(1.0563%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="herself"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="herself"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>herself</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>3 <span class="small text-muted">(1.0563%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="about"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="about"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>about</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>3 <span class="small text-muted">(1.0563%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="for"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="for"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>for</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>3 <span class="small text-muted">(1.0563%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="think"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="think"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>think</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>3 <span class="small text-muted">(1.0563%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="how"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="how"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>how</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>3 <span class="small text-muted">(1.0563%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="alice"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="alice"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>alice</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>3 <span class="small text-muted">(1.0563%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="went"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="went"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>went</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>3 <span class="small text-muted">(1.0563%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="time"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="time"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>time</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="not"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="not"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>not</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="look"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="look"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>look</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="cupboards"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="cupboards"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>cupboards</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="deep"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="deep"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>deep</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="her"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="her"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>her</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="wonder"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="wonder"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>wonder</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="what"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="what"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>what</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="at"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="at"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>at</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="this"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="this"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>this</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="fall"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="fall"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>fall</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="anything"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="anything"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>anything</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="in"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="in"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>in</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="so"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="so"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>so</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="had"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="had"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>had</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="like"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="like"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>like</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="moment"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="moment"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>moment</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="after"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="after"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>after</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="never"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="never"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>never</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="one"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="one"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>one</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="out"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="out"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>out</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="that"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="that"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>that</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="jar"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="jar"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>jar</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="but"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="but"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>but</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="then"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="then"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>then</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="suddenly"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="suddenly"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>suddenly</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>2 <span class="small text-muted">(0.7042%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="put"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="put"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>put</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="did"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="did"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>did</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="me"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="me"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>me</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="home"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="home"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>home</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="all"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="all"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>all</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="they&#039;ll"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="they&#039;ll"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>they&#039;ll</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="brave"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="brave"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>brave</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="stairs"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="stairs"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>stairs</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="such"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="such"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>such</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="drop"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="drop"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>drop</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="managed"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="managed"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>managed</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="fear"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="fear"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>fear</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="thought"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="thought"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>thought</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="killing"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="killing"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>killing</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="past"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="past"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>past</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="nothing"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="nothing"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>nothing</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="into"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="into"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>into</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="shall"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="shall"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>shall</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="somebody"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="somebody"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>somebody</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="tumbling"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="tumbling"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>tumbling</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="true"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="true"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>true</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="why"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="why"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>why</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="many"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="many"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>many</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="centre"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="centre"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>centre</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="near"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="near"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>near</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="somewhere"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="somewhere"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>somewhere</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="getting"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="getting"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>getting</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="be"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="be"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>be</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="must"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="must"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>must</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="aloud"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="aloud"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>aloud</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="said"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="said"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>said</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="by"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="by"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>by</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="fallen"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="fallen"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>fallen</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="i&#039;ve"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="i&#039;ve"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>i&#039;ve</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="miles"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="miles"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>miles</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="end"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="end"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>end</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="wouldn&#039;t"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="wouldn&#039;t"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>wouldn&#039;t</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="an"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="an"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>an</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="come"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="come"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>come</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="would"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="would"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>would</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="disappointment"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="disappointment"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>disappointment</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="likely"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="likely"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>likely</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="which"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="which"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>which</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="house"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="house"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>house</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="top"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="top"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>top</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="off"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="off"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>off</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="if"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="if"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>if</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="even"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="even"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>even</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="say"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="say"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>say</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="empty"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="empty"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>empty</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="were"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="were"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>were</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="great"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="great"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>great</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="stopping"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="stopping"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>stopping</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="first"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="first"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>first</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="next"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="next"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>next</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="happen"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="happen"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>happen</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="going"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="going"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>going</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="plenty"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="plenty"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>plenty</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="slowly"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="slowly"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>slowly</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="or"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="or"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>or</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="either"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="either"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>either</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="falling"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="falling"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>falling</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="found"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="found"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>found</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="before"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="before"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>before</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="dipped"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="dipped"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>dipped</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="make"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="make"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>make</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="way"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="way"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>way</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="some"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="some"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>some</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="tunnel"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="tunnel"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>tunnel</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="on"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="on"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>on</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="straight"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="straight"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>straight</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="rabbit-hole"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="rabbit-hole"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>rabbit-hole</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                    
+                                                    <span class="badge badge-warning h4">To study</span>
+                            <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="339124" data-state="2">Known</button>
+                        
+                    
+
+
+                </td>
+
+                <td>again</td>
+
+                <td>
+
+                                            снова
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="get"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="get"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>get</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="world"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="world"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>world</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="considering"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="considering"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>considering</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="once"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="once"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>once</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="tried"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="tried"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>tried</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="coming"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="coming"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>coming</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="marmalade"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="marmalade"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>marmalade</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="saw"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="saw"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>saw</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="orange"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="orange"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>orange</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="labelled"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="labelled"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>labelled</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="passed"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="passed"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>passed</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="shelves"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="shelves"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>shelves</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="from"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="from"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>from</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="took"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="took"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>took</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="pegs"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="pegs"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>pegs</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="upon"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="upon"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>upon</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="hung"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="hung"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>hung</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="pictures"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="pictures"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>pictures</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="maps"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="maps"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>maps</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="there"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="there"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>there</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="too"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="too"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>too</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="here"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="here"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>here</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="book-shelves"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="book-shelves"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>book-shelves</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="with"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="with"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>with</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="filled"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="filled"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>filled</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="another"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="another"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>another</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="they"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="they"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>they</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="noticed"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="noticed"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>noticed</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="sides"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="sides"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>sides</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="looked"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="looked"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>looked</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="see"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="see"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>see</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="dark"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="dark"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>dark</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+            <tr>
+                <td>
+
+                                            <button type="button" class="btn btn-warning btn-sm word_btn"
+                                data-word="earth"
+                                data-state="1">To study</button>
+
+                        <button type="button" class="btn btn-success btn-sm word_btn"
+                                data-word="earth"
+                                data-state="2">Known</button>
+                    
+
+
+                </td>
+
+                <td>earth</td>
+
+                <td>
+
+                                            -
+                                    </td>
+
+                <td>1 <span class="small text-muted">(0.3521%)</span> </td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+
+</div>
+
+
+
+
+
+    </div>
+    <!-- Main Col END -->
+
+
+    <!-- RIGHT SIDEBAR START -->
+    <div class="sidebar-expanded text_page_sidebar col-2">
+
+        <div class="position-fixed">
+
+            <div>
+                <span style="font-size:30px" id="rs_word">Word</span>
+                <span class="badge badge-warning h4" id="rs_word_state" style="vertical-align: middle">To study</span>
+            </div>
+
+            <hr>
+
+            <div>
+                <b>Translation:</b>
+            </div>
+
+            <textarea id="rs_word_translation" cols="30" rows="10">word translation</textarea>
+
+            <div id="rs_mark_known_wrapper">
+                <hr>
+
+                <button type="button" id="rs_save_translation_btn" class="btn btn-info">Save Translation</button>
+
+                <hr>
+
+                <b>Mark this word as:</b>
+                <br>
+                <span class="text-muted">New words get &quot;To study&quot; state by default</span>
+                <br>
+
+                <button type="button" id="rs_mark_as_known_btn" class="btn btn-success btn-sm" data-state="2">Known</button>
+
+                <button type="button" id="rs_mark_as_to_study_btn" class="btn btn-warning btn-sm" data-state="1">To study</button>
+
+
+            </div>
+
+            <hr>
+
+            <div class="pr-3 pt-3">
+                <a href="#" class="btn btn-primary w-100 mb-2" id="gt_btn">Translate in Google</a>
+                <a href="#" class="btn btn-primary w-100 mb-2" id="yt_btn">Translate in Yandex</a>
+            </div>
+
+        </div>
+    </div>
+    <!-- RIGHT SIDEBAR END -->
+
+</div>
+<!-- body-row END -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://127.0.0.1:50500/js/jquery-3.4.1.min.js"></script>
+<script src="http://127.0.0.1:50500/js/popper.min.js"></script>
+<script src="http://127.0.0.1:50500/js/bootstrap.min.js"></script>
+<script src="http://127.0.0.1:50500/js/bootstrap-select.min.js"></script>
+
+<!-- App JavaScript -->
+<script src="http://127.0.0.1:50500/js/reader.js"></script>
+<script src="http://127.0.0.1:50500/js/js.cookie.js"></script>
+
+</body>
+</html>
+

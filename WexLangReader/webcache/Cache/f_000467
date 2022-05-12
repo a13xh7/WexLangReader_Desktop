@@ -1,0 +1,2864 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="1hJnun9Rlo1ocIapV4Ne1QKFtR1i3mOzy3OjW558">
+
+    <link rel="stylesheet" href="http://127.0.0.1:56878/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:56878/css/style.css">
+    <link rel="stylesheet" href="http://127.0.0.1:56878/css/icofont.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:56878/css/bootstrap-select.min.css">
+
+    <title>WexLang Reader 1.0</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-dark bg-dark fixed-top" style="padding-top: 0; padding-bottom: 0;">
+
+    <a class="navbar-brand" href="http://127.0.0.1:56878">
+
+        <img src="http://127.0.0.1:56878/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        <span class="mr-3">WexLang Reader</span>
+
+
+        <img src="http://127.0.0.1:56878/img/flags/en.svg" class="text_flag" alt=""> <i class="text-small">(English)</i>
+        <span class="q_lang_arrow">⟶</span>
+        <img src="http://127.0.0.1:56878/img/flags/ru.svg" class="text_flag" alt=""> <i class="text-small">(Русский)</i>
+
+    </a>
+
+
+    <div>
+
+        <form class="form-inline btn" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="padding: 0; margin: 0; padding-top: 7px;">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="UZVJNLNS3TEYL" />
+            <input type="image" src="http://127.0.0.1:56878/img/paypal2.png" width="204px" height="40px" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+        <a href="https://vk.com/wexlang" target="_blank" class="btn">
+            <i class="icofont-vk icofont-2x" style="color: white; vertical-align: middle;"></i>
+        </a>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        learned_lang_code = "en";
+        known_lang_code = "ru";
+    </script>
+
+</nav>
+
+
+<!-- Bootstrap row -->
+<div class="row" id="body-row">
+    <!-- Sidebar -->
+    <div id="sidebar-container" class="sidebar-expanded col-2">
+
+        <ul class="list-group sticky-top sticky-offset">
+
+            <br>
+
+            <a href="http://127.0.0.1:56878" class="bg-dark list-group-item list-group-item-action" onclick="showLoadingOverlay()"><i class="icofont-book"></i> Мои тексты</a>
+
+            <a href="http://127.0.0.1:56878/reader/words" class="bg-dark list-group-item list-group-item-action" onclick="showLoadingOverlay()"><i class="icofont-file-text"></i> Мои слова</a>
+
+            <br>
+
+            <a href="http://127.0.0.1:56878/reader/add/text" class="bg-dark list-group-item list-group-item-action"><i class="icofont-plus-square"></i> Добавить текст</a>
+
+            <br>
+
+            <a href="http://127.0.0.1:56878/reader/upload_dictionary" class="bg-dark list-group-item list-group-item-action"><i class="icofont-upload"></i> Загрузить словарь</a>
+
+            <br>
+
+            <a href="http://127.0.0.1:56878/reader/settings" class="bg-dark list-group-item list-group-item-action"><i class="icofont-gears"></i> Настройки</a>
+
+
+
+        </ul>
+
+    </div>
+    <!-- sidebar-container END -->
+
+    <!-- MAIN -->
+    <div class="col py-3">
+
+        
+    
+
+
+    <form action="http://127.0.0.1:56878/reader/words/add-new" method="POST" >
+
+        <div class="form-inline">
+            <h2 class="mr-2">Добавить новое слово:</h2>
+            <input type="text" class="form-control mr-2" id="new_word" name="new_word" placeholder="слово" required>
+
+            <input type="text" class="form-control mr-2" id="new_translation" name="new_translation" placeholder="перевод" required>
+
+            <select class="form-control mr-2" id="new_word_state" name="new_word_state">
+                <option value="1">Изучить</option>
+                <option value="2">Знакомое</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary">ДОБАВИТЬ</button>
+        </div>
+
+
+    </form>
+
+    <hr style="border: 1px solid #DCDCDC;">
+
+
+        <div class="row">
+
+            <div class="col">
+                <form class="form-inline" method="GET" action="http://127.0.0.1:56878/reader/words">
+
+                    <span class="h2 pr-1">Найти:</span>
+                    <input type="text" class="form-control mr-2" id="word_to_find" name="word_to_find" placeholder="word" value="">
+
+                    <button type="submit" class="btn btn-primary mr-2">Поиск</button>
+                    <a href="http://127.0.0.1:56878/reader/words" class="btn btn-success">Сброс</a>
+                </form>
+            </div>
+
+
+            <div class="col-auto">
+                <a href="http://127.0.0.1:56878/reader/words/exportcsv" type="submit" class="btn btn-info" >ЭКСПОРТИРОВАТЬ ВСЕ КАК <b>CSV</b></a>
+                <a href="http://127.0.0.1:56878/reader/words/delete-all" type="button" class="btn btn-danger">Удалить все слова</a>
+            </div>
+
+        </div>
+
+    <hr style="border: 1px solid #DCDCDC;">
+
+    
+    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+
+        
+        <li class="nav-item" style="margin-right: 50px;">
+            <a href="http://127.0.0.1:56878/reader/words?show_words=0" type="button" class="btn btn-primary noradius disabled">
+                <span class="h2 uc">Все: <span class="badge badge-light">15883</span> </span>
+            </a>
+        </li>
+
+        <li class="nav-item" style="margin-right: 50px;">
+            <a href="http://127.0.0.1:56878/reader/words?show_words=1" type="button" class="btn btn-primary ">
+                <span class="h2 uc">Изучить: <span class="badge badge-warning">0 </span> </span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="http://127.0.0.1:56878/reader/words?show_words=2" type="button" class="btn btn-primary noradius ">
+                <span class="h2 uc">Знакомое: <span class="badge badge-success">0</span> </span>
+            </a>
+        </li>
+
+    </ul>
+    
+
+
+    
+    <table class="table" id="all_text_words">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col" style="width: 2%">Id</th>
+            <th scope="col" style="width: 15%">Статус</th>
+            <th scope="col">Слово</th>
+            <th scope="col">Перевод</th>
+            <th scope="col" style="width: 10%">Удалить слово</th>
+        </tr>
+        </thead>
+        <tbody>
+
+    
+        <tr>
+            <td style="width: 2%">370929</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370929" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370929" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>act to</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="разыгрывать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370929">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370929">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370930</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370930" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370930" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>add on</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="прибавлять">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370930">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370930">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370931</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370931" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370931" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>add up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="сходиться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370931">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370931">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370932</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370932" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370932" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>answer back</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="огрызаться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370932">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370932">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370933</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370933" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370933" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>answer to</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="соответствовать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370933">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370933">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370934</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370934" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370934" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>ask after</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="справляться о">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370934">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370934">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370935</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370935" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370935" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>attend to</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="обслуживать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370935">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370935">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370936</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370936" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370936" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>back out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="отступаться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370936">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370936">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370937</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370937" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370937" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>back up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="поддержать, прикрыть">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370937">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370937">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370938</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370938" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370938" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bank on</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="надеяться, полагаться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370938">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370938">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370939</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370939" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370939" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bear out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="поддерживать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370939">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370939">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370940</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370940" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370940" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bear up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="держаться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370940">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370940">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370941</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370941" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370941" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>beat down</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="хлестать, палить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370941">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370941">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370942</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370942" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370942" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>belt out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="горланить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370942">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370942">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370943</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370943" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370943" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>belt up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="заткнуться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370943">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370943">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370944</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370944" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370944" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>blast off</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="взлетать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370944">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370944">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370945</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370945" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370945" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>blot out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="заслонять">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370945">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370945">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370946</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370946" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370946" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>blow out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="задуть">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370946">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370946">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370947</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370947" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370947" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>blow over</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="пройти, утихнуть">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370947">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370947">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370948</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370948" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370948" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>boil down to</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="сводиться к">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370948">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370948">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370949</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370949" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370949" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>book in</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="регистрироваться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370949">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370949">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370950</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370950" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370950" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bottle up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="держать в себе">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370950">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370950">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370951</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370951" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370951" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>box off</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="окружать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370951">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370951">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370952</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370952" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370952" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>break down</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="ломаться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370952">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370952">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370953</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370953" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370953" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>break in</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="вламываться, вмешиваться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370953">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370953">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370954</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370954" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370954" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>break off</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="прерывать, расторгать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370954">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370954">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370955</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370955" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370955" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>break open</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="взламывать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370955">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370955">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370956</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370956" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370956" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>break out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="вспыхнуть, разразиться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370956">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370956">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370957</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370957" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370957" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>break through</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="прорываться сквозь">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370957">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370957">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370958</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370958" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370958" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bring about</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="вызывать, порождать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370958">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370958">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370959</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370959" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370959" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bring back</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="вернуть">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370959">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370959">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370960</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370960" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370960" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bring down</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="сбрасывать, свергать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370960">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370960">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370961</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370961" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370961" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bring forward</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="выдвигать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370961">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370961">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370962</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370962" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370962" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bring in</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="вводить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370962">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370962">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370963</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370963" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370963" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bring off</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="заключать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370963">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370963">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370964</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370964" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370964" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bring out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="выпустить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370964">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370964">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370965</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370965" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370965" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bring round</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="приводить в чувство">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370965">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370965">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370966</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370966" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370966" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>brush aside</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="отметать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370966">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370966">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370967</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370967" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370967" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>brush past</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="проноситься мимо">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370967">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370967">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370968</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370968" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370968" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>brush up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="освежать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370968">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370968">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370969</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370969" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370969" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>build on</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="нарастить, развить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370969">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370969">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370970</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370970" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370970" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>build up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="наращивать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370970">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370970">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370971</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370971" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370971" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bump along</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="трястись по">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370971">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370971">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370972</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370972" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370972" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bump into</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="случайно встретить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370972">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370972">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370973</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370973" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370973" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bundle off</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="отсылать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370973">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370973">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370974</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370974" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370974" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>bundle out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="быстро уходить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370974">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370974">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370975</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370975" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370975" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>burst into</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="врываться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370975">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370975">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370976</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370976" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370976" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>burst open</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="распахиваться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370976">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370976">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370977</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370977" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370977" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>burst out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="разразиться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370977">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370977">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370978</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370978" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370978" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>buy in</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="закупать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370978">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370978">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370979</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370979" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370979" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>buy into</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="входить в долю">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370979">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370979">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370980</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370980" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370980" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>buy off</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="подкупать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370980">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370980">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370981</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370981" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370981" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>buy out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="выкупать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370981">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370981">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370982</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370982" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370982" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>buy up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="скупить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370982">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370982">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370983</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370983" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370983" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>buzz off</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="отваливать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370983">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370983">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370984</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370984" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370984" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>call at</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="останавливаться в">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370984">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370984">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370985</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370985" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370985" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>call back</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="перезвонить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370985">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370985">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370986</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370986" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370986" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>call for</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="требовать, взывать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370986">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370986">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370987</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370987" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370987" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>call off</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="отменить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370987">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370987">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370988</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370988" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370988" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>call on</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="обратиться, попросить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370988">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370988">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370989</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370989" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370989" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>call out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="кричать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370989">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370989">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370990</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370990" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370990" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>carry on</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="продолжать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370990">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370990">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370991</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370991" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370991" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>carry out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="выполнить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370991">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370991">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370992</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370992" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370992" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>cast aside</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="отвергать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370992">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370992">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370993</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370993" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370993" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>catch on</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="становиться популярным">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370993">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370993">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370994</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370994" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370994" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>catch up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="нагонять">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370994">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370994">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370995</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370995" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370995" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>catch up with</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="догнать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370995">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370995">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370996</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370996" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370996" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>chance on</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="случайно наткнуться на">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370996">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370996">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370997</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370997" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370997" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>chase up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="напоминать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370997">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370997">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370998</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370998" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370998" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>chat up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="заигрывать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370998">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370998">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">370999</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="370999" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="370999" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>check in</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="вселиться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="370999">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="370999">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371000</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371000" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371000" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>check off</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="отмечать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371000">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371000">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371001</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371001" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371001" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>check out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="посмотреть, заценить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371001">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371001">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371002</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371002" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371002" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>check up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="наводить справки">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371002">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371002">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371003</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371003" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371003" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>cheer up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="взбодриться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371003">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371003">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371004</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371004" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371004" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>chill out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="расслабиться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371004">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371004">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371005</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371005" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371005" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>chip in</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="встревать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371005">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371005">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371006</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371006" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371006" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>clear off</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="убраться вон">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371006">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371006">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371007</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371007" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371007" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>climb down</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="уступать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371007">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371007">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371008</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371008" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371008" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>close in</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="опускаться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371008">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371008">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371009</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371009" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371009" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>close off</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="огораживать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371009">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371009">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371010</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371010" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371010" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>come across</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="встретить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371010">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371010">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371011</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371011" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371011" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>come along</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="появиться, прийти">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371011">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371011">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371012</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371012" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371012" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>come apart</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="разваливаться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371012">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371012">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371013</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371013" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371013" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>come by</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="найти, заполучить">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371013">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371013">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371014</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371014" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371014" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>come forward</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="вызываться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371014">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371014">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371015</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371015" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371015" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>come in for</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="подвергаться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371015">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371015">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371016</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371016" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371016" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>come off</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="отвалиться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371016">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371016">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371017</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371017" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371017" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>come on</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="включаться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371017">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371017">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371018</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371018" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371018" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>come round</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="приходить в себя">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371018">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371018">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371019</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371019" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371019" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>come through</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="пережить, перенести">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371019">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371019">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371020</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371020" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371020" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>come up against</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="сталкиваться">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371020">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371020">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371021</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371021" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371021" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>come up with</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="придумать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371021">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371021">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371022</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371022" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371022" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>cool down</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="остыть">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371022">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371022">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371023</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371023" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371023" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>count on</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="рассчитывать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371023">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371023">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371024</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371024" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371024" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>count up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="подсчитывать">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371024">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371024">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371025</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371025" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371025" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>cover up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="прикрывать, покрывать кого-либо">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371025">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371025">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371026</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371026" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371026" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>crack down on</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="расправляться с">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371026">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371026">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371027</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371027" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371027" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>crack up</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="лопаться от смеха">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371027">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371027">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        <tr>
+            <td style="width: 2%">371028</td>
+
+            <td style="width: 15%">
+
+                                    <button type="button" class="btn btn-warning btn-sm word_btn" data-word_id="371028" data-state="1">Изучить</button>
+                    <button type="button" class="btn btn-success btn-sm word_btn" data-word_id="371028" data-state="2">Знакомое</button>
+                
+                
+                
+            </td>
+
+            <td>cross out</td>
+
+            <td>
+                <input class="admin_word_size" type="text" value="вычеркнуть">
+                <button type="button" class="btn btn-success btn-sm admin_word_save_btn" data-word_id="371028">Сохранить</button>
+            </td>
+
+            <td style="width: 10%">
+                <button type="button" class="btn btn-danger btn-sm admin_word_delete_btn" data-word_id="371028">Удалить</button>
+            </td>
+
+        </tr>
+
+    
+        </tbody>
+    </table>
+    
+
+    <ul class="pagination justify-content-center" role="navigation">
+        
+                    <li class="page-item disabled" aria-disabled="true" aria-label="&laquo; Previous">
+                <span class="page-link" aria-hidden="true">&lsaquo;</span>
+            </li>
+        
+        
+                    
+            
+            
+                                                                        <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:56878/reader/words?page=2">2</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:56878/reader/words?page=3">3</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:56878/reader/words?page=4">4</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:56878/reader/words?page=5">5</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:56878/reader/words?page=6">6</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:56878/reader/words?page=7">7</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:56878/reader/words?page=8">8</a></li>
+                                                                    
+                            <li class="page-item disabled" aria-disabled="true"><span class="page-link">...</span></li>
+            
+            
+                                
+            
+            
+                                                                        <li class="page-item"><a class="page-link" href="http://127.0.0.1:56878/reader/words?page=158">158</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="http://127.0.0.1:56878/reader/words?page=159">159</a></li>
+                                                        
+        
+                    <li class="page-item">
+                <a class="page-link" href="http://127.0.0.1:56878/reader/words?page=2" rel="next" aria-label="Next &raquo;">&rsaquo;</a>
+            </li>
+            </ul>
+
+
+
+    </div>
+    <!-- Main Col END -->
+
+</div>
+<!-- body-row END -->
+
+
+<div class="alert alert-success fade show" id="alert" style="position: fixed; top: 57px; right: 0; z-index: 9999999 !important; display: none;" >
+
+    <strong>      Saved      </strong>
+
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://127.0.0.1:56878/js/jquery-3.4.1.min.js"></script>
+<script src="http://127.0.0.1:56878/js/popper.min.js"></script>
+<script src="http://127.0.0.1:56878/js/bootstrap.min.js"></script>
+<script src="http://127.0.0.1:56878/js/bootstrap-select.min.js"></script>
+
+<!-- App JavaScript -->
+<script src="http://127.0.0.1:56878/js/reader.js"></script>
+<script src="http://127.0.0.1:56878/js/js.cookie.js"></script>
+<script src="http://127.0.0.1:56878/js/loadingoverlay.min.js"></script>
+</body>
+</html>
